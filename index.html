@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+
+	<title>XPUSH</title>
+
+	<link rel="shortcut icon" href="assets/images/xpush_icon_black.png">
+
+	<!-- Bootstrap itself -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="assets/css/magister.css">
+
+	<!-- Fonts -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+</head>
+
+<!-- use "theme-invert" class on bright backgrounds, also try "text-shadows" class -->
+<body class="theme-invert">
+
+<nav class="mainmenu">
+	<div class="container">
+		<div class="dropdown">
+			<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+			<!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+				<li><a href="#head" class="active">XPUSH</a></li>
+				<li><a href="#about">Installation</a></li>
+				<li><a href="#run">Run</a></li>
+				<li><a href="#themes">Reference</a></li>
+				<li><a href="#contact">Get in touch</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<!-- Main (Home) section -->
+<section class="section" id="head">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
+
+				<!-- Site Title, your name, HELLO msg, etc. -->
+				<img src="assets/images/xpush2.png" alt="">
+
+				<h1 class="title">eXtensional PUSH</h1>
+				<h2 class="subtitle">Real-time communication server</h2>
+
+				<!-- Short introductory (optional) -->
+				<h3 class="tagline">
+					XPUSH is programmable library that supports websocket, GCM and APNS.<br/>
+					It is suitable for implementing components such as messengers and push system.<br/>
+					It makes it easy to send and receive real-time messages for web pages, android and iOS.
+					<br/><br/>
+					XPUSH is consists of a channel server and session servers to handle the load of millions of connections.<br/>
+					Your applications can send and receive messages(or datas) via the dedicated Channel server.<br/>
+					Before connecting with Channel server, Session server assigns Channel server to the clients. <br/>
+					Session server is for load balancing and managing many distributed channel servers.
+				</h3>
+
+				<!-- Nice place to describe your site in a sentence or two -->
+
+
+				<ul class="list-inline list-social">
+
+					<li><a href="https://github.com/xpush/node-xpush" target="_blank" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+
+				</ul>
+
+			</div> <!-- /col -->
+		</div> <!-- /row -->
+
+	</div>
+</section>
+
+<!-- Second (About) section -->
+<section class="section" id="about">
+	<div class="container">
+
+		<h2 class="text-center title">Installation</h2>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<p class="lead">Preparation to install</p>
+
+
+				<p>Before install and run XPUSH servers, you have to install zookeeper, redis and mongoDB.</p>
+
+				<a href="http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html" target="_blank"  class="btn btn-link"><p><b>Install and start zookeeper.</b></p></a>
+
+				<a href="http://redis.io/download" target="_blank"  class="btn btn-link"><p><b>Install and start redis.</b></p></a>
+
+				<a href="http://docs.mongodb.org/manual/installation" target="_blank"  class="btn btn-link"><p><b>Install and start mongoDB.</b></p></a>
+
+
+			</div>
+		</div>
+
+		<br/>
+		<br/>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<a href="https://github.com/xpush/node-xpush#install-xpush" target="_blank"  class="btn btn-link"><p class="lead"><b>And then, Install XPUSH</b></p></a>
+
+			</div>
+		</div>
+
+		<br/>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<h3 class="text-center subtitle">Don't be surprised </h3>
+				<a href="https://registry.hub.docker.com/u/stalk/xpush/" target="_blank"  class="btn btn-link"><p class="lead"><b>We support very trendy docker also.</b></p></a>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- Second (About) section -->
+<section class="section" id="run">
+	<div class="container">
+
+		<h2 class="text-center title">Run XPUSH Servers</h2>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<p class="lead">Start XPUSH Session server</p>
+
+				<pre><code>$ xpush --port 8000 --config ./config.sample.json —session
+</code></pre>
+
+				<br/>
+				<p class="lead">Start XPUSH Channel server</p>
+					<pre><code>$ xpush --port 9990 --config ./config.sample.json
+</code></pre>
+
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- Third (Works) section -->
+<section class="section" id="themes">
+	<div class="container">
+
+		<h2 class="text-center title">Amazing Services</h2>
+		<p class="lead text-center">
+			with XPUSH Servers<br>
+
+		</p>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-2">
+				<div class="thumbnail">
+					<img src="assets/screenshots/stalk.png" alt="">
+					<div class="caption">
+						<h3>stalk.io</h3>
+						<p>STALK.IO chat widget. You can chat with every one who watch the same web page
+You can chat with every one who watch the same web page</p>
+<br/><br/>
+						<p><a href="http://stalk.io" target="_blank" class="btn btn-primary" role="button">Go</a> </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="assets/screenshots/link.png" alt="">
+					<div class="caption">
+						<h3>link.stalk.io</h3>
+						<p>Make the sale and keep customers happy
+
+LINK.STALK.IO is the live conversation service with visitors on your website. Experience the easiest way to boost your sales, help solve issues and understand your customers with this live chat.</p>
+						<p><a href="http://link.stalk.io" class="btn btn-primary" role="button">Go</a> </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-sm-offset-2">
+				<div class="thumbnail">
+					<img src="assets/screenshots/messenger.png" alt="">
+					<div class="caption">
+						<h3>messenger.stalk.io</h3>
+						<p>Web based messenger.</p>
+						<p><a href="http://messenger.stalk.io:8080/" class="btn btn-primary" role="button">Go</a> </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img src="assets/images/xpush1024.png" alt="">
+					<div class="caption">
+						<h3>And Your Service</h3>
+						<p>It's your turn</p>
+						<p><a href="#" class="btn btn-primary" role="button">Go</a> </p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<!-- Fourth (Contact) section -->
+<section class="section" id="contact">
+	<div class="container">
+
+		<h2 class="text-center title">Get in touch</h2>
+
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<p class="lead">Have a question about XPUSH, or want to suggest a new feature?</p>
+				<p>Feel free to email me, or drop me a line in Facebook!</p>
+				<p><b>xpush.io@gmail.com</b><br><br></p>
+				<ul class="list-inline list-social">
+					<li><a href="https://www.facebook.com/xpush.team?fref=ts" class="btn btn-link"><i class="fa fa-facebook fa-fw"></i> Facebook</a></li>
+					<li><a href="https://github.com/xpush/node-xpush#install-xpush" class="btn btn-link"><i class="fa fa-github fa-fw"></i> Github</a></li>
+
+				</ul>
+			</div>
+
+
+		</div>
+
+	</div>
+</section>
+
+
+<!-- Load js libs only when the page is loaded. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="assets/js/modernizr.custom.72241.js"></script>
+<!-- Custom template scripts -->
+<script src="assets/js/magister.js"></script>
+</body>
+</html>
