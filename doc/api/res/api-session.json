@@ -1,0 +1,18 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://johnkim.github.io/doc/api/res",
+  "apis": [
+    {
+      "path": "/user.json",
+      "description": "Users"
+    },
+    {
+      "path": "/session.json",
+      "description": "Event list of session socket"
+    },
+    {
+      "path": "/app.json",
+      "description": "Apps"
+    }
+  ]
+}
