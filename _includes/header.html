@@ -7,15 +7,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ site.baseurl }}/">SOLID.</a>
+      <a class="navbar-brand" href="{{ site.baseurl }}/">XPUSH.</a>
     </div>
     <div class="navbar-collapse collapse navbar-right">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ site.baseurl }}/">HOME</a></li>
-        <li><a href="{{ site.baseurl }}/about">ABOUT</a></li>
-        <li><a href="{{ site.baseurl }}/doc">DOCUMENT</a></li>
-        <li><a href="{{ site.baseurl }}/blog">BLOG</a></li>
-        <li><a href="{{ site.baseurl }}/service">SERVICE</a></li>
+        <li>HOME</a></li>
+        <li {% if page.url contains "/about" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/about">ABOUT</a></li>
+        <li {% if page.url contains "/doc" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/doc">DOCUMENTS</a></li>
+        <li {% if page.url contains "/blog" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/blog">BLOG</a></li>
+        <li {% if page.url contains "/service" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/service">SERVICES</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
