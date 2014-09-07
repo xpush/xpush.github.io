@@ -2,7 +2,8 @@
 layout: post
 title:  "현재-사이트만들고-있습니다!"
 date:   2014-09-06 12:03:54
-categories: jekyll update
+categories: test
+tags: test stalk
 ---
 
 지금 만들고 있어요.
@@ -10,3 +11,11 @@ categories: jekyll update
 Jekyll 로 만들었죠. ㅋㅋㅋ
 
 테스트 중입니다.
+
+블로그 기능은 어느정도 잘 됨..
+
+페이징도 되고,
+
+카테고리 목록이랑 테그도 잘 나옴...
+
+하지만, 아직 카테고리 랑 테그 눌렀을때 페이지는 작업 중...

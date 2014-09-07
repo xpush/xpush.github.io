@@ -24,50 +24,68 @@ layout: default
     <! -- BLOG POSTS LIST -->
     <div class="col-lg-8">
 
-      {% for post in site.posts %}
+      {% for post in paginator.posts %}
 
       <! -- Blog Post 1 -->
-      <p><img class="img-responsive" src="assets/img/post01.jpg"></p>
       <a href="single-post.html"><h3 class="ctitle">{{ post.title }}</h3></a>
-      <p><csmall>Posted: {{ post.date | date: "%b %-d, %Y" }}</csmall> | <csmall2>By: Admin - 3 Comments</csmall2></p>
+      <p><csmall>Posted: {{ post.date | date: "%b %-d, %Y" }}</csmall></p>
       <p>{{ post.content }}</p>
-      <p><a href="single-post.html">[Read More]</a></p>
       <div class="hline"></div>
 
       <div class="spacing"></div>
 
       {% endfor %}
 
+      {% if paginator.total_pages > 1 %}
+      <p class="text-center">
+        <ul class="pagination">
+          {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
+          {% else %}
+            <li class="disabled"><a href="#">&laquo;</a></li>
+          {% endif %}
+
+          {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+              <li class="active"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+            {% elsif page == 1 %}
+              <li><a href="{{ '/blog' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+            {% else %}
+              <li><a href="/{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
+          {% else %}
+            <li class="disabled"><a href="#">&raquo;</a></li>
+          {% endif %}
+        </ul>
+      </p>
+      {% endif %}
+
     </div><! --/col-lg-8 -->
 
 
-     <! -- SIDEBAR -->
-     <div class="col-lg-4">
-      <h4>Search</h4>
-      <div class="hline"></div>
-        <p>
-          <br/>
-          <input type="text" class="form-control" placeholder="Search something">
-        </p>
+    <! -- SIDEBAR -->
+    <div class="col-lg-4">
 
       <div class="spacing"></div>
 
       <h4>Categories</h4>
       <div class="hline"></div>
-        <p><a href="#"><i class="fa fa-angle-right"></i> Wordpress</a> <span class="badge badge-theme pull-right">9</span></p>
-        <p><a href="#"><i class="fa fa-angle-right"></i> Photoshop</a> <span class="badge badge-theme pull-right">3</span></p>
-        <p><a href="#"><i class="fa fa-angle-right"></i> Web Design</a> <span class="badge badge-theme pull-right">11</span></p>
-        <p><a href="#"><i class="fa fa-angle-right"></i> Development</a> <span class="badge badge-theme pull-right">5</span></p>
-        <p><a href="#"><i class="fa fa-angle-right"></i> Tips & Tricks</a> <span class="badge badge-theme pull-right">7</span></p>
-        <p><a href="#"><i class="fa fa-angle-right"></i> Code Snippets</a> <span class="badge badge-theme pull-right">12</span></p>
-
+        {% for category in site.categories %}
+        <p>
+          <a href="#"><i class="fa fa-angle-right"></i> {{ category | first }}</a>
+          <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+        </p>
+        {% endfor %}
       <div class="spacing"></div>
 
-      <h4>Recent Posts</h4>
+      <!--h4>Recent Posts</h4>
       <div class="hline"></div>
        <ul class="popular-posts">
                  <li>
-                     <a href="#"><img src="assets/img/thumb01.jpg" alt="Popular Post"></a>
                      <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
                      <em>Posted on 02/21/14</em>
                  </li>
@@ -87,25 +105,14 @@ layout: default
                  </li>
              </ul>
 
-      <div class="spacing"></div>
+      <div class="spacing"></div-->
 
       <h4>Popular Tags</h4>
       <div class="hline"></div>
       <p>
-        <a class="btn btn-theme" href="#" role="button">Design</a>
-        <a class="btn btn-theme" href="#" role="button">Wordpress</a>
-        <a class="btn btn-theme" href="#" role="button">Flat</a>
-        <a class="btn btn-theme" href="#" role="button">Modern</a>
-        <a class="btn btn-theme" href="#" role="button">Wallpaper</a>
-        <a class="btn btn-theme" href="#" role="button">HTML5</a>
-        <a class="btn btn-theme" href="#" role="button">Pre-processor</a>
-        <a class="btn btn-theme" href="#" role="button">Developer</a>
-        <a class="btn btn-theme" href="#" role="button">Windows</a>
-        <a class="btn btn-theme" href="#" role="button">Phothosop</a>
-        <a class="btn btn-theme" href="#" role="button">UX</a>
-        <a class="btn btn-theme" href="#" role="button">Interface</a>
-        <a class="btn btn-theme" href="#" role="button">UI</a>
-        <a class="btn btn-theme" href="#" role="button">Blog</a>
+        {% for tag in site.tags %}
+          <a class="btn btn-theme" href="#" role="button">{{ tag | first }}</a>
+        {% endfor %}
       </p>
     </div>
   </div><! --/row -->
