@@ -1,0 +1,182 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:8000/",
+  "resourcePath": "/user",
+  "apis": [
+    {
+      "path": "/user/register",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Add a newuser",
+          "nickname": "register_user",
+          "parameters": [
+            {
+              "name": "A",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "PW",
+              "description": "Password",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "D",
+              "description": "Device ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "N",
+              "description": "noti ID for GCM or APNS",
+              "required": false,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "DT",
+              "description": "Additional JSON Data for User",
+              "required": false,
+              "paramType": "param",
+              "type": "JSON"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/user/update",
+     "operations": [
+        {
+          "method": "POST",
+          "summary": "Update existing user",
+          "nickname": "register_user",
+          "parameters": [
+            {
+              "name": "A",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "PW",
+              "description": "Password",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "D",
+              "description": "Device ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "N",
+              "description": "noti ID for GCM or APNS",
+              "required": false,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "DT",
+              "description": "Additional JSON Data for User",
+              "required": false,
+              "paramType": "param",
+              "type": "JSON"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel": "ResponseUser"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "JSON": {
+      "id": "JSON",
+      "properties": {
+      }
+    },
+    "ResponseUser": {
+      "id": "ResponseUser",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "user" : {
+          "type" : "UserModel"
+        }       
+      }
+    },
+    "UserModel" : {
+      "id": "UserModel",
+      "properties": {
+        "A": {
+          "type": "string"
+        },
+        "U": {
+          "type": "string"
+        },
+        "D": {
+          "type": "string"
+        },
+        "N": {
+          "type": "string"
+        },
+        "DT": {
+          "type": "JSON"
+        }        
+      }
+    }
+  }
+}

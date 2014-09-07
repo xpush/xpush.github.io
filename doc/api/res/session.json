@@ -1,0 +1,474 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:8000/",
+  "apis": [
+    {
+      "path": "/auth",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Authenticate a user",
+          "nickname": "auth_user",
+          "parameters": [
+            {
+              "name": "A",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "PW",
+              "description": "Password",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "D",
+              "description": "Device ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/node/{app}/{channel}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get server info to connect",
+          "nickname": "auth_user",
+          "parameters": [
+            {
+              "name": "app",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "path",
+              "type": "string"
+            },
+            {
+              "name": "channel",
+              "description": "Channel ID",
+              "required": true,
+              "paramType": "path",
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/channel-create",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Create a channel",
+          "nickname": "channel_create",
+          "parameters": [
+            {
+              "name": "C",
+              "description": "Channel ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            },
+            {
+              "name": "U",
+              "description": "User ID or User ID's array",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            },
+            {
+              "name": "DT",
+              "description": "Additional Data for channel",
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/channel-list",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Get list of channels",
+          "nickname": "channel_create",
+          "parameters": [
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseArray"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/channel-update",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Update a channel",
+          "nickname": "channel_update",
+          "parameters": [
+            {
+              "name": "C",
+              "description": "Channel ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            },
+            {
+              "name": "Q",
+              "description": "update query string of Mongo DB",
+              "required": true,
+              "type": "JSON",
+              "paramType": "JSON"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/channel-get",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Get a channel",
+          "nickname": "channel_get",
+          "parameters": [
+            {
+              "name": "C",
+              "description": "Channel ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/channel-exit",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Exit from the channel",
+          "nickname": "channel_exit",
+          "parameters": [
+            {
+              "name": "C",
+              "description": "Channel ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/user-query",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Exit from the channel",
+          "nickname": "user_query",
+          "parameters": [
+            {
+              "name": "query",
+              "description": "Query for search user",
+              "required": true,
+              "type": "JSON",
+              "paramType": "param"
+            },
+            {
+              "name": "column",
+              "description": "Result columns for search result",
+              "required": true,
+              "type": "JSON",
+              "paramType": "param"
+            },
+            {
+              "name": "options",
+              "description": "Channel ID",
+              "required": true,
+              "type": "JSON",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/channel-list-active",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Get list of channels in active",
+          "nickname": "channel_list_active",
+          "parameters": [
+            {
+              "name": "key",
+              "description": "key pattern for search channel",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseArray"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/message-unread",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "List of unread message",
+          "nickname": "message_unread",
+          "parameters": [
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseArray"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/message-received",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Delete unread message after read message",
+          "nickname": "message_received",
+          "parameters": [
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/group-list",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Get user list in group",
+          "nickname": "group_list_active",
+          "parameters": [
+            {
+              "name": "GR",
+              "description": "Group ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseArray"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/group-add",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Add users to user list in group",
+          "nickname": "group_add",
+          "parameters": [
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "type": "string | array",
+              "paramType": "param"
+            },
+            {
+              "name": "GR",
+              "description": "Group ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/group-remove",
+      "operations": [
+        {
+          "method": "EVENT",
+          "summary": "Get user list in group",
+          "nickname": "group_add",
+          "parameters": [
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            },
+            {
+              "name": "GR",
+              "description": "Group ID",
+              "required": true,
+              "type": "string",
+              "paramType": "param"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "JSON": {
+      "id": "JSON",
+      "properties": {
+      }
+    },
+    "ChannelModel": {
+      "id": "ChannelModel",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }      
+      }
+    },
+    "ResponseObject": {
+      "id": "ResponseObject",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "result" : {
+          "type" : "JSON"
+        }       
+      }
+    },
+    "ResponseArray": {
+      "id": "ResponseArray",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "result" : {
+          "type": "array",
+          "items": {
+            "$ref": "JSON"
+          }
+        }     
+      }
+    }
+  }
+}

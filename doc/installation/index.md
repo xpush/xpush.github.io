@@ -4,6 +4,8 @@ title: Installation
 date: April 25, 2014
 ---
 
+/doc/installation/index.md 파일 작성해야 함 !!
+
 Currently under development.
 
 XPUSH is installed and managed via npm, the Node.js package manager.

@@ -1,0 +1,178 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:8000/",
+  "resourcePath": "/app",
+  "apis": [
+    {
+      "path": "/app/{appNm}",
+      "operations": [
+        {
+          "method": "PUT",
+          "summary": "Add a new applicaion",
+          "nickname": "create_app",
+          "parameters": [
+            {
+              "name": "appNm",
+              "description": "Application name",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseApp"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app/{appId}",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "Delete the applicaion",
+          "nickname": "delete_app",
+          "parameters": [
+            {
+              "name": "appId",
+              "description": "Application ID",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app/{appIdOrNm}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get a applicaion",
+          "nickname": "get_app",
+          "parameters": [
+            {
+              "name": "appIdOrNm",
+              "description": "Application ID or name",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseApp"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get list of applicaion",
+          "nickname": "list_app",
+          "parameters": [
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseApps"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "JSON": {
+      "id": "JSON",
+      "properties": {
+      }
+    },
+    "ResponseApp": {
+      "id": "ResponseApp",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "result" : {
+          "type" : "AppModel"
+        }       
+      }
+    },
+    "ResponseApps": {
+      "id": "ResponseApps",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "result" : {
+          "type": "array",
+          "items": {
+            "$ref": "AppModel"
+          }
+        }    
+      }
+    },
+    "AppModel": {
+      "id": "AppModel",
+      "properties": {
+        "appId": {
+          "type": "string"
+        },
+        "appNm" : {
+          "type" : "string"
+        }       
+      }
+    }
+  }
+}

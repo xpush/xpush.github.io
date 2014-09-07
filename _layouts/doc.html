@@ -4,32 +4,7 @@ layout: default
 <div class="container mtb">
   <div class="row">
 
-    <! -- SIDEBAR -->
-    <div class="col-lg-2">
-
-      <div class="spacing"></div>
-
-      <h4>GETTING STARTED</h4>
-      <div class="hline"></div>
-      <p><a href="/doc/welcome"><i class="fa fa-angle-right"></i> Welcome</a></p>
-      <p><a href="/doc/quick-start"><i class="fa fa-angle-right"></i> Quick-start guide</a></p>
-      <p><a href="/doc/installation"><i class="fa fa-angle-right"></i> Installation</a></p>
-      <p><a href="/doc/configuration"><i class="fa fa-angle-right"></i> Configuration</a></p>
-      <div class="spacing"></div>
-
-      <h4>API DOCUMENTS</h4>
-      <div class="hline"></div>
-      <p><a href="/doc/api/session"><i class="fa fa-angle-right"></i> Session Server</a></p>
-      <p><a href="/doc/api/channel"><i class="fa fa-angle-right"></i> Channel Server</a></p>
-      <div class="spacing"></div>
-
-      <h4>FOR CLIENTS</h4>
-      <div class="hline"></div>
-      <p><a href="/doc/library/javascript"><i class="fa fa-angle-right"></i> Javascript Library</a></p>
-      <p><a href="/doc/library/java"><i class="fa fa-angle-right"></i> JAVA Library</a></p>
-      <div class="spacing"></div>
-
-    </div>
+    {% include doc/sidebar.html %}
 
     <! -- SINGLE POST -->
     <div class="col-lg-10">
@@ -40,8 +15,7 @@ layout: default
 
       {{ content }}
 
+    </div>
 
-    </div><! --/col-lg-8 -->
-
-  </div><! --/row -->
-</div><! --/container -->
+  </div>
+</div>
