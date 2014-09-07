@@ -14,14 +14,15 @@ layout: default
 
   {% for service in site.data.services %}
 
+  {% assign srv_num = forloop.index %}
   <div class="row">
   	<div class="col-lg-10 col-lg-offset-1 centered">
       <h2>{{ service.name }}</h2>
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <div id="carousel-generic-{{ srv_num }}" class="carousel slide" data-ride="carousel">
     	  <!-- Indicators -->
     	  <ol class="carousel-indicators">
           {% for image in service.images %}
-    	    <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.index0 }}" {% if forloop.index == 1 %}class="active"{% endif %} ></li>
+    	    <li data-target="#carousel-generic-{{ srv_num }}" data-slide-to="{{ forloop.index0 }}" {% if forloop.index == 1 %}class="active"{% endif %} ></li>
           {% endfor %}
     	  </ol>
 

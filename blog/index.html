@@ -1,70 +1,112 @@
 ---
-layout: doc
+layout: default
 ---
+
+<!-- *****************************************************************************************************************
+ BLUE WRAP
+ ***************************************************************************************************************** -->
 <div id="blue">
   <div class="container">
-    <div class="row">
-      <h3>About</h3>
-    </div>
-  </div>
-</div>
+		<div class="row">
+			<h3>Blog List.</h3>
+		</div><!-- /row -->
+  </div> <!-- /container -->
+</div><!-- /blue -->
+
+
+<!-- *****************************************************************************************************************
+ BLOG CONTENT
+ ***************************************************************************************************************** -->
 
 <div class="container mtb">
   <div class="row">
-    <div class="col-lg-6">
-      <img class="img-responsive" src="https://scontent-b-pao.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10629829_895666050460891_2715905292933006964_n.jpg?oh=e4c64483bf08b6cc11bad4c92c355518&oe=54A7B32F" alt="">
-    </div>
-    <div class="col-lg-6">
-      <h4>More About Our Agency.</h4>
-      <h3>여기는 수정해야 할 부분입니다.</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-      <p><br/><a href="contact.html" class="btn btn-theme">Contact Us</a></p>
-    </div>
-  </div>
-</div>
 
-<div class="container mtb">
-  <div class="row centered">
-    <h3 class="mb">MEET OUR TEAM</h3>
+    <! -- BLOG POSTS LIST -->
+    <div class="col-lg-8">
 
-    {% for member in site.data.members %}
+      {% for post in site.posts %}
 
-    <div class="col-lg-3 col-md-3 col-sm-3">
-      <div class="he-wrap tpl6">
-        <img src="{{ member.image }}" alt="">
-        <div class="he-view">
-          <div class="bg a0" data-animate="fadeIn">
-            <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-            <a href="mailto:{{ member.email }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-envelope"></i></a>
-            <a href="{{ member.facebook }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-twitter"></i></a>
-          </div><!-- he bg -->
-        </div><!-- he view -->
-      </div><!-- he wrap -->
-      <h4>{{ member.name }}</h4>
-      <h5 class="ctitle">{{ member.role }}</h5>
-      <p class="lefted">{{ member.description }}</p>
+      <! -- Blog Post 1 -->
+      <p><img class="img-responsive" src="assets/img/post01.jpg"></p>
+      <a href="single-post.html"><h3 class="ctitle">{{ post.title }}</h3></a>
+      <p><csmall>Posted: {{ post.date | date: "%b %-d, %Y" }}</csmall> | <csmall2>By: Admin - 3 Comments</csmall2></p>
+      <p>{{ post.content }}</p>
+      <p><a href="single-post.html">[Read More]</a></p>
       <div class="hline"></div>
+
+      <div class="spacing"></div>
+
+      {% endfor %}
+
+    </div><! --/col-lg-8 -->
+
+
+     <! -- SIDEBAR -->
+     <div class="col-lg-4">
+      <h4>Search</h4>
+      <div class="hline"></div>
+        <p>
+          <br/>
+          <input type="text" class="form-control" placeholder="Search something">
+        </p>
+
+      <div class="spacing"></div>
+
+      <h4>Categories</h4>
+      <div class="hline"></div>
+        <p><a href="#"><i class="fa fa-angle-right"></i> Wordpress</a> <span class="badge badge-theme pull-right">9</span></p>
+        <p><a href="#"><i class="fa fa-angle-right"></i> Photoshop</a> <span class="badge badge-theme pull-right">3</span></p>
+        <p><a href="#"><i class="fa fa-angle-right"></i> Web Design</a> <span class="badge badge-theme pull-right">11</span></p>
+        <p><a href="#"><i class="fa fa-angle-right"></i> Development</a> <span class="badge badge-theme pull-right">5</span></p>
+        <p><a href="#"><i class="fa fa-angle-right"></i> Tips & Tricks</a> <span class="badge badge-theme pull-right">7</span></p>
+        <p><a href="#"><i class="fa fa-angle-right"></i> Code Snippets</a> <span class="badge badge-theme pull-right">12</span></p>
+
+      <div class="spacing"></div>
+
+      <h4>Recent Posts</h4>
+      <div class="hline"></div>
+       <ul class="popular-posts">
+                 <li>
+                     <a href="#"><img src="assets/img/thumb01.jpg" alt="Popular Post"></a>
+                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
+                     <em>Posted on 02/21/14</em>
+                 </li>
+                 <li>
+                     <a href="#"><img src="assets/img/thumb02.jpg" alt="Popular Post"></a>
+                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
+                     <em>Posted on 03/01/14</em>
+                 <li>
+                     <a href="#"><img src="assets/img/thumb03.jpg" alt="Popular Post"></a>
+                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
+                     <em>Posted on 05/16/14</em>
+                 </li>
+                 <li>
+                     <a href="#"><img src="assets/img/thumb04.jpg" alt="Popular Post"></a>
+                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
+                     <em>Posted on 05/16/14</em>
+                 </li>
+             </ul>
+
+      <div class="spacing"></div>
+
+      <h4>Popular Tags</h4>
+      <div class="hline"></div>
+      <p>
+        <a class="btn btn-theme" href="#" role="button">Design</a>
+        <a class="btn btn-theme" href="#" role="button">Wordpress</a>
+        <a class="btn btn-theme" href="#" role="button">Flat</a>
+        <a class="btn btn-theme" href="#" role="button">Modern</a>
+        <a class="btn btn-theme" href="#" role="button">Wallpaper</a>
+        <a class="btn btn-theme" href="#" role="button">HTML5</a>
+        <a class="btn btn-theme" href="#" role="button">Pre-processor</a>
+        <a class="btn btn-theme" href="#" role="button">Developer</a>
+        <a class="btn btn-theme" href="#" role="button">Windows</a>
+        <a class="btn btn-theme" href="#" role="button">Phothosop</a>
+        <a class="btn btn-theme" href="#" role="button">UX</a>
+        <a class="btn btn-theme" href="#" role="button">Interface</a>
+        <a class="btn btn-theme" href="#" role="button">UI</a>
+        <a class="btn btn-theme" href="#" role="button">Blog</a>
+      </p>
     </div>
-
-    {% endfor %}
-
-  </div>
-</div>
-
-<!-- *****************************************************************************************************************
- TESTIMONIALS
- ***************************************************************************************************************** -->
- <div id="twrap">
-  <div class="container centered">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2">
-        <i class="fa fa-comment-o"></i>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-        <h4><br/>Marcel Newman</h4>
-        <p>WEB DESIGNER - BLACKTIE.CO</p>
-      </div>
-    </div>
-  </div>
-</div>
+  </div><! --/row -->
+ </div><! --/container -->
