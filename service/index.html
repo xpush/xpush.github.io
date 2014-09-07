@@ -47,10 +47,9 @@ layout: default
       <div class="spacing"></div>
   		<h4>Project Details</h4>
   		<div class="hline"></div>
-  		<p><b>Date:</b> {{ service.date }}</p>
   		<p><b>Author:</b> {{ service.author }}</p>
-  		<p><b>Supported:</b> Illustration, Web Design, Wordpress</p>
-  		<p><b>Website:</b> <a href="{{ service.url }}">{{ service.url }}</a></p>
+  		<p><b>Supported:</b> {{ service.support }}</p>
+  		{% if service.url %}<p><b>Website:</b> <a href="{{ service.url }}">{{ service.url }}</a></p>{% endif %}
   	</div>
 
   </div><! --/row -->
