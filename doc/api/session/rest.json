@@ -1,0 +1,400 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:8000/",
+  "apis": [
+    {
+      "path": "/auth",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Authenticate a user",
+          "nickname": "auth_user",
+          "parameters": [
+            {
+              "name": "A",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "PW",
+              "description": "Password",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "D",
+              "description": "Device ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/node/{app}/{channel}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get server info to connect",
+          "nickname": "auth_user",
+          "parameters": [
+            {
+              "name": "app",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "path",
+              "type": "string"
+            },
+            {
+              "name": "channel",
+              "description": "Channel ID",
+              "required": true,
+              "paramType": "path",
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "callback",
+              "responseModel" : "ResponseObject"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app/{appNm}",
+      "operations": [
+        {
+          "method": "PUT",
+          "summary": "Add a new applicaion",
+          "nickname": "create_app",
+          "parameters": [
+            {
+              "name": "appNm",
+              "description": "Application name",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseApp"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app/{appId}",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "Delete the applicaion",
+          "nickname": "delete_app",
+          "parameters": [
+            {
+              "name": "appId",
+              "description": "Application ID",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app/{appIdOrNm}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get a applicaion",
+          "nickname": "get_app",
+          "parameters": [
+            {
+              "name": "appIdOrNm",
+              "description": "Application ID or name",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseApp"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/app",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get list of applicaion",
+          "nickname": "list_app",
+          "parameters": [
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseApps"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/user/register",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Add a newuser",
+          "nickname": "register_user",
+          "parameters": [
+            {
+              "name": "A",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "PW",
+              "description": "Password",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "D",
+              "description": "Device ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "N",
+              "description": "noti ID for GCM or APNS",
+              "required": false,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "DT",
+              "description": "Additional JSON Data for User",
+              "required": false,
+              "paramType": "param",
+              "type": "JSON"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/user/update",
+     "operations": [
+        {
+          "method": "POST",
+          "summary": "Update existing user",
+          "nickname": "register_user",
+          "parameters": [
+            {
+              "name": "A",
+              "description": "Application ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "U",
+              "description": "User ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "PW",
+              "description": "Password",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "D",
+              "description": "Device ID",
+              "required": true,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "N",
+              "description": "noti ID for GCM or APNS",
+              "required": false,
+              "paramType": "param",
+              "type": "string"
+            },
+            {
+              "name": "DT",
+              "description": "Additional JSON Data for User",
+              "required": false,
+              "paramType": "param",
+              "type": "JSON"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel": "ResponseUser"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "JSON": {
+      "id": "JSON",
+      "properties": {
+      }
+    },
+    "ChannelModel": {
+      "id": "ChannelModel",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }      
+      }
+    },
+    "ResponseObject": {
+      "id": "ResponseObject",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "result" : {
+          "type" : "JSON"
+        }       
+      }
+    },
+    "ResponseArray": {
+      "id": "ResponseArray",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "result" : {
+          "type": "array",
+          "items": {
+            "$ref": "JSON"
+          }
+        }     
+      }
+    }
+  }
+}

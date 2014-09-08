@@ -1,0 +1,166 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:8000/",
+  "apis": [
+    {
+      "path": "/upload",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Upload a file",
+          "nickname": "upload_file",
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "xp-a",
+              "description": "Application ID",
+              "required": true,
+              "type": "string",
+              "paramType": "header"
+            },
+            {
+              "name": "xp-c",
+              "description": "Channel ID",
+              "required": true,
+              "type": "string",
+              "paramType": "header"
+            },
+            {
+              "name": "xp-u",
+              "description": "User Info. U^D^TK",
+              "required": true,
+              "type": "string",
+              "paramType": "header"
+            },
+            {
+              "name": "xp-fu-org",
+              "description": "Original file name with ext",
+              "required": true,
+              "type": "string",
+              "paramType": "header"
+            },
+            {
+              "name": "xp-fu-nm",
+              "description": "File Name",
+              "type": "string",
+              "paramType": "header"
+            },
+            {
+              "name": "xp-fu-tp",
+              "description": "File Type",
+              "type": "string",
+              "paramType": "header"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "ok",
+              "responseModel" : "ResponseFile"
+            },
+            {
+              "code": 400,
+              "message": "bad request"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/download/{app}/{channel}/{userId}/{socketId}/{filename}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Download the file",
+          "nickname": "download_file",
+          "parameters": [
+            {
+              "name": "app",
+              "description": "Application ID",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            },
+            {
+              "name": "channel",
+              "description": "Channel ID",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            },
+            {
+              "name": "userId",
+              "description": "User ID",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            },
+            {
+              "name": "socketId",
+              "description": "socket ID",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            },
+            {
+              "name": "filename",
+              "description": "File Name",
+              "required": true,
+              "type": "string",
+              "paramType": "path"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 301,
+              "message": "ok"
+            },
+            {
+              "code": 404,
+              "message": "not found"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "JSON": {
+      "id": "JSON",
+      "properties": {
+      }
+    },
+    "ResponseFile": {
+      "id": "ResponseFile",
+      "properties": {
+        "status": {
+          "channel": "string"
+        },
+        "result" : {
+          "type" : "FileModel"
+        }       
+      }
+    },
+    "FileModel": {
+      "id": "FileModel",
+      "properties": {
+        "channel": {
+          "type": "string"
+        },
+        "name" : {
+          "type" : "string"
+        }       
+      }
+    }
+  }
+}
