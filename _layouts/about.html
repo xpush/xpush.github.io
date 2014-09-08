@@ -12,19 +12,6 @@ layout: default
 
 <div class="container mtb">
   {{ content }}
-  <!-- div class="row">
-    <div class="col-lg-6">
-      <img class="img-responsive" src="https://scontent-b-pao.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10629829_895666050460891_2715905292933006964_n.jpg?oh=e4c64483bf08b6cc11bad4c92c355518&oe=54A7B32F" alt="">
-    </div>
-    <div class="col-lg-6">
-      <h4>More About Our Agency.</h4>
-      <h3>여기는 수정해야 할 부분입니다.</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      <p>Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-      <p><br/><a href="contact.html" class="btn btn-theme">Contact Us</a></p>
-    </div>
-  </div -->
 </div>
 
 <div class="container mtb">
@@ -39,8 +26,9 @@ layout: default
         <div class="he-view">
           <div class="bg a0" data-animate="fadeIn">
             <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
-            <a href="mailto:{{ member.email }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-envelope"></i></a>
-            <a href="{{ member.facebook }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-twitter"></i></a>
+            {% if member.email %}<a href="mailto:{{ member.email }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-envelope"></i></a>{% endif %}
+            {% if member.facebook %}<a href="{{ member.facebook }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-facebook"></i></a>{% endif %}
+            {% if member.github %}<a href="{{ member.github }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-github"></i></a>{% endif %}
           </div><!-- he bg -->
         </div><!-- he view -->
       </div><!-- he wrap -->

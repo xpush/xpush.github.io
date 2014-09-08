@@ -12,8 +12,8 @@
   image: /lib/img/team/team02.jpg
   role: HUMAN
   email: yohany@gmail.com
-  facebook: https://www.facebook.com/JohnKim0331
-  github: https://github.com/JohnKim
+  facebook:
+  github:
   description: _data/members.yml 파일을 수정할 것.
 
 - name: Member 3
