@@ -4,13 +4,40 @@ title: Quick-start guide
 date: April 25, 2014
 ---
 
-/doc/quick-start/index.md 파일 작성해야 함 !!
+XPUSH 를 가장 쉽고 빠르게 경험하기 위해서, Docker 기반의 이미지 파일을 사용할 수 있습니다.
 
-<p><b>Lorem Ipsum</b> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<p>Contrary to popular belief, <b>Lorem Ipsum is not simply random text</b>. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at <a href="#">Hampden-Sydney College</a> in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-<p>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-<h4>Why do we use it?</h4>
-<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-<blockquote>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</blockquote>
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 를 통해 이미지를 여러분의 서버 또는 PC 에 설치 할 수 있습니다.
+
+<br />
+
+#### 1. Docker 설치
+
+[Docker Installation](https://docs.docker.com/installation/#installation) 를 참조하여 Docker 를 설치 합니다.
+
+<br />
+
+#### 2. XPUSH Docker 이미지 다운로드
+
+[docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에는 이미 설정이 완료된 XPUSH 환경이 구성되어 있습니다. 다음과 같이 XPUSH 이미지 파일을 다운로드 받습니다.
+
+	> docker pull stalk/xpush
+
+다운로드 받은 이미지에는, XPUSH 에서 사용하는 MongoDB, Redis 그리고 Zookeeper 가 설치되어 있고, XPUSH Session 서버와 Channel 서버가 실행될 수 있도록 정의 되어 있습니다.
+
+<br />
+
+#### 3. XPUSH 서버 실행.
+
+다운로드 받은 이미지를 Docker 환경에서 실행합니다.
+
+	> docker run -d --name xpush -p 8000:8000 -p 9000:9000 xpush/standalone
+
+8000 포트는 Session 서버가 사용하는 포트번호이고, 9000 포트는 Channel 서버가 사용하곡 포트번호 입니다.
+
+<br />
+
+#### 4. Sample 프로그램 작성
+
+***TODO 누가 작성좀 해주세요. (Javascript 또는 JAVA로, 아니면 둘다 ?)***
+
+/doc/quick-start/index.md 파일 작성
