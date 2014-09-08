@@ -10,6 +10,7 @@
     {{ content }}
 
     {% include footer.html %}
+    {% include script.html %}
 
     {% if page.javascript %}
     <script src="{{ page.javascript | prepend: site.baseurl }}"></script>
