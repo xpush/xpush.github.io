@@ -15,12 +15,14 @@ XPUSH 설치 방법은, NPM(Node Package Manager) 로 XPUSH 모듈을 설치하�
 <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="npm">
 
-			{% markdown ../doc/installation/with-npm.md %}
+      {% capture npm_include %}{% include doc/installation/with-npm.md %}{% endcapture %}
+      {{ npm_include | markdownify }}
 
     </div>
     <div class="tab-pane" id="docker">
 
-			{% markdown ../doc/installation/with-docker.md %}
+      {% capture docker_include %}{% include doc/installation/with-docker.md %}{% endcapture %}
+      {{ docker_include | markdownify }}
 
     </div>
 </div>
