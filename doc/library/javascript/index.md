@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Javascript Lybrary
+title: Javascript Library
 date: April 25, 2014
 ---
 
