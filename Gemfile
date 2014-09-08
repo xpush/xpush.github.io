@@ -1,4 +1,2 @@
 source 'https://rubygems.org'
-gem:
-  - 'github-pages'
-  - 'markdown'
+gem 'github-pages'
