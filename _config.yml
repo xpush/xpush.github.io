@@ -13,3 +13,7 @@ permalink: pretty
 
 paginate: 3
 paginate_path: "blog/page:num"
+
+gems:
+  - markdown
+  - jekyll-sitemap
