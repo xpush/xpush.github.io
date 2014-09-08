@@ -27,7 +27,7 @@ layout: default
       {% for post in paginator.posts %}
 
       <! -- Blog Post 1 -->
-      <a href="single-post.html"><h3 class="ctitle">{{ post.title }}</h3></a>
+      <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
       <p><csmall>Posted: {{ post.date | date: "%b %-d, %Y" }}</csmall></p>
       <p>{{ post.content }}</p>
       <div class="hline"></div>
@@ -37,7 +37,7 @@ layout: default
       {% endfor %}
 
       {% if paginator.total_pages > 1 %}
-      <p class="text-center">
+      <div class="text-center">
         <ul class="pagination">
           {% if paginator.previous_page %}
             <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
@@ -61,59 +61,12 @@ layout: default
             <li class="disabled"><a href="#">&raquo;</a></li>
           {% endif %}
         </ul>
-      </p>
+      </div>
       {% endif %}
 
     </div><! --/col-lg-8 -->
 
+    {% include blog/sidebar.html %}
 
-    <! -- SIDEBAR -->
-    <div class="col-lg-4">
-
-      <div class="spacing"></div>
-
-      <h4>Categories</h4>
-      <div class="hline"></div>
-        {% for category in site.categories %}
-        <p>
-          <a href="#"><i class="fa fa-angle-right"></i> {{ category | first }}</a>
-          <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
-        </p>
-        {% endfor %}
-      <div class="spacing"></div>
-
-      <!--h4>Recent Posts</h4>
-      <div class="hline"></div>
-       <ul class="popular-posts">
-                 <li>
-                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
-                     <em>Posted on 02/21/14</em>
-                 </li>
-                 <li>
-                     <a href="#"><img src="assets/img/thumb02.jpg" alt="Popular Post"></a>
-                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
-                     <em>Posted on 03/01/14</em>
-                 <li>
-                     <a href="#"><img src="assets/img/thumb03.jpg" alt="Popular Post"></a>
-                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
-                     <em>Posted on 05/16/14</em>
-                 </li>
-                 <li>
-                     <a href="#"><img src="assets/img/thumb04.jpg" alt="Popular Post"></a>
-                     <p><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></p>
-                     <em>Posted on 05/16/14</em>
-                 </li>
-             </ul>
-
-      <div class="spacing"></div-->
-
-      <h4>Popular Tags</h4>
-      <div class="hline"></div>
-      <p>
-        {% for tag in site.tags %}
-          <a class="btn btn-theme" href="#" role="button">{{ tag | first }}</a>
-        {% endfor %}
-      </p>
-    </div>
   </div><! --/row -->
  </div><! --/container -->

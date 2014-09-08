@@ -1,0 +1,23 @@
+<! -- SIDEBAR -->
+<div class="col-lg-4">
+
+  <div class="spacing"></div>
+
+  <h4>Categories</h4>
+  <div class="hline"></div>
+    {% for category in site.categories %}
+    <p>
+      <a href="#"><i class="fa fa-angle-right"></i> {{ category | first }}</a>
+      <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+    </p>
+    {% endfor %}
+  <div class="spacing"></div>
+
+  <h4>Popular Tags</h4>
+  <div class="hline"></div>
+  <p>
+    {% for tag in site.tags %}
+      <a class="btn btn-theme" href="#" role="button">{{ tag | first }}</a>
+    {% endfor %}
+  </p>
+</div>
