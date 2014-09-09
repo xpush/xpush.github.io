@@ -20,7 +20,7 @@ res-path: /doc/library/res
     
         
 <dt>
-    <h4 class="name" id="Xpush"><span class="type-signature"></span>new Xpush<span class="signature">(host, appId, eventHandler, autoInitFlag)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Xpush"><span class="type-signature"></span>new Xpush<span class="signature">(host, appId, <span class="optional">eventHandler</span>, <span class="optional">autoInitFlag</span>)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -28,7 +28,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Represents a Xpush.</p>
+        <p>Xpush의 생성자</p>
     </div>
     
 
@@ -49,6 +49,8 @@ res-path: /doc/library/res
 
 		<th>Type</th>
 
+		
+		<th>Argument</th>
 		
 
 		
@@ -75,10 +77,18 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>connect to host</p></td>
+            <td class="description last"><p>접속할 Session Server의 address</p></td>
         </tr>
 
 	
@@ -97,6 +107,14 @@ res-path: /doc/library/res
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -121,10 +139,20 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Optional function for eventHandler</p></td>
+            <td class="description last"><p>session event를 처리하기 위한 함수</p></td>
         </tr>
 
 	
@@ -144,10 +172,20 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Optional parameter for initilize channel automatically</p></td>
+            <td class="description last"><p>자동 초기화 여부에 대한 flag</p></td>
         </tr>
 
 	
@@ -232,7 +270,7 @@ res-path: /doc/library/res
         <dl>
             
 <dt>
-    <h4 class="name" id="addUserToGroup"><span class="type-signature">&lt;static> </span>addUserToGroup<span class="signature">(groupId, userIds, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="addUserToGroup"><span class="type-signature">&lt;static> </span>addUserToGroup<span class="signature">(<span class="optional">groupId</span>, userIds, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -240,7 +278,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Add user with xpush API <code>group-add</code>.</p>
+        <p>하나 또는 다수의 사용자에 group id를 추가한다.</p>
     </div>
     
 
@@ -261,6 +299,8 @@ res-path: /doc/library/res
 
 		<th>Type</th>
 
+		
+		<th>Argument</th>
 		
 
 		
@@ -287,6 +327,16 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -310,10 +360,18 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Array of users to add</p></td>
+            <td class="description last"><p>추가할 사용자들의 ID array</p></td>
         </tr>
 
 	
@@ -333,10 +391,18 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>addUserToGroupCallback</p></td>
+            <td class="description last"><p>추가 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -373,7 +439,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-816">line 816</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-815">line 815</a>
 			</li>
 		</ul>
 	</dd>
@@ -411,7 +477,7 @@ res-path: /doc/library/res
         
             
 <dt>
-    <h4 class="name" id="createChannel"><span class="type-signature">&lt;static> </span>createChannel<span class="signature">(userId, channel, datas, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createChannel"><span class="type-signature">&lt;static> </span>createChannel<span class="signature">(users, <span class="optional">channel</span>, <span class="optional">datas</span>, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -419,7 +485,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Create channel with users and datas</p>
+        <p>새로운 channel을 생성한다.</p>
     </div>
     
 
@@ -441,6 +507,8 @@ res-path: /doc/library/res
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -453,7 +521,7 @@ res-path: /doc/library/res
 
         <tr>
             
-                <td class="name"><code>userId</code></td>
+                <td class="name"><code>users</code></td>
             
 
             <td class="type">
@@ -466,10 +534,18 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>User Array for channel create</p></td>
+            <td class="description last"><p>channel에 포함될 userId의 배열</p></td>
         </tr>
 
 	
@@ -488,6 +564,16 @@ res-path: /doc/library/res
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -512,10 +598,20 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Optional Data for additional channel info</p></td>
+            <td class="description last"><p>추가적인 channel 정보를 위한 JSON</p></td>
         </tr>
 
 	
@@ -535,10 +631,18 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>createChannelCallback</p></td>
+            <td class="description last"><p>생성 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -575,7 +679,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-207">line 207</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-205">line 205</a>
 			</li>
 		</ul>
 	</dd>
@@ -605,7 +709,7 @@ res-path: /doc/library/res
         
             
 <dt>
-    <h4 class="name" id="createSimpleChannel"><span class="type-signature">&lt;static> </span>createSimpleChannel<span class="signature">(channel, userObj, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createSimpleChannel"><span class="type-signature">&lt;static> </span>createSimpleChannel<span class="signature">(channel, <span class="optional">userObj</span>, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -613,7 +717,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Create new channel mode <code>CHANNEL_ONLY</code></p>
+        <p>새로운 <code>CHANNEL_ONLY</code> 채널을 생성한다.</p>
     </div>
     
 
@@ -634,6 +738,8 @@ res-path: /doc/library/res
 
 		<th>Type</th>
 
+		
+		<th>Argument</th>
 		
 
 		
@@ -660,6 +766,14 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -683,10 +797,20 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Optional. UserObject( U : userID, D : deviceId )</p></td>
+            <td class="description last"><p>UserObject( U : userID, D : deviceId )</p></td>
         </tr>
 
 	
@@ -706,135 +830,18 @@ res-path: /doc/library/res
             </td>
 
             
-
-            
-
-            <td class="description last"><p>createSimpleChannelCallback</p></td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-	<dt class="tag-source">Source:</dt>
-	<dd class="tag-source">
-		<ul class="dummy">
-			<li>
-				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-265">line 265</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="emit"><span class="type-signature">&lt;static> </span>emit<span class="signature">(event)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        <p>If unread message is exist, stack the message. If not apply the event</p>
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>event</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">string</span>
 
+                
 
-            
-            </td>
-
-            
-
+                
+                </td>
             
 
-            <td class="description last"><p>key</p></td>
+            
+
+            <td class="description last"><p>생성 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -871,7 +878,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1177">line 1177</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-263">line 263</a>
 			</li>
 		</ul>
 	</dd>
@@ -909,7 +916,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Exit channel</p>
+        <p>channel에서 나간다.</p>
     </div>
     
 
@@ -982,7 +989,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>exitChannelCallback</p></td>
+            <td class="description last"><p>나간 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -1019,7 +1026,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-418">line 418</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-417">line 417</a>
 			</li>
 		</ul>
 	</dd>
@@ -1057,7 +1064,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get channel info in xpush object</p>
+        <p>현재 xpush object 안의 channel 정보를 가져온다.</p>
     </div>
     
 
@@ -1144,7 +1151,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-367">line 367</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-366">line 366</a>
 			</li>
 		</ul>
 	</dd>
@@ -1205,7 +1212,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get channel info at server with xpush API <code>channel-get</code></p>
+        <p>server의 channel 정보를 조회한다.</p>
     </div>
     
 
@@ -1278,7 +1285,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>getChannelDataCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -1315,7 +1322,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-385">line 385</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-384">line 384</a>
 			</li>
 		</ul>
 	</dd>
@@ -1353,7 +1360,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get channel list at server with xpush API <code>channel-list</code></p>
+        <p>server에서 channel list를 조회한다.</p>
     </div>
     
 
@@ -1403,7 +1410,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>getChannlesCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -1440,7 +1447,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-305">line 305</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-304">line 304</a>
 			</li>
 		</ul>
 	</dd>
@@ -1478,7 +1485,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get channel list in redis with key</p>
+        <p>현재 channel에 연결된 사용자가 있는 channel list를 redis에서 조회한다.</p>
     </div>
     
 
@@ -1551,7 +1558,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>getChannelsActiveCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -1588,7 +1595,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-351">line 351</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-350">line 350</a>
 			</li>
 		</ul>
 	</dd>
@@ -1626,7 +1633,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get uploaded file url</p>
+        <p>업로드 완료된 file의 url을 가져온다.</p>
     </div>
     
 
@@ -1699,7 +1706,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>File name</p></td>
+            <td class="description last"><p>업로드후 return 받은 파일의 name</p></td>
         </tr>
 
 	
@@ -1736,7 +1743,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-575">line 575</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-574">line 574</a>
 			</li>
 		</ul>
 	</dd>
@@ -1763,7 +1770,7 @@ res-path: /doc/library/res
     
             
 <div class="param-desc">
-    <p>file download url</p>
+    <p>파일을 다운로드 받을 수 있는 url</p>
 </div>
 
 
@@ -1797,7 +1804,7 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get user's friend list at server with xpush API <code>group-list</code>.</p>
+        <p>서버에서 group에 포함된 사용자 list를 조회한다.</p>
     </div>
     
 
@@ -1847,7 +1854,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>userId to search</p></td>
+            <td class="description last"><p>찾을 groupId</p></td>
         </tr>
 
 	
@@ -1870,7 +1877,7 @@ res-path: /doc/library/res
 
             
 
-            <td class="description last"><p>getGroupUsersCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -1907,7 +1914,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-795">line 795</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-794">line 794</a>
 			</li>
 		</ul>
 	</dd>
@@ -1953,8 +1960,8 @@ res-path: /doc/library/res
     
     
     <div class="description">
-        <p>Get unread message list at server with xpush API <code>message-unread</code>.
-Then, call API <code>message-received</code> to delete unread message.</p>
+        <p>server에서 읽지 않은 message를 조회한다.
+조회 후, <code>message-received</code> API를 호출하여 조회한 message를 삭제한다.</p>
     </div>
     
 
@@ -2004,7 +2011,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 
             
 
-            <td class="description last"><p>getUnreadMessageCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -2041,7 +2048,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-755">line 755</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-754">line 754</a>
 			</li>
 		</ul>
 	</dd>
@@ -2087,7 +2094,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
     
     
     <div class="description">
-        <p>Get user list at server with xpush API <code>user-list</code></p>
+        <p>server에서 사용자 list를 조회한다.</p>
     </div>
     
 
@@ -2160,7 +2167,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 
             
 
-            <td class="description last"><p>{getUserListCallback}</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -2197,7 +2204,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-677">line 677</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-676">line 676</a>
 			</li>
 		</ul>
 	</dd>
@@ -2235,7 +2242,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
     
     
     <div class="description">
-        <p>If channels is exist return true or false</p>
+        <p>channel이 존재하는지 확인 후, 결과를 반환한다.</p>
     </div>
     
 
@@ -2322,7 +2329,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-659">line 659</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-658">line 658</a>
 			</li>
 		</ul>
 	</dd>
@@ -2379,7 +2386,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
     
     
     <div class="description">
-        <p>Join channel</p>
+        <p>channel에 Join한다.</p>
     </div>
     
 
@@ -2452,7 +2459,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 
             
 
-            <td class="description last"><p>Channel Id</p></td>
+            <td class="description last"><p>JSON Data ( U, DT )</p></td>
         </tr>
 
 	
@@ -2475,7 +2482,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 
             
 
-            <td class="description last"><p>joinChannelCallback</p></td>
+            <td class="description last"><p>합류 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -2512,7 +2519,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-400">line 400</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-399">line 399</a>
 			</li>
 		</ul>
 	</dd>
@@ -2542,7 +2549,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
         
             
 <dt>
-    <h4 class="name" id="login"><span class="type-signature">&lt;static> </span>login<span class="signature">(userId, password, deviceId, mode, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="login"><span class="type-signature">&lt;static> </span>login<span class="signature">(userId, password, <span class="optional">deviceId</span>, <span class="optional">mode</span>, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -2550,7 +2557,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
     
     
     <div class="description">
-        <p>Login with userId and password</p>
+        <p>userId와 password를 이용하여 Login을 한다.</p>
     </div>
     
 
@@ -2572,7 +2579,11 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
+		
+		<th>Default</th>
 		
 
 		<th class="last">Description</th>
@@ -2597,7 +2608,19 @@ Then, call API <code>message-received</code> to delete unread message.</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>User Id</p></td>
@@ -2620,7 +2643,19 @@ Then, call API <code>message-received</code> to delete unread message.</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>Password</p></td>
@@ -2643,10 +2678,26 @@ Then, call API <code>message-received</code> to delete unread message.</p>
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>Device Id ( Optional. default <code>WEB</code> )</p></td>
+            
+                <td class="default">
+                
+                    WEB
+                
+                </td>
+            
+
+            <td class="description last"><p>Device Id</p></td>
         </tr>
 
 	
@@ -2666,10 +2717,24 @@ Then, call API <code>message-received</code> to delete unread message.</p>
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>Mode ( Optional. CHANNLE_ONLY )</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>mode</p></td>
         </tr>
 
 	
@@ -2689,10 +2754,22 @@ Then, call API <code>message-received</code> to delete unread message.</p>
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>loginCallback</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>로그인 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -2729,7 +2806,7 @@ Then, call API <code>message-received</code> to delete unread message.</p>
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-96">line 96</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-94">line 94</a>
 			</li>
 		</ul>
 	</dd>
@@ -2780,7 +2857,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     <div class="description">
-        <p>Disconnect session or channel connection</p>
+        <p>session socket 과 channel socket의 연결을 끊는다.</p>
     </div>
     
 
@@ -2818,7 +2895,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-181">line 181</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-179">line 179</a>
 			</li>
 		</ul>
 	</dd>
@@ -2856,7 +2933,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     <div class="description">
-        <p>Remove the function at event array</p>
+        <p>event stack에서 event와 function을 제거한다.</p>
     </div>
     
 
@@ -2966,7 +3043,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1149">line 1149</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1150">line 1150</a>
 			</li>
 		</ul>
 	</dd>
@@ -3004,7 +3081,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     <div class="description">
-        <p>Remove all function at event array</p>
+        <p>event stack의 모든 event를 제거한다.</p>
     </div>
     
 
@@ -3114,7 +3191,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1164">line 1164</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1165">line 1165</a>
 			</li>
 		</ul>
 	</dd>
@@ -3152,7 +3229,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     <div class="description">
-        <p>Stack the function into event array. The function will excute when an event occur.</p>
+        <p>event stack에 event와 function을 등록한다. 해당 function은 event가 발생시 호출된다.</p>
     </div>
     
 
@@ -3262,7 +3339,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1095">line 1095</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1096">line 1096</a>
 			</li>
 		</ul>
 	</dd>
@@ -3300,7 +3377,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     <div class="description">
-        <p>Get user list at server with xpush API <code>user-query</code></p>
+        <p>server에서 사용자 list를 조회한다. pageing 처리가 가능하다.</p>
     </div>
     
 
@@ -3373,7 +3450,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 
             
 
-            <td class="description last"><p>queryUserCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -3410,7 +3487,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-698">line 698</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-697">line 697</a>
 			</li>
 		</ul>
 	</dd>
@@ -3449,7 +3526,7 @@ xpush.queryUser( param, function( err, userArray, count ){
         
             
 <dt>
-    <h4 class="name" id="removeUserFromGroup"><span class="type-signature">&lt;static> </span>removeUserFromGroup<span class="signature">(groupId, userId, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="removeUserFromGroup"><span class="type-signature">&lt;static> </span>removeUserFromGroup<span class="signature">(<span class="optional">groupId</span>, userId, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -3457,7 +3534,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Remove user with xpush API <code>group-remove</code>.</p>
+        <p>user를 group에서 삭제한다.</p>
     </div>
     
 
@@ -3478,6 +3555,8 @@ xpush.queryUser( param, function( err, userArray, count ){
 
 		<th>Type</th>
 
+		
+		<th>Argument</th>
 		
 
 		
@@ -3504,6 +3583,16 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3527,10 +3616,18 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>userId to remove</p></td>
+            <td class="description last"><p>삭제할 user의 ID</p></td>
         </tr>
 
 	
@@ -3550,10 +3647,18 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>removeUserFromGroupGroupCallback</p></td>
+            <td class="description last"><p>삭제 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -3590,7 +3695,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-840">line 840</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-839">line 839</a>
 			</li>
 		</ul>
 	</dd>
@@ -3636,7 +3741,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Send message</p>
+        <p>data를 전송한다.</p>
     </div>
     
 
@@ -3769,7 +3874,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-736">line 736</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-735">line 735</a>
 			</li>
 		</ul>
 	</dd>
@@ -3813,7 +3918,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Set userId and deviceId at scope</p>
+        <p>현재 xpush 객체에 userId와 deviceId를 세팅한다.</p>
     </div>
     
 
@@ -3909,7 +4014,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>setSessionInfoCallback</p></td>
+            <td class="description last"><p>세팅 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -3946,7 +4051,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-158">line 158</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-156">line 156</a>
 			</li>
 		</ul>
 	</dd>
@@ -3976,7 +4081,7 @@ xpush.queryUser( param, function( err, userArray, count ){
         
             
 <dt>
-    <h4 class="name" id="signup"><span class="type-signature">&lt;static> </span>signup<span class="signature">(userId, password, deviceId, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="signup"><span class="type-signature">&lt;static> </span>signup<span class="signature">(userId, password, <span class="optional">deviceId</span>, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -3984,7 +4089,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Register user with userId and pssword</p>
+        <p>userId와 password를 이용하여 회원가입을 한다.</p>
     </div>
     
 
@@ -4006,7 +4111,11 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
+		
+		<th>Default</th>
 		
 
 		<th class="last">Description</th>
@@ -4031,7 +4140,19 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>User Id</p></td>
@@ -4054,7 +4175,19 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>Password</p></td>
@@ -4077,10 +4210,26 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>Device Id ( Optional. default <code>WEB</code> )</p></td>
+            
+                <td class="default">
+                
+                    WEB
+                
+                </td>
+            
+
+            <td class="description last"><p>Device Id</p></td>
         </tr>
 
 	
@@ -4100,10 +4249,22 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
             
 
-            <td class="description last"><p>signupCallback</p></td>
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>회원가입 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -4140,7 +4301,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-74">line 74</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-72">line 72</a>
 			</li>
 		</ul>
 	</dd>
@@ -4178,7 +4339,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Update channel info at server with xpush API <code>channel-update</code></p>
+        <p>server의 channel 정보를 수정한다.</p>
     </div>
     
 
@@ -4251,7 +4412,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>JSON Object for update. query is mongo DB style</p></td>
+            <td class="description last"><p>mongo DB query 형태로 된 JSON</p></td>
         </tr>
 
 	
@@ -4274,7 +4435,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>updateChannelCallback</p></td>
+            <td class="description last"><p>수정 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -4311,7 +4472,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-332">line 332</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-331">line 331</a>
 			</li>
 		</ul>
 	</dd>
@@ -4349,7 +4510,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Upload file with JSON Object for mobile user</p>
+        <p>file dom 객체가 지원되지 않는 mobile에서는 REST API를 이용하여 파일을 업로드한다.</p>
     </div>
     
 
@@ -4422,7 +4583,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>FileUri for update</p></td>
+            <td class="description last"><p>업로드할 fileUri</p></td>
         </tr>
 
 	
@@ -4468,7 +4629,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>callback function for progressing status</p></td>
+            <td class="description last"><p>업로도 진행 상황을 보여주기 위한 function</p></td>
         </tr>
 
 	
@@ -4491,7 +4652,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>uploadFileCallback</p></td>
+            <td class="description last"><p>업로드 완료 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -4528,7 +4689,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-513">line 513</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-512">line 512</a>
 			</li>
 		</ul>
 	</dd>
@@ -4566,7 +4727,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Upload file DOM Object with socket stream</p>
+        <p>file DOM 객체를 이용하여 socket stream을 이용하여 file을 upload한다.</p>
     </div>
     
 
@@ -4662,7 +4823,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>callback function for progressing status</p></td>
+            <td class="description last"><p>업로도 진행 상황을 보여주기 위한 function</p></td>
         </tr>
 
 	
@@ -4685,7 +4846,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>uploadStreamCallback</p></td>
+            <td class="description last"><p>업로드 완료 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -4722,7 +4883,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-461">line 461</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-460">line 460</a>
 			</li>
 		</ul>
 	</dd>
@@ -4760,7 +4921,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>Get channel info asynchronous. If channel is not exist in channel, call server API</p>
+        <p>비동기로 channel 정보를 가져온다. channel 정보가 객체 안에 존재하지 않으면, channel 정보를 server에서 조회한다.</p>
     </div>
     
 
@@ -4833,7 +4994,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>_getChannelAsyncCallback</p></td>
+            <td class="description last"><p>조회 후 수행할 callback function</p></td>
         </tr>
 
 	
@@ -4870,7 +5031,133 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-440">line 440</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-439">line 439</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="emit"><span class="type-signature">&lt;static> </span>XPush#emit<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>event stack에 등록되어 있는 함수를 호출한다.
+읽지 않은 메세지가 존재하면, 초기화 중인 상태이므로 message가 오더라도 해당 event의 function을 즉시 발생시키지 않고 stack에 쌓는다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>event</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>key</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="xpush.js/index.html">xpush.js</a>,
+				 <a href="xpush.js/index.html#sunlight-1-line-1185">line 1185</a>
 			</li>
 		</ul>
 	</dd>

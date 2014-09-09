@@ -59,7 +59,6 @@ pre code {
   line-height: 15px;
   padding: 12px 4px !important;
 }
-
 h5 {
   margin: 10px 0;
   font-family: 'Telex', sans-serif;
@@ -67,4 +66,7 @@ h5 {
   line-height: 20px;
   color: #317eac;
   text-rendering: optimizelegibility;
+}
+h4.name {
+  margin-top: 35px;
 }
