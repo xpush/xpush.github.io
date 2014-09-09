@@ -90,9 +90,13 @@ javascript: index.js
 	<div class="container mtb">
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-1">
-				<h4>More About Our Agency.</h4>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-				<p><br/><a href="about.html" class="btn btn-theme">More Info</a></p>
+				<h4>More About Our Project.</h4>
+				<p>
+					최근 어플리케이션 또는 웹서비스는 실시간 데이터 송수신 기능을 구현해야 하는 경우가 많아지고 있습니다.&nbsp;
+					<b>XPUSH</b> 는 설치형 실시간 통신 플랫폼으로 여러분이 직접 설치하고, 이를 사용하여 앱과 웹간 데이터 송수신을 실시간으로 가능하게 할 수 있습니다.&nbsp;
+					송수신 메시지 관리와 사용자 및 디바이스 관리 기능을 제공하며, 모바일앱을 위한 Push Notification (GCM, APN) 을 위한 기능도 제공하고 있습니다.
+				</p>
+				<p><br/><a href="/about" class="btn btn-theme">More Info</a></p>
 			</div>
 
 			<div class="col-lg-4">
@@ -106,19 +110,4 @@ javascript: index.js
 		</div><! --/row -->
 	</div><! --/container -->
 
-	<!-- *****************************************************************************************************************
-	 TESTIMONIALS
-	 ***************************************************************************************************************** -->
-
-	<div id="twrap">
-		<div class="container centered">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-				<i class="fa fa-comment-o"></i>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-				<h4><br/>Marcel Newman</h4>
-				<p>WEB DESIGNER - BLACKTIE.CO</p>
-				</div>
-			</div><! --/row -->
-		</div><! --/container -->
-	</div><! --/twrap -->
+	{% include testimonial.html %}
