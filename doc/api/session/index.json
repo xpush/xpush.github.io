@@ -3,7 +3,7 @@
   "basePath": "http://johnkim.github.io/doc/api/session",
   "apis": [
     {
-      "path": "/rest.json",
+      "path": "/rest",
       "description": "REST API list of session server"
     }
   ]

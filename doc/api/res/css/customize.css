@@ -29,3 +29,7 @@
   padding-right: 0;
   border-right: none;
 }
+
+#resources_container {
+  max-width: 960px;
+}
