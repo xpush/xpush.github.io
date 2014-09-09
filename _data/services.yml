@@ -2,9 +2,9 @@
 
 - name: messenger X
   images:
-    - path: /service/single01.jpg
-    - path: /service/single02.jpg
-    - path: /service/single03.jpg
+    - path: /service/resource/single01.jpg
+    - path: /service/resource/single02.jpg
+    - path: /service/resource/single03.jpg
   description: <b>_data/servics.yml 작성해야 함</b><br> xpush 기반의 메신져 서비스 <br> 다양한 서비스와 연계 가능한 설치형 메신져 플랫폼으로, 기본 ....
   source: https://github.com/xpush/messengerX
   support: Android, IOS / Windows, OS X, Linux
@@ -12,9 +12,9 @@
 
 - name: stalk.io
   images:
-    - path: /service/single02.jpg
-    - path: /service/single01.jpg
-    - path: /service/single03.jpg
+    - path: /service/resource/stalk.io.001.png
+    - path: /service/resource/stalk.io.002.png
+    - path: /service/resource/stalk.io.003.png
   description: <b>_data/servics.yml 작성해야 함</b><br> xpush 기반의 웹기반 대화 서비스
   url: http://stalk.io
   source: https://github.com/xpush/messengerX
@@ -23,9 +23,9 @@
 
 - name: link.stalk.io
   images:
-    - path: /service/single03.jpg
-    - path: /service/single02.jpg
-    - path: /service/single01.jpg
+    - path: /service/resource/single03.jpg
+    - path: /service/resource/single02.jpg
+    - path: /service/resource/single01.jpg
   description: <b>_data/servics.yml 작성해야 함</b><br> stalk.io 의 상담 서비스.
   url: http://link.stalk.io
   source: https://github.com/xpush/link.stalk.io
