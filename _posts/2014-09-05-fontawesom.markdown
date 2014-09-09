@@ -2,8 +2,8 @@
 layout: post
 title:  "Font Awesome 에서 이미지 변환하기"
 date:   2014-09-09 22:03:54
-categories: languages
-tags: fontawesome
+categories: programming
+tags: service
 ---
 
 xpush 사이트에서 사용한 이미지 중 일부는 [Font Awesome] 에서 폰트를 이미지로 변환해 사용하였습니다.

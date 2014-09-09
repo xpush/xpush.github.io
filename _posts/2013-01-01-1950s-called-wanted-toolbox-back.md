@@ -3,8 +3,8 @@ title: "The 1950s called and wanted their toolbox back"
 description: "Your favourite fancy-pants modern programming language is from the 1950s. Pretty much any programming language used today is a derivative of Fortran or Lisp, both born in the 1950s. Okay, reality check: It’s 2013—yes, 60 years later—and we have cars that drive themselves on the street, robots roaming the surface of alien planets and tiny networked devices with interactive surfaces that we keep in our pockets, which are orders of magnitude more powerful than the computers of the 1950s."
 og_image_url: http://farm9.staticflickr.com/8358/8336375923_9f0dca4da9_o.png
 layout: post
-tags: programming stalk
-category: languages
+tags: service
+category: programming
 comments: yes
 ---
 

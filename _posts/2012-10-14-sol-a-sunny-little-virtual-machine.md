@@ -3,8 +3,8 @@ title: "Sol — a sunny little virtual machine"
 description: "During this weekend, together with a few evenings earlier this week, I created a rather simple virtual machine dubbed Sol, after the Swedish word for sun. It's register based with multitasking and timers."
 og_image_url: http://farm9.staticflickr.com/8468/8089711825_0a2626e84b_z.jpg
 layout: post
-tags: programming
-category: languages
+tags: service
+category: programming
 comments: yes
 ---
 
@@ -115,7 +115,7 @@ A third class of operations only use one operand which size has a correlation wi
          6                               26                            Bits
       [0..63]                   Buu: [0..67108863]                     Range
                                 Bss: [-33554431..33554432]
-    
+
 A, B, C, Bu and Buu signify unsigned integers whilst Bs and Bss signify signed integers. As we can read above, there's room for 64 operations and 256 registers (OP=6 bits, A=8 bits) with this configuration. More than we need :)
 
 Changing and maintaining instructions (operations + operands) is simple in Sol. I've intentionally gone to great lengths in order to make playing around with the instuction set easy. The file `instr.h` contains a list of instructions:
@@ -198,7 +198,7 @@ Pling, plong, plong, ding, pling!
 
 No toy VM can be presented without shame unless it's able to [multitask](http://en.wikipedia.org/wiki/Computer_multitasking); perform multiple things at once, or at least give the programmer the illusion of concurrency.
 
-Sol has an operation called "yield" which is able to pause a task in any state and later have that task resume at the exact same state. 
+Sol has an operation called "yield" which is able to pause a task in any state and later have that task resume at the exact same state.
 
 ![Sketch of tasks yielding](http://farm9.staticflickr.com/8468/8089711825_e00b434731_o.png)
 
@@ -375,7 +375,7 @@ Output when running in debug mode:
     [vm] Task           Function       PC         Op      Values
     [vm] 0x7f8c9bc03bf0 0x7f8c9bc000e0 2          LOADK   AB:    0,   0
     [vm] 0x7f8c9bc03bf0 0x7f8c9bc000e0 3          RETURN  AB:    0,   1
-    [vm] 0x7f8c9bc03bf0 0x7f8c9bc03910 3          DBGREG 
+    [vm] 0x7f8c9bc03bf0 0x7f8c9bc03910 3          DBGREG
     D [vm] R(0) = 123.000000 (sched_exec.h:214)
     D [vm] R(1) = 500.000000 (sched_exec.h:215)
     D [vm] R(0) = 123.000000 (sched_exec.h:216)

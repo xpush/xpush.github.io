@@ -1,0 +1,53 @@
+
+<!-- *****************************************************************************************************************
+ BLUE WRAP
+ ***************************************************************************************************************** -->
+<div id="blue">
+  <div class="container">
+    <div class="row">
+      <h3>Blog List</h3>
+    </div><!-- /row -->
+  </div> <!-- /container -->
+</div><!-- /blue -->
+
+
+<!-- *****************************************************************************************************************
+ BLOG CONTENT
+ ***************************************************************************************************************** -->
+
+<div class="container mtb">
+  <div class="row">
+
+    <! -- BLOG POSTS LIST -->
+    <div class="col-lg-8">
+
+      <h4>Blog > tab : {{ page.tagname }}</h4>
+      <div class="hline"></div>
+      <div class="spacing"></div>
+
+      <div class="row">
+
+        {% for post in site.posts %}
+        {% for pc in post.tags %}
+        {% if pc == page.tagname %}
+
+        <div class="col-lg-10">
+          <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="ctitle">{{ post.title }}</h4></a>
+        </div>
+        <div class="col-lg-2">
+          {{ post.date | date: "%b %-d, %Y" }}
+        </div>
+
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+
+      </div>
+      <div class="spacing"></div>
+
+    </div>
+
+    {% include blog/sidebar.html %}
+
+  </div>
+ </div>

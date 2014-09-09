@@ -2,8 +2,8 @@
 title: "Our own little computer language"
 description: "A tutorial to writing our own programming language"
 layout: post
-tags: programming
-category: languages
+tags: service
+category: programming
 comments: yes
 ---
 
