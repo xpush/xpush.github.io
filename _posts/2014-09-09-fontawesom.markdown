@@ -17,6 +17,10 @@ http://pillow.readthedocs.org/en/latest/installation.html#mac-os-x-installation
 https://github.com/odyniec/font-awesome-to-png/blob/master/font-awesome-to-png.py
 
 
+  > brew install libtiff libjpeg webp little-cms2
+  > sudo pip install Pillow
+  > font-awesome-to-png.py --size 280 twitch
+
 **작성 중**
 
 [Font Awesome]: https://github.com/jekyll/jekyll
