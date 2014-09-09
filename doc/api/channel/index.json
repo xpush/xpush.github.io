@@ -3,15 +3,15 @@
 	"basePath": "http://johnkim.github.io/doc/api/channel",
   "apis": [
 		{
-		  "path": "/channel.json",
+		  "path": "/channel",
 		  "description": "Event list of channel socket"
 		},
 		{
-		  "path": "/session.json",
+		  "path": "/session",
 		  "description": "Event list of session socket"
 		},
 		{
-		  "path": "/rest.json",
+		  "path": "/rest",
 		  "description": "REST API list of channel server"
 		}
   ]
