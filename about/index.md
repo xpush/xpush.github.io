@@ -39,7 +39,7 @@ layout: about
 
 - - -
 
-<img src="/about/resource/software.png" width="50%" align="left">
+<img src="/about/resource/software.png" width="40%" align="left">
 
 ### 3. Scalable Web Architecture
 
