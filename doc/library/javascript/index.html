@@ -247,6 +247,19 @@ res-path: /doc/library/res
     
     
     
+        <h5>Examples</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Create new Xpush Object
+var xpush = new Xpush( &#x27;http:&#x2F;&#x2F;stalk-front-s01.cloudapp.net:8000&#x27;, &#x27;sample&#x27; );</pre>
+
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Create new Xpush Object with event Handler
+var xpush = new Xpush( &#x27;http:&#x2F;&#x2F;stalk-front-s01.cloudapp.net:8000&#x27;, &#x27;sample&#x27;, function (type, data){
+  console.log( &quot; type : &quot;, type );
+  console.log( &quot; data : &quot;, data );
+});</pre>
+
+
+    
 </dd>
 
     
@@ -439,7 +452,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-815">line 815</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-935">line 935</a>
 			</li>
 		</ul>
 	</dd>
@@ -679,7 +692,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-205">line 205</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-228">line 228</a>
 			</li>
 		</ul>
 	</dd>
@@ -703,6 +716,25 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Examples</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; create random channel without data
+xpush.createChannel([&#x27;james&#x27;, &#x27;notdol&#x27;], function(err, data){
+  console.log( &#x27;create channel success : &#x27;, data);
+});</pre>
+
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; create a channel without data
+xpush.createChannel([&#x27;james&#x27;], &#x27;channel02&#x27;, function(err,data){
+  console.log( &#x27;create channel success : &#x27;, data);
+});</pre>
+
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; create a channel with data
+xpush.createChannel([&#x27;james&#x27;], &#x27;channel03&#x27;, {&#x27;NM&#x27;:&#x27;james&#x27;}, function(err,data){
+  console.log( &#x27;create channel success : &#x27;, data);
+});</pre>
+
+
     
 </dd>
 
@@ -878,7 +910,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-263">line 263</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-311">line 311</a>
 			</li>
 		</ul>
 	</dd>
@@ -902,6 +934,20 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Examples</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; create simple channel without userObject
+xpush.createSimpleChannel(&#x27;channel01&#x27;, function(){
+  console.log( &#x27;create simple channel success&#x27; );
+});</pre>
+
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; create simple channel with userObject
+xpush.createSimpleChannel(&#x27;channel02&#x27;, {&#x27;U&#x27;:&#x27;james&#x27;,&#x27;D&#x27;:&#x27;WEB&#x27;}, function(){
+  console.log( &#x27;create simple channel success&#x27; );
+});</pre>
+
+
     
 </dd>
 
@@ -1026,7 +1072,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-417">line 417</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-503">line 503</a>
 			</li>
 		</ul>
 	</dd>
@@ -1050,6 +1096,14 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.exitChannel( &#x27;channel03&#x27;, function(err, result){
+  console.log( &#x27;result : &#x27;, result);
+});</pre>
+
+
     
 </dd>
 
@@ -1151,7 +1205,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-366">line 366</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-442">line 442</a>
 			</li>
 		</ul>
 	</dd>
@@ -1198,6 +1252,12 @@ res-path: /doc/library/res
 
         
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var channel01 = xpush.getChannel(&#x27;channel01&#x27;);</pre>
+
+
     
 </dd>
 
@@ -1322,7 +1382,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-384">line 384</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-462">line 462</a>
 			</li>
 		</ul>
 	</dd>
@@ -1346,6 +1406,14 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.getChannelData( channel, function(err,data){
+  console.log( &#x27;retrieve channel success : &#x27;, data);
+});</pre>
+
+
     
 </dd>
 
@@ -1447,7 +1515,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-304">line 304</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-365">line 365</a>
 			</li>
 		</ul>
 	</dd>
@@ -1471,6 +1539,15 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Get channels
+xpush.getChannels(function(err,datas){
+  console.log( &#x27;channels : &#x27; + datas );
+});</pre>
+
+
     
 </dd>
 
@@ -1595,7 +1672,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-350">line 350</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-421">line 421</a>
 			</li>
 		</ul>
 	</dd>
@@ -1619,6 +1696,15 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Retrieve channels that start with channel
+xpush.getChannelsActive( {&#x27;key&#x27;:&#x27;channel*&#x27;}, function(results){
+  console.log( &#x27;results : &#x27;, results );
+});</pre>
+
+
     
 </dd>
 
@@ -1743,7 +1829,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-574">line 574</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-686">line 686</a>
 			</li>
 		</ul>
 	</dd>
@@ -1790,6 +1876,12 @@ res-path: /doc/library/res
 
         
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var url = xpush.getFileUrl( &#x27;channel03&#x27;, data.result.name )</pre>
+
+
     
 </dd>
 
@@ -1914,7 +2006,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-794">line 794</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-914">line 914</a>
 			</li>
 		</ul>
 	</dd>
@@ -2048,7 +2140,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-754">line 754</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-874">line 874</a>
 			</li>
 		</ul>
 	</dd>
@@ -2086,7 +2178,7 @@ res-path: /doc/library/res
         
             
 <dt>
-    <h4 class="name" id="getUserList"><span class="type-signature">&lt;static> </span>getUserList<span class="signature">(params, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getUserList"><span class="type-signature">&lt;static> </span>getUserList<span class="signature">(<span class="optional">params</span>, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -2116,6 +2208,8 @@ res-path: /doc/library/res
 		<th>Type</th>
 
 		
+		<th>Argument</th>
+		
 
 		
 
@@ -2141,10 +2235,20 @@ res-path: /doc/library/res
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>Optional param for search user.</p></td>
+            <td class="description last"><p>param for search user.</p></td>
         </tr>
 
 	
@@ -2163,6 +2267,14 @@ res-path: /doc/library/res
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2204,7 +2316,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-676">line 676</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-792">line 792</a>
 			</li>
 		</ul>
 	</dd>
@@ -2228,6 +2340,14 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.getUserList( {&#x27;page&#x27;:{&#x27;num&#x27;:1,&#x27;size&#x27;:10} },function(err, users){
+  console.log( users );
+});</pre>
+
+
     
 </dd>
 
@@ -2329,7 +2449,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-658">line 658</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-772">line 772</a>
 			</li>
 		</ul>
 	</dd>
@@ -2372,6 +2492,12 @@ res-path: /doc/library/res
 
         
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var isExist = xpush.isExistChannel(&#x27;channel03&#x27;);</pre>
+
+
     
 </dd>
 
@@ -2519,7 +2645,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-399">line 399</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-481">line 481</a>
 			</li>
 		</ul>
 	</dd>
@@ -2543,6 +2669,14 @@ res-path: /doc/library/res
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.joinChannel( &#x27;channel03&#x27;, {&#x27;U&#x27;:[&#x27;notdol&#x27;]}, function(result){
+  console.log( &#x27;result : &#x27;, result);
+});</pre>
+
+
     
 </dd>
 
@@ -2806,7 +2940,7 @@ res-path: /doc/library/res
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-94">line 94</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-108">line 108</a>
 			</li>
 		</ul>
 	</dd>
@@ -2833,13 +2967,13 @@ res-path: /doc/library/res
     
         <h5>Examples</h5>
         
-    <pre class="sunlight-highlight-javascript">xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, function(){
-  console.log(&#x27;login success&#x27;);
+    <pre class="sunlight-highlight-javascript">xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, function(err,data){
+  console.log(&#x27;register success : &#x27;, data);
 });</pre>
 
     <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; login with deviceId
-xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(){
-  console.log(&#x27;login success&#x27;);
+xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(err,data){
+  console.log(&#x27;login success : &#x27;, data);
 });</pre>
 
 
@@ -2895,7 +3029,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-179">line 179</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-199">line 199</a>
 			</li>
 		</ul>
 	</dd>
@@ -2919,6 +3053,13 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; logout
+xpush.logout();</pre>
+
+
     
 </dd>
 
@@ -3043,7 +3184,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1150">line 1150</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1268">line 1268</a>
 			</li>
 		</ul>
 	</dd>
@@ -3067,6 +3208,14 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.off( &#x27;message&#x27;, function(channel, name, data){
+  console.log( channel, name, data );
+});</pre>
+
+
     
 </dd>
 
@@ -3191,7 +3340,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1165">line 1165</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1287">line 1287</a>
 			</li>
 		</ul>
 	</dd>
@@ -3215,6 +3364,12 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.clearEvent();</pre>
+
+
     
 </dd>
 
@@ -3339,7 +3494,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1096">line 1096</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1210">line 1210</a>
 			</li>
 		</ul>
 	</dd>
@@ -3363,6 +3518,14 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.on( &#x27;message&#x27;, function(channel, name, data){
+  console.log( channel, name, data );
+});</pre>
+
+
     
 </dd>
 
@@ -3487,7 +3650,7 @@ xpush.login( &#x27;james&#x27;, &#x27;1234&#x27;, &#x27;android&#x27;, function(
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-697">line 697</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-817">line 817</a>
 			</li>
 		</ul>
 	</dd>
@@ -3695,7 +3858,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-839">line 839</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-959">line 959</a>
 			</li>
 		</ul>
 	</dd>
@@ -3722,7 +3885,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
         <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">xpush.removeUserFromGroup( &#x27;james&#x27;, [&#x27;notdol&#x27;], function( err, result ){
+    <pre class="sunlight-highlight-javascript">xpush.removeUserFromGroup( &#x27;james&#x27;, &#x27;notdol&#x27;, function( err, result ){
   console.log( result );
 )};</pre>
 
@@ -3874,7 +4037,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-735">line 735</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-855">line 855</a>
 			</li>
 		</ul>
 	</dd>
@@ -3901,7 +4064,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
         <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">xpush.send( &#x27;ch01&#x27;, &#x27;ev01&#x27;, {&#x27;MG&#x27;:&#x27;Hello world&#x27;} );</pre>
+    <pre class="sunlight-highlight-javascript">xpush.send( &#x27;ch01&#x27;, &#x27;message&#x27;, {&#x27;MG&#x27;:&#x27;Hello world&#x27;} );</pre>
 
 
     
@@ -3910,7 +4073,7 @@ xpush.queryUser( param, function( err, userArray, count ){
         
             
 <dt>
-    <h4 class="name" id="setSessionInfo"><span class="type-signature">&lt;static> </span>setSessionInfo<span class="signature">(userId, deviceId, cb)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setSessionInfo"><span class="type-signature">&lt;static> </span>setSessionInfo<span class="signature">(userId, <span class="optional">deviceId</span>, cb)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -3918,7 +4081,7 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     <div class="description">
-        <p>현재 xpush 객체에 userId와 deviceId를 세팅한다.</p>
+        <p>현재 xpush 객체에 userId와 deviceId를 세팅한다. session socket이 이미 연결되어 있는 경우만</p>
     </div>
     
 
@@ -3939,6 +4102,8 @@ xpush.queryUser( param, function( err, userArray, count ){
 
 		<th>Type</th>
 
+		
+		<th>Argument</th>
 		
 
 		
@@ -3965,6 +4130,14 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -3988,6 +4161,16 @@ xpush.queryUser( param, function( err, userArray, count ){
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4010,6 +4193,14 @@ xpush.queryUser( param, function( err, userArray, count ){
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4051,7 +4242,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-156">line 156</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-170">line 170</a>
 			</li>
 		</ul>
 	</dd>
@@ -4075,6 +4266,16 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     
+    
+        <h5>Examples</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Set session info
+xpush.setSessionInfo( &#x27;james&#x27;, function(){} );</pre>
+
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Set session info with deviceId
+xpush.setSessionInfo( &#x27;james&#x27;, &#x27;WEB&#x27;, function(){} );</pre>
+
+
     
 </dd>
 
@@ -4301,7 +4502,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-72">line 72</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-81">line 81</a>
 			</li>
 		</ul>
 	</dd>
@@ -4325,6 +4526,15 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Add new user
+xpush.signup( &#x27;james&#x27;, &#x27;1234&#x27;, function(err,data){
+  console.log(&#x27;register success : &#x27; + data);
+}); </pre>
+
+
     
 </dd>
 
@@ -4435,7 +4645,8 @@ xpush.queryUser( param, function( err, userArray, count ){
 
             
 
-            <td class="description last"><p>수정 후 수행할 callback function</p></td>
+            <td class="description last"><p>수정 후 수행할 callback function
+// update channel</p></td>
         </tr>
 
 	
@@ -4472,7 +4683,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-331">line 331</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-397">line 397</a>
 			</li>
 		</ul>
 	</dd>
@@ -4496,6 +4707,14 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.updateChannel( &#x27;channel02&#x27;, { $set:{&#x27;DT&#x27;:{&#x27;NM&#x27;:&#x27;notdol1&#x27;}}}, function(err, result){
+  console.log( &#x27;result : &#x27;, result );
+});</pre>
+
+
     
 </dd>
 
@@ -4689,7 +4908,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-512">line 512</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-615">line 615</a>
 			</li>
 		</ul>
 	</dd>
@@ -4713,6 +4932,19 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush.uploadFile(&#x27;channelId&#x27;, &#x27;content:&#x2F;&#x2F;media&#x2F;external&#x2F;images&#x2F;media&#x2F;636&#x27;,
+{type : &#x27;image&#x27;, name:&#x27;image.png&#x27; },
+function ( data ){
+  console.log( data );
+},
+function (data){
+  console.log( data.response );
+});</pre>
+
+
     
 </dd>
 
@@ -4883,7 +5115,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-460">line 460</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-554">line 554</a>
 			</li>
 		</ul>
 	</dd>
@@ -4907,6 +5139,19 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var fileObj = document.getElementById(&#x27;file&#x27;);
+xpush.uploadStream( &#x27;channel03&#x27;, {
+  file: fileObj
+}, function(data, idx){
+  console.log( &#x27;progress : &#x27; + data );
+}, function(data,idx){
+  console.log( &#x27;upload result : &#x27; + data );
+});</pre>
+
+
     
 </dd>
 
@@ -5031,7 +5276,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-439">line 439</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-533">line 533</a>
 			</li>
 		</ul>
 	</dd>
@@ -5056,12 +5301,20 @@ xpush.queryUser( param, function( err, userArray, count ){
     
     
     
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">xpush._getChannelAsync( &#x27;channel03&#x27;, function(err, result){
+  console.log( &#x27;result : &#x27;, result);
+});</pre>
+
+
+    
 </dd>
 
         
             
 <dt>
-    <h4 class="name" id="emit"><span class="type-signature">&lt;static> </span>XPush#emit<span class="signature">(event)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="emit"><span class="type-signature">&lt;private, static> </span>XPush#emit<span class="signature">(event)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -5157,7 +5410,7 @@ xpush.queryUser( param, function( err, userArray, count ){
 		<ul class="dummy">
 			<li>
 				<a href="xpush.js/index.html">xpush.js</a>,
-				 <a href="xpush.js/index.html#sunlight-1-line-1185">line 1185</a>
+				 <a href="xpush.js/index.html#sunlight-1-line-1310">line 1310</a>
 			</li>
 		</ul>
 	</dd>
