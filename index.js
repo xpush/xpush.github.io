@@ -38,9 +38,7 @@
 			var winWidth = $(window).width(),
 			columnNumber = 1;
 
-			if (winWidth > 1200) {
-				columnNumber = 5;
-			} else if (winWidth > 950) {
+			if (winWidth > 950) {
 				columnNumber = 4;
 			} else if (winWidth > 600) {
 				columnNumber = 3;
