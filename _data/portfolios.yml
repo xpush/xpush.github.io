@@ -1,33 +1,33 @@
 # portfolios
 
-- name: xpush github project
+- name: xpush source repository
   image: /lib/img/portfolio/portfolio.001.png
   link: https://github.com/xpush/node-xpush
 
-- name: messenger-x github project
+- name: messenger-x source repository
   image: /lib/img/portfolio/portfolio.002.png
-  link: https://github.com/xpush/node-xpush
+  link: https://github.com/xpush/messengerx
 
-- name: sample
+- name: messenger-x service
   image: /lib/img/portfolio/portfolio_01.jpg
-  link: https://github.com/xpush/node-xpush
+  link: https://github.com/service/messengerx
 
-- name: sample
-  image: /lib/img/portfolio/portfolio_02.jpg
-  link: https://github.com/xpush/node-xpush
-
-- name: sample
+- name: stalk.io
   image: /lib/img/portfolio/portfolio_03.jpg
-  link: https://github.com/xpush/node-xpush
+  link: http://stalk.io
 
-- name: sample
+- name: stalk.io chrome extension
   image: /lib/img/portfolio/portfolio_04.jpg
-  link: https://github.com/xpush/node-xpush
+  link: https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe
 
-- name: sample
+- name: link.stalk.io
   image: /lib/img/portfolio/portfolio_05.jpg
-  link: https://github.com/xpush/node-xpush
+  link: http://link.stalk.io
 
-- name: sample
+- name: Docker Repository
   image: /lib/img/portfolio/portfolio_06.jpg
+  link: https://registry.hub.docker.com/repos/stalk
+
+- name: sample ????
+  image: /lib/img/portfolio/portfolio_02.jpg
   link: https://github.com/xpush/node-xpush
