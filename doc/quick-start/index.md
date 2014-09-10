@@ -32,7 +32,7 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 	> docker run -d --name xpush -p 8000:8000 -p 9000:9000 xpush/standalone
 
-8000 포트는 Session 서버가 사용하는 포트번호이고, 9000 포트는 Channel 서버가 사용하곡 포트번호 입니다.
+8000 포트는 Session 서버가 사용하는 포트번호이고, 9000 포트는 Channel 서버가 사용하는 포트번호 입니다.
 
 <br />
 

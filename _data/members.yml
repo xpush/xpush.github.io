@@ -24,10 +24,10 @@
   github: https://github.com/JohnKim
   description: _data/members.yml 파일을 수정할 것.
 
-- name: Member 4
-  image: /lib/img/team/team04.jpg
-  role: TESTER
-  email: yohany@gmail.com
-  facebook: https://www.facebook.com/JohnKim0331
-  github: https://github.com/JohnKim
-  description: _data/members.yml 파일을 수정할 것.
+- name: James Jung
+  image: /lib/img/team/james.jpg
+  role: DEVELOPER
+  email: 0nlyoung7@gmail.com
+  facebook: https://www.facebook.com/jung.jinyung.9
+  github: https://github.com/0nlyoung7
+  description: server side application develop, web application, data modeling, scale application design, middleware
