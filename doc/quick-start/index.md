@@ -36,8 +36,42 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 <br />
 
-#### 4. Sample 프로그램 작성
+#### 4. Sample JavaScript Source
 
-***TODO 누가 작성좀 해주세요. (Javascript 또는 JAVA로, 아니면 둘다 ?)***
+Xpush client library를 include합니다.
 
-/doc/quick-start/index.md 파일 작성
+<pre data-lang="html">
+<code class="prettyprint">&lt;script type="text/javascript" charset="utf-8" src="xpush.min.js"&gt;&lt;/script&gt;
+</code>
+</pre>
+
+Xpush를 생성합니다.
+
+<pre data-lang="js">
+<code class="prettyprint">// parameter : server to connect, applicationId
+var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+</code>
+</pre>
+
+channel 생성 후에 event 발생 시에 호출할 function을 등록합니다.
+
+<pre data-lang="js">
+<code class="prettyprint">xpush.createSimpleChannel('channel01', function(){
+  console.log( 'create simple channel success' );
+
+  xpush.on( 'message', function(channel, name, data){
+    console.log( 'channel01', name, data );
+  });
+});
+</code>
+</pre>
+
+channel01로 message를 전송합니다.
+
+<pre data-lang="js">
+<code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>
+</pre>
+
+<script>
+	prettyPrint();
+</script>
