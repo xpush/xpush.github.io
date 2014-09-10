@@ -31,7 +31,12 @@ layout: default
       <p>{{ content }}</p>
 
       <div class="spacing"></div>
-
+      <h6>SHARE:</h6>
+      <p class="share">
+      	<a href="http://twitter.com/home?status={{ site.url }}{{ page.url }}" title="Share on Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+      	<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" target="_blank"></a><i class="fa fa-facebook"></i></a>
+      	<a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" target="_blank"><i class="fa fa-google-plus"></i></a>		 		
+      </p>
     </div><! --/col-lg-8 -->
 
     {% include blog/sidebar.html %}
