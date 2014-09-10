@@ -24,8 +24,10 @@ layout: default
     <! -- BLOG POSTS LIST -->
     <div class="col-lg-8">
 
-      <a href="single-post.html"><h3 class="ctitle">{{ page.title }}</h3></a>
-      <p><csmall>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</csmall></p>
+      <h3 class="ctitle">{{ page.title }}</h3>
+      <p>
+        <csmall>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</csmall>
+      </p>
       <p>{{ content }}</p>
 
       <div class="spacing"></div>
