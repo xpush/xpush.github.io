@@ -1,33 +1,17 @@
 # portfolios
 
 - name: xpush source repository
-  image: /lib/img/portfolio/portfolio.001.png
+  image: /lib/img/portfolio/001.png
   link: https://github.com/xpush/node-xpush
 
 - name: messenger-x source repository
-  image: /lib/img/portfolio/portfolio.002.png
+  image: /lib/img/portfolio/002.png
   link: https://github.com/xpush/messengerx
 
-- name: messenger-x service
-  image: /lib/img/portfolio/portfolio_01.jpg
-  link: https://github.com/service/messengerx
-
 - name: stalk.io
-  image: /lib/img/portfolio/portfolio_03.jpg
+  image: /lib/img/portfolio/003.png
   link: http://stalk.io
 
 - name: stalk.io chrome extension
-  image: /lib/img/portfolio/portfolio_04.jpg
+  image: /lib/img/portfolio/004.png
   link: https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe
-
-- name: link.stalk.io
-  image: /lib/img/portfolio/portfolio_05.jpg
-  link: http://link.stalk.io
-
-- name: Docker Repository
-  image: /lib/img/portfolio/portfolio_06.jpg
-  link: https://registry.hub.docker.com/repos/stalk
-
-- name: sample ????
-  image: /lib/img/portfolio/portfolio_02.jpg
-  link: https://github.com/xpush/node-xpush
