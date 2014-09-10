@@ -18,7 +18,7 @@
   support: Any Web Browsers
   author: xpush team
 
-name: stalk.io chrome extension
+- name: stalk.io chrome extension
   images:
     - path: /service/resource/stalk.io.chrome.001.png
     - path: /service/resource/stalk.io.chrome.002.png

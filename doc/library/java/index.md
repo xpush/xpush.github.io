@@ -1,5 +1,5 @@
 ---
-layout: doc
+layout: doc-library
 title: Java Library
 date: April 25, 2014
 ---
@@ -19,7 +19,7 @@ You can build the project from the source in this repository. See **Library deve
 
 ## API Overview
 
-```java
+{% highlight java %}
 XPush xpush = new XPush( XPUSH_SERVER_HOST, APPLICATION_ID);
 xpush.login( USER_ID, PASSWORD, DEVICE_ID);
 
@@ -50,7 +50,7 @@ xpush.on( io.stalk.xpush.Channel.RECEIVE_KEY ,new Emitter.Listener() {
         JSONObject message_data = (JSONObject) args[2];
     }
 });
-```
+{% endhighlight %}
 
 # io.stalk.xpush.XPush
 
@@ -58,29 +58,29 @@ xpush.on( io.stalk.xpush.Channel.RECEIVE_KEY ,new Emitter.Listener() {
 
 The standard constructor take a host and an application id.
 
-```java
+{% highlight java %}
 XPush xpush = new XPush( XPUSH_SERVER_HOST, APPLICATION_ID);
-```
+{% endhighlight %}
 
 ## Connecting (Signin)
 
 In order to send and receive messages you need to login to XPush server.
 
-```java
+{% highlight java %}
 xpush.login( USER_ID, PASSWORD, DEVICE_ID);
-```
+{% endhighlight %}
 
 ## Signup
 
-```java
+{% highlight java %}
 xpush.signup( USER_ID, PASSWORD, DEVICE_ID);
-```
+{% endhighlight %}
 
 ## Create Channel
 
 In order to send and receive messages you need to create channel.
 
-```java
+{% highlight java %}
 xpush.createChannel( new String[]{"notdol102"}, null, new JsonObject(), new Emitter.Listener() {
     public void call(Object... arg0) {
         // TODO Auto-generated method stub
@@ -89,11 +89,11 @@ xpush.createChannel( new String[]{"notdol102"}, null, new JsonObject(), new Emit
         io.stalk.xpush.Channel ch = (io.stalk.xpush.Channel)arg0[2];
     }
 });
-```
+{% endhighlight %}
 
 ## Get All Channels name
 
-```java
+{% highlight java %}
 xpush.getChannels( new Emitter.Listener() {
     public void call(Object... arg0) {
         // TODO Auto-generated method stub
@@ -101,13 +101,13 @@ xpush.getChannels( new Emitter.Listener() {
         String[] channels_name = (String)arg0[1];
     }
 });
-```
+{% endhighlight %}
 
 ## Get Channel Object
 
-```java
+{% highlight java %}
 Channel ch = xpush.getChannel( CHANNEL_NAME );
-```
+{% endhighlight %}
 
 ## Join Channel
 
@@ -122,20 +122,20 @@ NOT YET.
 
 Send Message to all users in specific channel. Message type is JSONObject.
 
-```java
+{% highlight java %}
 xpush.send(CHANNEL_NAME, SEND_MESSAGE_KEY, MESSAGE - new JSONObject(), new Emitter.Listener() {
     public void call(Object... arg0) {
         // call after send message
     }
 });
-```
+{% endhighlight %}
 ## Receive Message
 
 Receiving Message is available in two ways:
 
 Receive all message without message_key.
 
-```java
+{% highlight java %}
 xpush2.on( io.stalk.xpush.Channel.RECEIVE_KEY ,new Emitter.Listener() {
     public void call(Object... args) {
         String channel_name = (String) args[0];
@@ -143,11 +143,11 @@ xpush2.on( io.stalk.xpush.Channel.RECEIVE_KEY ,new Emitter.Listener() {
         JSONObject message_data = (JSONObject) args[2];
     }
 });
-```
+{% endhighlight %}
 
 The other way is specific message_key.
 
-```java
+{% highlight java %}
 xpush2.on( MESSAGE_KEY ,new Emitter.Listener() {
     public void call(Object... args) {
         String channel_name = (String) args[0];
@@ -155,14 +155,12 @@ xpush2.on( MESSAGE_KEY ,new Emitter.Listener() {
         JSONObject message_data = (JSONObject) args[2];
     }
 });
-```
+{% endhighlight %}
 
 # io.stalk.xpush.Channel
 
 ## Disconnect channel
 
-```java
+{% highlight java %}
 channel.disconnect();
-```
-
-
+{% endhighlight %}
