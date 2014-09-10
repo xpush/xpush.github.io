@@ -52,5 +52,5 @@ Docker repository를 등록하고, Docker를 설치합니다.
 	
 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
 
-	docker run -d --name xpush -p 8000:8000 -p 8080:8080 xpush/standalone
+	docker run -d --name xpush -p 8000:8000 -p 8080:8080 stalk/xpush
 	
