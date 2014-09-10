@@ -1,6 +1,6 @@
 {
   "swaggerVersion": "1.2",
-	"basePath": "http://johnkim.github.io/doc/api/channel",
+	"basePath": "http://xpush.github.io/doc/api/channel",
   "apis": [
 		{
 		  "path": "/channel",
