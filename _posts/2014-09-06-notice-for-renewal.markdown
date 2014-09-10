@@ -3,7 +3,7 @@ layout: post
 title:  "XPUSH 웹사이트 오픈"
 date:   2014-09-06 12:03:54
 categories: announcement
-tags: XPUSH
+tags: xpush
 ---
 
 안녕하십니까. **XPUSH** 개발팀입니다.
