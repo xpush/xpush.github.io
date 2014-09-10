@@ -8,21 +8,21 @@
   github: https://github.com/JohnKim
   description: scalable web architecture design, enterprise large-scale application design, high-performance, high-availability, reliable systems, security, client/server and multi-tier systems, middleware, database integration, concurrency.
 
-- name: Member 2
-  image: /lib/img/team/team02.jpg
-  role: HUMAN
-  email: yohany@gmail.com
-  facebook:
-  github:
+- name: John Ko
+  image: /lib/img/team/johnko.png
+  role: S/W Developer
+  email: eunsan.ko@gmail.com
+  facebook: https://www.facebook.com/john.ko.54
+  github: https://github.com/EunsanKo
   description: _data/members.yml 파일을 수정할 것.
 
-- name: Member 3
-  image: /lib/img/team/team03.jpg
-  role: SON OF KING
-  email: yohany@gmail.com
-  facebook: https://www.facebook.com/JohnKim0331
-  github: https://github.com/JohnKim
-  description: _data/members.yml 파일을 수정할 것.
+- name: John Ko
+  image: /lib/img/team/johnko.png
+  role: DEVELOPER
+  email: eunsan.ko@gmail.com
+  facebook: https://www.facebook.com/john.ko.54
+  github: https://github.com/EunsanKo
+  description: server side application development, web application, data modeling, scale application design
 
 - name: Member 4
   image: /lib/img/team/team04.jpg
