@@ -1,0 +1,41 @@
+# services
+
+- name: messenger X
+  images:
+    - path: /service/resource/messengerX.001.png
+    - path: /service/resource/messengerX.002.png
+    - path: /service/resource/messengerX.003.png
+  description: <b>XPUSH</b> 플랫폼을 기반으로한 '웹메신져' 입니다. 사진/동영상 전송이나 그룹대화 등 웹브라우져에서 메신저를 사용할 수 있습니다. 뿐만아니라, Chrome 브라우져에서 동작하고, Linux, OS X, Windows 에서 메신저 어플리케이션을 설치해서 사용하실 수도 있습니다.<br /> 여러분이 기업이나 조직에서 자체 메신져 시스템을 구축하시려고 한다면, messengerX 를 설치하여 운영하실 수 있습니다.
+  source: https://github.com/xpush/messengerX
+  support: Android, IOS / Windows, OS X, Linux
+  author: xpush team
+
+- name: stalk.io
+  images:
+    - path: /service/resource/stalk.io.001.png
+    - path: /service/resource/stalk.io.002.png
+    - path: /service/resource/stalk.io.003.png
+  description: stalk.io 는 웹페이지에 간단한 테그만 추가하면 설치 가능한 웹기반 대화 서비스입니다. <b>XPUSH</b> 플랫폼을 기반으로 하고 있으며, 같은 페이지를 보고 있는 사람끼리 서로 대화를 나눌 수 있는 기능을 제공합니다.<br />IE, Chrome, Safari 등 거의 모든 웹 브라우져에서 동작하고, 모바일 웹브라우져에서도 동작합니다. 지금 바로 <a href="http://stalk.io" target="_blank">stalk.io</a> 싸이트에 방문하셔서 간단한 설치 방법을 알아보시기 바랍니다.
+  url: http://stalk.io
+  source: https://github.com/xpush/messengerX
+  support: Any Web Browsers
+  author: xpush team
+
+- name: stalk.io chrome extension
+  images:
+    - path: /service/resource/stalk.io.chrome.001.png
+    - path: /service/resource/stalk.io.chrome.002.png
+
+  description: stalk.io chrome extension은 설치 후 버튼 한번 클릭으로 현재 접속중인 페이지에 동시에 접속하고 있는 사람과 채팅이 가능한 웹기반 대화 서비스입니다. <b>XPUSH</b> 플랫폼을 기반으로 하고 있으며, 같은 페이지를 보고 있는 사람끼리 서로 대화를 나눌 수 있는 기능을 제공합니다.<br />IE, Chrome, Safari 등 거의 모든 웹 브라우져에서 동작하고, 모바일 웹브라우져에서도 동작합니다. 지금 바로 <a href="http://stalk.io" target="_blank">stalk.io</a> 싸이트에 방문하셔서 간단한 설치 방법을 알아보시기 바랍니다.
+  url: https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko
+  source: https://github.com/xpush/messengerX
+  support: Any Web Browsers
+  author: xpush team
+
+- name: link.stalk.io
+  images:
+  description: 여러분들의 홈페이지에 접속하는 고객과 1:1 대화 상담할 수 있는 서비스 입니다. 이 서비스를 통해 여러분의 홈페이지 안에서 고객과 적극적인 실시간 온라인 상담이 가능합니다.
+  url: http://link.stalk.io
+  source: https://github.com/xpush/link.stalk.io
+  support: Any Web Browsers
+  author: xpush team

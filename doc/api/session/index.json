@@ -1,0 +1,10 @@
+{
+  "swaggerVersion": "1.2",
+  "basePath": "http://johnkim.github.io/doc/api/session",
+  "apis": [
+    {
+      "path": "/rest",
+      "description": "REST API list of session server"
+    }
+  ]
+}

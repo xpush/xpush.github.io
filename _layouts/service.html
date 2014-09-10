@@ -1,0 +1,68 @@
+---
+layout: default
+---
+<div id="blue">
+  <div class="container">
+    <div class="row">
+      <h3>{{ page.title }}</h3>
+      <h5>{{ page.description }}</h5>
+    </div>
+  </div>
+</div>
+
+
+<div class="container mt">
+
+  {{ content }}
+
+  {% for service in site.data.services %}
+
+  {% assign srv_num = forloop.index %}
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1 centered">
+      <h2>{{ service.name }}</h2>
+      <div id="carousel-generic-{{ srv_num }}" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          {% for image in service.images %}
+          <li data-target="#carousel-generic-{{ srv_num }}" data-slide-to="{{ forloop.index0 }}" {% if forloop.index == 1 %}class="active"{% endif %} ></li>
+          {% endfor %}
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          {% for image in service.images %}
+          <div class="item {% if forloop.index == 1 %}active{% endif %}">
+            <img src="{{ image.path }}" alt="">
+          </div>
+          {% endfor %}
+        </div>
+      </div><! --/Carousel -->
+    </div>
+
+    <div class="col-lg-5 col-lg-offset-1">
+      <div class="spacing"></div>
+      <h4>{{ service.name }}</h4>
+      <p>{{ service.description }}</p>
+    </div>
+
+    <div class="col-lg-4 col-lg-offset-1">
+      <div class="spacing"></div>
+      <h4>Project Details</h4>
+      <div class="hline"></div>
+      <p><b>Author:</b> {{ service.author }}</p>
+      <p><b>Supported:</b> {{ service.support }}</p>
+      {% if service.url %}<p><b>Website:</b> <a href="{{ service.url }}">{{ service.url }}</a></p>{% endif %}
+    </div>
+
+  </div><! --/row -->
+
+  <div class="spacing"></div>
+  <div class="hline"></div>
+  <div class="spacing"></div>
+
+  {% endfor %}
+
+</div><! --/container -->
+
+{% include testimonial.html %}

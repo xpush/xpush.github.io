@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<!-- *****************************************************************************************************************
+ BLUE WRAP
+ ***************************************************************************************************************** -->
+<div id="blue">
+  <div class="container">
+    <div class="row">
+      <h3>Blog.</h3>
+    </div><!-- /row -->
+  </div> <!-- /container -->
+</div><!-- /blue -->
+
+
+<!-- *****************************************************************************************************************
+ BLOG CONTENT
+ ***************************************************************************************************************** -->
+
+<div class="container mtb">
+  <div class="row">
+
+    <! -- BLOG POSTS LIST -->
+    <div class="col-lg-8">
+
+      <h3 class="ctitle">{{ page.title }}</h3>
+      <p>
+        <csmall>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</csmall>
+      </p>
+      <p>{{ content }}</p>
+
+      <div class="spacing"></div>
+      <h6>SHARE:</h6>
+      <p class="share">
+      	<a href="http://twitter.com/home?status={{ site.url }}{{ page.url }}" title="Share on Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+      	<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+      	<a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" target="_blank"><i class="fa fa-google-plus"></i></a>		 		
+      </p>
+    </div><! --/col-lg-8 -->
+
+    {% include blog/sidebar.html %}
+
+  </div><! --/row -->
+ </div><! --/container -->

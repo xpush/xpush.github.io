@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include doc/head-library.html %}
+
+    <body>
+
+    {% include header.html %}
+
+    <div class="container mtb">
+      <div class="row">
+
+        {% include doc/sidebar.html %}
+
+        <! -- SINGLE POST -->
+        <div class="col-lg-10 swagger-section">
+
+          <a href="single-post.html"><h3 class="ctitle">{{ page.title }}</h3></a>
+
+          {{ content }}
+
+        </div>
+
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    </body>
+
+</html>

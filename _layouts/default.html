@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+    <body>
+
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+    {% include script.html %}
+
+    {% if page.javascript %}
+    <script src="{{ page.javascript | prepend: site.baseurl }}"></script>
+    {% endif %}
+
+    </body>
+
+</html>

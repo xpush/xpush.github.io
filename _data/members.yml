@@ -1,0 +1,33 @@
+# project members
+
+- name: John Kim
+  image: /lib/img/team/johnkim.jpeg
+  role: S/W ARCHITECT
+  email: yohany@gmail.com
+  facebook: https://www.facebook.com/JohnKim0331
+  github: https://github.com/JohnKim
+  description: scalable web architecture design, enterprise large-scale application design, high-performance, high-availability, reliable systems, security, client/server and multi-tier systems, middleware, database integration, concurrency.
+
+- name: Pu suk Paek
+  image: /lib/img/team/notdol.jpg
+  role: DEVELOPER
+  email: nixenic@gmail.com
+  facebook: https://www.facebook.com/notdol
+  github: https://github.com/notdol
+  description: server side application development, web application, data modeling, scale application design
+
+- name: John Ko
+  image: /lib/img/team/johnko.png
+  role: DEVELOPER
+  email: eunsan.ko@gmail.com
+  facebook: https://www.facebook.com/john.ko.54
+  github: https://github.com/EunsanKo
+  description: server side application development, web application, data modeling, scale application design
+
+- name: James Jung
+  image: /lib/img/team/james.jpg
+  role: DEVELOPER
+  email: 0nlyoung7@gmail.com
+  facebook: https://www.facebook.com/jung.jinyung.9
+  github: https://github.com/0nlyoung7
+  description: server side application develop, web application, data modeling, scale application design, middleware

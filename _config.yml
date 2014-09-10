@@ -1,0 +1,15 @@
+# Site settings
+title: xpush
+email: xpush.io@gmail.com
+description: "eXtensional PUSH : Real-time communication server"
+baseurl: ""
+url: "http://xpush.github.io"
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+paginate: 3
+paginate_path: "blog/page:num"

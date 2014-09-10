@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div id="blue">
+  <div class="container">
+    <div class="row">
+      <h3>{{ page.title }}</h3>
+      <h5>{{ page.description }}</h5>
+    </div>
+  </div>
+</div>
+
+<div class="container mtb">
+  {{ content }}
+</div>
+
+<div class="container mtb">
+  <div class="row centered">
+    <h3 class="mb">MEET OUR TEAM</h3>
+
+    {% for member in site.data.members %}
+
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      <div class="he-wrap tpl6">
+        <img src="{{ member.image }}" alt="">
+        <div class="he-view">
+          <div class="bg a0" data-animate="fadeIn">
+            <h3 class="a1" data-animate="fadeInDown">Contact Me:</h3>
+            {% if member.email %}<a href="mailto:{{ member.email }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-envelope"></i></a>{% endif %}
+            {% if member.facebook %}<a href="{{ member.facebook }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-facebook"></i></a>{% endif %}
+            {% if member.github %}<a href="{{ member.github }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-github"></i></a>{% endif %}
+          </div><!-- he bg -->
+        </div><!-- he view -->
+      </div><!-- he wrap -->
+      <h4>{{ member.name }}</h4>
+      <h5 class="ctitle">{{ member.role }}</h5>
+      <p class="lefted">{{ member.description }}</p>
+      <div class="hline"></div>
+    </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+
+{% include testimonial.html %}

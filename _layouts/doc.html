@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="container mtb">
+  <div class="row">
+
+    {% include doc/sidebar.html %}
+
+    <! -- SINGLE POST -->
+    <div class="col-lg-10">
+
+      <h3 class="ctitle">{{ page.title }}</h3>
+
+      <p><csmall>Updated: {{ page.date }}.</csmall></p>
+
+      {{ content }}
+
+    </div>
+
+  </div>
+</div>
