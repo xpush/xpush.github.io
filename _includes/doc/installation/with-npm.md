@@ -84,7 +84,7 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 
 latest development version을 설치하기 위해서는 [git](https://github.com/xpush/node-xpush)을 이용해서 직접 설치하세요.
 
-**Note**:직접 설치 시에 에러가 발생할 경우, nodejs가 최신 version인지 확인하세요.
+>**Note**:직접 설치 시에 에러가 발생할 경우, nodejs가 최신 version인지 확인하세요.
 
 	git clone https://github.com/xpush/node-xpush.git
 	cd node-xpush
