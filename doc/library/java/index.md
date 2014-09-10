@@ -1,3 +1,8 @@
+---
+layout: doc
+title: Java Library
+date: April 25, 2014
+---
 # XPush Java Client
 
 XPush client library for Java targeting **Android** and general Java.
