@@ -21,6 +21,16 @@ https://github.com/odyniec/font-awesome-to-png/blob/master/font-awesome-to-png.p
   > sudo pip install Pillow
   > font-awesome-to-png.py --size 280 twitch
 
+{% highlight javascript %}
+xpush.createSimpleChannel('channel01', function(){
+  console.log( 'create simple channel success' );
+
+  xpush.on( 'message', function(channel, name, data){
+    console.log( 'channel01', name, data );
+  });
+});
+{% endhighlight %}
+
 **작성 중**
 
 [Font Awesome]: https://github.com/jekyll/jekyll
