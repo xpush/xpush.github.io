@@ -72,6 +72,8 @@ channel01로 message를 전송합니다.
 <code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>
 </pre>
 
+full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
+
 <script>
 	prettyPrint();
 </script>
