@@ -37,7 +37,7 @@ Docker repository를 등록하고, Docker를 설치합니다.
 
 ## 2. Install xpush
 
-모든 준비가 되었으면, docker에 등록된 xpush image를 설치하세요. 총 20분~60분 정도 소요됩니다.
+모든 준비가 되었으면, docker에 등록된 xpush image를 설치하세요. 네트워크 환경에 따라 총 20분~60분 정도 소요됩니다.
 
 	docker pull stalk/xpush
 
@@ -52,5 +52,4 @@ Docker repository를 등록하고, Docker를 설치합니다.
 	
 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
 
-	docker run -d --name xpush -p 8000:8000 -p 8080:8080 stalk/xpush
-	
+	docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush
