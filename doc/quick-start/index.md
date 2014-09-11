@@ -72,6 +72,77 @@ channel01로 message를 전송합니다.
 <code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>
 </pre>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- xpush -->
+<script src="http://xpush.github.io/lib/dist/xpush.js"></script>
+
+<script type="text/javascript">
+// Create new xpush
+var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+
+$(document).ready( function(){
+	var preHtml = '<strong>Well done!</strong> ';
+	xpush.createSimpleChannel('channel01', function(){
+		var html =  preHtml + 'Create simple channel success';
+		$( "#alert" ).html(html);
+		$( "#alert" ).show();
+
+		xpush.on( 'message', function(channel, name, data){
+			data = decodeURIComponent( data );
+			$( "#alert" ).html(preHtml + data );
+
+			var newMessage = $( "#item" ).clone();
+			newMessage.attr( "id", Date.now() );
+			newMessage.html( data );
+
+			$( "#item" ).hide();
+			newMessage.appendTo( "#list" );
+			newMessage.show();
+
+			$( ".list-group-item-success" ).each(function(){
+				$(this).removeClass( "list-group-item-success" );
+			});
+			newMessage.addClass( "list-group-item-success" );
+		});
+	});
+});
+
+var send = function( ){
+	var msg = $( "#message" ).val();
+	xpush.send( 'channel01', 'message', encodeURIComponent( msg ) );
+	$( "#message" ).val('');
+};
+
+</script>
+
+<div class="row" style="margin-top:20px;">
+	<div class="col-sm-12">
+		<div class="jumbotron">
+	    <h1>Simple Channel Example</h1>
+	    <p>Send a message with simple channel</p>
+	    <p><a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">View source from github</a></p>
+	  </div>
+		<div id="alert" class="alert alert-success" role="alert" style="display:none">
+	  </div>
+
+		<div style="display:flex;">
+			<input class="form-control" placeholder="Input message" name="message" id="message" type="text" value=""/>
+			<button type="submit" id="form-button" class="btn btn-primary" style="margin-left:10px;" onclick="send();">Send</button>
+		</div>
+		<span class="help-block">Input message to send. The message will be displayed in under area</span>
+		
+		<div class="row">
+			<div class="col-sm-8">
+				<h2>Received message</h2>
+				<ul id="list" class="list-group">
+					<li id="item" class="list-group-item">There is no message</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
 full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
 
 <script>
