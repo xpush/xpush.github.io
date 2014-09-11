@@ -1,81 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Simple Channel Example</title>
+<title>Simple Channel Example</title>
 
 	<!-- Bootstrap and jquery -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-	<!-- xpush -->
-	<script src="http://xpush.github.io/lib/dist/xpush.js"></script>
+<!-- xpush -->
+<script src="http://xpush.github.io/lib/dist/xpush.js"></script>
 
-	<script type="text/javascript">
-	// Create new xpush
-	var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+<script type="text/javascript">
+// Create new xpush
+var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
 
-	$(document).ready( function(){
-		var preHtml = '<strong>Well done!</strong> ';
-		xpush.createSimpleChannel('channel01', function(){
-			var html =  preHtml + 'Create simple channel success';
-			$( "#alert" ).html(html);
-			$( "#alert" ).show();
+$(document).ready( function(){
+	// channel01 을 생성합니다.
+	xpush.createSimpleChannel('channel01', function(){
+		// 생성 후에 success 메시지를 보여줍니다.
+		var html =  '<strong>Well done!</strong> Create simple channel success';
+		$( "#success" ).html(html);
+		$( "#success" ).show();
 
-			xpush.on( 'message', function(channel, name, data){
-				data = decodeURIComponent( data );
+  		// `message` event로 들어오는 data를 받아 화면에 출력합니다.
+		xpush.on( 'message', function(channel, name, data){
+			data = decodeURIComponent( data );
+			$( "#success" ).html( '<strong>Received success</strong> : ' + data );
 
-				var newMessage = $( "#item" ).clone();
-				newMessage.attr( "id", Date.now() );
-				newMessage.html( data );
+			// template을 복사하여 새로운 DOM 객체를 생성합니다..
+			var newMessage = $( "#template" ).clone();
 
-				$( "#item" ).hide();
-				newMessage.appendTo( "#list" );
-				newMessage.show();
+			// 새로 만든 DOM 객체를 수정합니다.
+			newMessage.attr( "id", "template_"+ Date.now() );
+			newMessage.html( data );
 
-				$( ".list-group-item-success" ).each(function(){
-					$(this).removeClass( "list-group-item-success" );
-				});
-				newMessage.addClass( "list-group-item-success" );
+			// 새로 만든 DOM 객체를 ul DOM에 추가합니다.
+			newMessage.appendTo( "#list" );
+			newMessage.show();
+
+			// 새로 생성한 DOM 객체에 class를 추가합니다.
+			$( ".list-group-item-success" ).each(function(){
+				$(this).removeClass( "list-group-item-success" );
 			});
+			newMessage.addClass( "list-group-item-success" );
 		});
 	});
+});
 
-	var send = function( ){
-		var msg = $( "#message" ).val();
-		xpush.send( 'channel01', 'message', encodeURIComponent( msg ) );
-		$( "#message" ).val('');
-	};
+var send = function( ){
+	var msg = $( "#message" ).val();
+	xpush.send( 'channel01', 'message', encodeURIComponent( msg ) );
+	$( "#message" ).val('');
+};
 
-	</script>
+</script>
 </head>
-<body>
-	<div class="container" >
-		<div class="row" style="margin-top:20px;">
-			<div class="col-sm-12">
-				<div class="jumbotron">
-		      <h1>Simple Channel Example</h1>
-		      <p>Send a message with simple channel</p>
-		      <p><a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">View source from github</a></p>
-		    </div>
-				<div id="alert" class="alert alert-success" role="alert" style="display:none">
-			  </div>
 
-				<div style="display:flex;">
-					<input class="form-control" placeholder="Input message" name="message" id="message" type="text" value=""/>
-					<button type="submit" id="form-button" class="btn btn-primary" style="margin-left:10px;" onclick="send();">Send</button>
-				</div>
-				<span class="help-block">Input message to send. The message will be displayed in under area</span>
-				
-				<div class="row">
-					<div class="col-sm-8">
-						<h2>Received message</h2>
-						<ul id="list" class="list-group">
-							<li id="item" class="list-group-item">There is no message</li>
-						</ul>
-					</div>
-				</div>
+<body>
+<div class="container">
+	
+<div class="row" style="margin-top:20px;">
+	<div class="col-sm-12">
+		<div class="jumbotron">
+			<h1>Simple Channel Example</h1>
+			<p class="lead">Send a message with simple channel</p>
+			<p><a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">View source from github</a></p>
+		</div>
+		<div id="success" class="alert alert-success" role="alert" style="display:none">
+		</div>
+
+		<div style="display:flex;">
+			<input class="form-control" placeholder="Input message" name="message" id="message" type="text" value=""/>
+			<button type="submit" id="form-button" class="btn btn-primary" style="margin-left:10px;" onclick="send();">Send</button>
+		</div>
+		<span class="help-block">Input message to send. The message will be displayed in under area</span>
+		
+		<div class="row">
+			<div class="col-sm-8">
+				<h2>Received message</h2>
+				<ul id="list" class="list-group">
+					<li id="template" class="list-group-item" style="display:none;">There is no message</li>
+				</ul>
 			</div>
 		</div>
 	</div>
+</div>
+
+</div>
 </body>
 </html>

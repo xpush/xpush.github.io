@@ -10,13 +10,13 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 <br />
 
-#### 1. Docker 설치
+## 1. Docker 설치
 
 [Docker Installation](https://docs.docker.com/installation/#installation) 를 참조하여 Docker 를 설치 합니다.
 
 <br />
 
-#### 2. XPUSH Docker 이미지 다운로드
+## 2. XPUSH Docker 이미지 다운로드
 
 [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에는 이미 설정이 완료된 XPUSH 환경이 구성되어 있습니다. 다음과 같이 XPUSH 이미지 파일을 다운로드 받습니다.
 
@@ -26,7 +26,7 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 <br />
 
-#### 3. XPUSH 서버 실행.
+## 3. XPUSH 서버 실행
 
 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
 
@@ -36,7 +36,7 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 <br />
 
-#### 4. Sample JavaScript Source
+## 4. Sample JavaScript Source
 
 Xpush client library를 include합니다.
 
@@ -53,24 +53,30 @@ var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
 </code>
 </pre>
 
-channel 생성 후에 event 발생 시에 호출할 function을 등록합니다.
+channel01 생성 후에 event 발생 시에 호출할 function을 등록합니다.
+`message` event를 처리할 수 있습니다.
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.createSimpleChannel('channel01', function(){
   console.log( 'create simple channel success' );
 
+  // `message` event로 들어오는 data를 받아 화면에 출력합니다.
   xpush.on( 'message', function(channel, name, data){
-    console.log( 'channel01', name, data );
+    console.log( channel, name, data );
   });
 });
 </code>
 </pre>
 
-channel01로 message를 전송합니다.
+channel01로 `message` event를 발생시키면서 Hello World를 전송합니다. 
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>
 </pre>
+
+<br />
+
+## 5. Live Demo
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -82,24 +88,30 @@ channel01로 message를 전송합니다.
 var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
 
 $(document).ready( function(){
-	var preHtml = '<strong>Well done!</strong> ';
+	// channel01 을 생성합니다.
 	xpush.createSimpleChannel('channel01', function(){
-		var html =  preHtml + 'Create simple channel success';
-		$( "#alert" ).html(html);
-		$( "#alert" ).show();
+		// 생성 후에 success 메시지를 보여줍니다.
+		var html =  '<strong>Well done!</strong> Create simple channel success';
+		$( "#success" ).html(html);
+		$( "#success" ).show();
 
+  		// `message` event로 들어오는 data를 받아 화면에 출력합니다.
 		xpush.on( 'message', function(channel, name, data){
 			data = decodeURIComponent( data );
-			$( "#alert" ).html(preHtml + data );
+			$( "#success" ).html( '<strong>Received success</strong> : ' + data );
 
-			var newMessage = $( "#item" ).clone();
-			newMessage.attr( "id", Date.now() );
+			// template을 복사하여 새로운 DOM 객체를 생성합니다..
+			var newMessage = $( "#template" ).clone();
+
+			// 새로 만든 DOM 객체를 수정합니다.
+			newMessage.attr( "id", "template_"+ Date.now() );
 			newMessage.html( data );
 
-			$( "#item" ).hide();
+			// 새로 만든 DOM 객체를 ul DOM에 추가합니다.
 			newMessage.appendTo( "#list" );
 			newMessage.show();
 
+			// 새로 생성한 DOM 객체에 class를 추가합니다.
 			$( ".list-group-item-success" ).each(function(){
 				$(this).removeClass( "list-group-item-success" );
 			});
@@ -119,12 +131,12 @@ var send = function( ){
 <div class="row" style="margin-top:20px;">
 	<div class="col-sm-12">
 		<div class="jumbotron">
-	    <h1>Simple Channel Example</h1>
-	    <p>Send a message with simple channel</p>
-	    <p><a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">View source from github</a></p>
-	  </div>
-		<div id="alert" class="alert alert-success" role="alert" style="display:none">
-	  </div>
+			<h1>Simple Channel Example</h1>
+			<p class="lead">Send a message with simple channel</p>
+			<p><a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">View source from github</a></p>
+		</div>
+		<div id="success" class="alert alert-success" role="alert" style="display:none">
+		</div>
 
 		<div style="display:flex;">
 			<input class="form-control" placeholder="Input message" name="message" id="message" type="text" value=""/>
@@ -136,7 +148,7 @@ var send = function( ){
 			<div class="col-sm-8">
 				<h2>Received message</h2>
 				<ul id="list" class="list-group">
-					<li id="item" class="list-group-item">There is no message</li>
+					<li id="template" class="list-group-item" style="display:none;">There is no message</li>
 				</ul>
 			</div>
 		</div>
@@ -145,6 +157,6 @@ var send = function( ){
 
 full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
 
-<script>
+<script type="text/javascript">
 	prettyPrint();
 </script>
