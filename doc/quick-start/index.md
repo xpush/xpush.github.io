@@ -38,7 +38,7 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 ## 4. Sample JavaScript Source
 
-Xpush client library를 include합니다.
+[Xpush client library](http://xpush.github.io/doc/library/javascript/xpush.js/index.html)를 include합니다.
 
 <pre data-lang="html">
 <code class="prettyprint">&lt;script type="text/javascript" charset="utf-8" src="xpush.min.js"&gt;&lt;/script&gt;
@@ -143,7 +143,7 @@ var send = function( ){
 			<button type="submit" id="form-button" class="btn btn-primary" style="margin-left:10px;" onclick="send();">Send</button>
 		</div>
 		<span class="help-block">Input message to send. The message will be displayed in under area</span>
-		
+
 		<div class="row">
 			<div class="col-sm-8">
 				<h2>Received message</h2>
