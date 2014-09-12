@@ -1,12 +1,12 @@
 ---
 layout: doc
-title: Quick-start guide
+title: XPUSH, Quick-start guide
 date: April 25, 2014
 ---
 
-XPUSH 를 가장 쉽고 빠르게 경험하기 위해서, Docker 기반의 이미지 파일을 사용할 수 있습니다.
+여러분은 Docker 이미지 파일 다운로드 받아 실행하여 XPUSH 를 가장 쉽고 빠르게 경험할 수 있습니다.
 
-XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 를 통해 이미지를 여러분의 서버 또는 PC 에 설치 할 수 있습니다.
+XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에 공유되어 있으며, 이미지를 다운로드 받아서, 여러분의 서버 또는 개인 PC 에 설치하고 실행해 볼 수 있습니다.
 
 <br />
 
@@ -22,13 +22,13 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 	> docker pull stalk/xpush
 
-다운로드 받은 이미지에는, XPUSH 에서 사용하는 MongoDB, Redis 그리고 Zookeeper 가 설치되어 있고, XPUSH Session 서버와 Channel 서버가 실행될 수 있도록 정의 되어 있습니다.
+다운로드 받은 이미지에는, XPUSH 에서 사용하는 MongoDB, Redis 그리고 Zookeeper 가 설치되어 있고, XPUSH Session 서버와 Channel 서버가 실행되도록 되어 있습니다.
 
 <br />
 
 ## 3. XPUSH 서버 실행
 
-다운로드 받은 이미지를 Docker 환경에서 실행합니다.
+이제, 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
 
 	> docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush
 
