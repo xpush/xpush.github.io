@@ -14,7 +14,7 @@
   email: nixenic@gmail.com
   facebook: https://www.facebook.com/notdol
   github: https://github.com/notdol
-  description: server side application development, web application, data modeling, scalalbe application design
+  description: server side application development, web application, data modeling, scalable application design
 
 - name: John Ko
   image: /lib/img/team/johnko.png
@@ -26,8 +26,8 @@
 
 - name: James Jung
   image: /lib/img/team/james.jpg
-  role: DEVELOPER
+  role: BACKEND DEVELOPER
   email: 0nlyoung7@gmail.com
   facebook: https://www.facebook.com/jung.jinyung.9
   github: https://github.com/0nlyoung7
-  description: server side application develop, web application, data modeling, scalable application design, middleware
+  description: server side application, web application, data modeling, scalable application design, middleware, web security, unit test
