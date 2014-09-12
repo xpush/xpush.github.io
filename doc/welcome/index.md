@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Welcome
+title: Documentation about XPUSH
 date: September 8, 2014
 ---
 
