@@ -1,10 +1,12 @@
 ---
 layout: doc
-title: Installation
+title: XPUSH, Installation
 date: April 25, 2014
 ---
 
-XPUSH 설치 방법은, NPM(Node Package Manager) 로 XPUSH 모듈을 설치하는 방법과 Docker 이미지 파일을 다운로드 받아 실행하는 방법으로 2가지가 있습니다.
+XPUSH 설치 방법으로는, 
+NPM(Node Package Manager) 로 XPUSH 모듈을 설치하는 방법과 Docker 이미지 파일을 다운로드 받아 실행하는 방법으로
+2가지가 있습니다.
 
 <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
     <li class="active"><a href="#npm" data-toggle="tab"><b>NPM</b> 으로 설치하기</a></li>
