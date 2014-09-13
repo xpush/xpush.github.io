@@ -4,7 +4,7 @@ title: XPUSH, Quick-start guide
 date: April 25, 2014
 ---
 
-여러분은 Docker 이미지 파일 다운로드 받아 실행하여 XPUSH 를 가장 쉽고 빠르게 경험할 수 있습니다.
+여러분은 Docker 이미지 파일을 다운로드 받아 실행하여 XPUSH 를 가장 쉽고 빠르게 경험할 수 있습니다.
 
 XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에 공유되어 있으며, 이미지를 다운로드 받아서, 여러분의 서버 또는 개인 PC 에 설치하고 실행해 볼 수 있습니다.
 
@@ -68,7 +68,7 @@ channel01 생성 후에 event 발생 시에 호출할 function을 등록합니�
 </code>
 </pre>
 
-channel01로 `message` event를 발생시키면서 Hello World를 전송합니다. 
+channel01로 `message` event를 발생시키면서 Hello World를 전송합니다.
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>

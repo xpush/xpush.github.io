@@ -9,8 +9,8 @@ XPUSH는 nodejs 기반으로 되어 있습니다. 여러분은 [npm](https://www
 
 XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](http://zookeeper.apache.org/), [redis](http://redis.io/), [mongodb](http://www.mongodb.org/)가 필요합니다.
 
-아래는 64bit inux에서 설치하는 방법입니다. 여러분의 환경에 맞게 설치하세요.
-이미 설치되어있으면, xpush를 [바로 설치](#install)하세요.
+아래는 64bit linux에서 설치하는 방법입니다. 여러분의 환경에 맞게 설치하세요.
+이미 설치되어 있으면, xpush를 [바로 설치](#install)하세요.
 
 ### nodejs
 [nodejs installation](http://nodejs.org/download/)를 참조하여 nodejs를 다운로드하고 압축을 해제합니다.
@@ -27,7 +27,7 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 ### zookeeper
 [zookeeper installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html)를 참조하여 zookeeper를 설치하고 실행합니다.
 
-아래는 zookeeper 3.4.6을 설치하고 실행하는 코드입니다. 
+아래는 zookeeper 3.4.6을 설치하고 실행하는 코드입니다.
 
 	cd $HOME/xpush
 	wget http://apache.mirror.cdnetworks.com/zookeeper/stable/zookeeper-3.4.6.tar.gz
@@ -41,7 +41,7 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 ### redis
 [redis installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html)를 참조하여 redis를 설치하고 실행합니다.
 
-아래는 redis 2.8.14을 설치하고 실행하는 코드입니다. 
+아래는 redis 2.8.14을 설치하고 실행하는 코드입니다.
 
 	cd $HOME/xpush
 	wget http://download.redis.io/releases/redis-2.8.14.tar.gz
@@ -54,7 +54,7 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 ### mongodb
 [mongodb installation](http://docs.mongodb.org/manual/installation/)를 참조하여 mongodb를 설치하고 실행합니다.
 
-아래는 redis 2.6.4을 설치하고 실행하는 코드입니다. 
+아래는 redis 2.6.4을 설치하고 실행하는 코드입니다.
 
 	cd $HOME/xpush
 	wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.4.tgz
@@ -80,6 +80,8 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 
 	npm install xpush
 
+>**Note**:node-gyp rebuild 에러가 발생하는 경우는 node-gyp 버전이 0.10.10인데 node.js 버전이 0.8.xx 일때, 버젼차이 때문에 gyp가 패키지 리빌드를 못합니다. 이런 경우에는 $HOME/.node-gyp 폴더를 지우고 npm을 이용해 node-gyp를 새로 설치하면 됩니다.
+
 ### Install from github
 
 latest development version을 설치하기 위해서는 [git](https://github.com/xpush/node-xpush)을 이용해서 직접 설치하세요.
@@ -97,11 +99,10 @@ latest development version을 설치하기 위해서는 [git](https://github.com
 
 세션 서버를 실행하세요.
 
-	cd $HOME/xpush/node_modules/xpush 
+	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 8000 --config ./config.sample.json --session
 
 채널 서버를 실행하세요.
 
 	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 8080 --config ./config.sample.json
-	
