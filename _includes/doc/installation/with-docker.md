@@ -22,12 +22,12 @@ AUFS Filesystem support를 위한 package를 설치합니다. (이미 설치되�
 	sudo apt-get update
 	sudo apt-get install linux-image-extra-`uname -r`
 
-Debian package로 Docker설치하기 위한 Docker repository key를 등록합니다.
+Debian package로 Docker를설치하기 위한 Docker repository key를 등록합니다.
 
 	sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
 
 Docker repository를 등록하고, Docker를 설치합니다.
-	
+
 	sudo sh -c "echo deb http://get.docker.io/ubuntu docker main/etc/apt/sources.list.d/docker.list"
 	sudo apt-get update
 	sudo apt-get install lxc-docker
@@ -45,7 +45,7 @@ Docker repository를 등록하고, Docker를 설치합니다.
 <br />
 
 ## 3. Run xpush
-	
+
 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
 
 	docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush

@@ -3,6 +3,10 @@ layout: doc
 title: Configuration
 date: September 9, 2014
 ---
+
+세션서버를 아래와 같이 실행 했듯이
+	bin/xpush --port 8000 --config ./config.sample.json --session
+
 XPUSH 를 실행하기 위해 설정파일은 json형태로 되어 있습니다. 설정에 대해 자세히 알아봅니다.
 
 	{
@@ -46,6 +50,7 @@ xpush가 사용할 mongodb의 주소를 설정합니다.
 XPUSH를 통해 서비스할 Application에 대한 정보를 설정합니다.
 
 <a name="oauth_config"></a>
+
 ### oauth
 
 oauth provider를 설정을 추가합니다. XPUSH는 oauth provider에 등록된 Application 정보를 이용하여 LOGIN 처리 후 event를 발생시킬 수 있습니다.
@@ -105,7 +110,7 @@ XPUSH 서버가 사용할 application정보와 GCM or APN key를 등록합니다
 	  {
 	    "id" : "applicationId Here",
 	    "name": "application Name Here",
-	    
+
 	    "notification": {
 	      "gcm": {
 		"apiKey": "Google API KEY for GCM Here"
@@ -154,5 +159,3 @@ XPUSH server 실행될 때 사용할 hostname. 해당 URL은 oauth에 사용할 
 [oauth 설정](#oauth_config) 참고
 
 	--host http://www.sample.net
-
-
