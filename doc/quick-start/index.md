@@ -34,6 +34,10 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 8000 포트는 Session 서버가 사용하는 포트번호이고, 9000 포트는 Channel 서버가 사용하는 포트번호 입니다.
 
+docker로 실행한 XPUSH서버에 접근하기 위해서는 다음의 명령어를 통해 IP를 획득합니다.
+
+	> boot2docker ip
+
 <br />
 
 ## 4. Sample JavaScript Source
