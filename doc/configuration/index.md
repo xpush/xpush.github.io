@@ -5,6 +5,7 @@ date: September 9, 2014
 ---
 
 세션서버를 아래와 같이 실행 했듯이
+
 	bin/xpush --port 8000 --config ./config.sample.json --session
 
 XPUSH 를 실행하기 위해 설정파일은 json형태로 되어 있습니다. 설정에 대해 자세히 알아봅니다.
