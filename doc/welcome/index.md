@@ -4,24 +4,25 @@ title: Documentation about XPUSH
 date: September 8, 2014
 ---
 
-XPUSH 설치부터 실행 및 API 사용방법에 대한 문서입니다.
+XPUSH 설치부터 실행 및 API 사용방법에 대한 문서를 제공합니다.
 
-이 문서를 통해서 여러분의 서버환경에 XPUSH 플랫폼을 설치하고, XPUSH를 활용한 다양한 어플리케이션을 개발해보세요.
+이 문서를 통해서 여러분의 로컬 및 서버환경에 XPUSH 플랫폼을 설치하고, XPUSH를 활용한 다양한 어플리케이션 개발을 시작해 보세요.
 
 - - -
 
 ### GETTING STARTED
 XPUSH 를 설치하는 방법과 설정파일 작성 방법을 설명합니다.
 
-#### > [Quick-start guide](/doc/quick-start)
-XPUSH 를 가장 빨리 설치해 보고 경험해 볼 수 있는 방법에 대한 문서입니다.
+#### > [Quick-start guide](/doc/quick-start) <span class="badge badge-theme">recommended</span>
+여러분이 가장 빨리 XPUSH 를 경험하기 위해서, XPUSH 를 설치하고 예제를 통해 직접 간단한 어플레키에션을 만들어 볼 수 있습니다.
 
 docker container 로 구성되어 있는 이미지 파일을 직접 설치하고 예제 어플리케이션을 실행해 보세요.
 
 #### > [Installation](/doc/installation)
-XPUSH 실행 환경을 구성하기 위해 MongoDB, zookeeper, redis 를 설치해야 합니다.
+XPUSH 는 데이터 저장/관리, 실시간 세션 관리 그리고 분산 환경 구성을 위하여 MongoDB, Redis, Zookeeper를 사용하고 있습니다.
+XPUSH 를 설치하기 전에, 먼저 이런 오픈소스 서버를 설치하는 방법 부터 설명합니다.
 
-그리고, npm(node package manager)로 XPUSH를 설치하는 방법에 대해 설명합니다.
+그리고, npm(node package manager)과 docker 이미지로 XPUSH를 설치하는 방법에 대해 자세히 설명합니다.
 
 #### > [Configuration](/doc/configuration)
 XPUSH 를 실행하기 위해 설정파일을 작성하는 방법과 설정 파라미터에 대해 알아봅니다.

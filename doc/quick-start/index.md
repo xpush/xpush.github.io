@@ -4,7 +4,7 @@ title: XPUSH, Quick-start guide
 date: April 25, 2014
 ---
 
-여러분은 Docker 이미지 파일을 다운로드 받아 실행하여 XPUSH 를 가장 쉽고 빠르게 경험할 수 있습니다.
+여러분은 Docker 이미지 파일을 다운로드 받아 실행하여 XPUSH 를 설치 및 실행할 수 있으며 이를 통해 XPUSH 를 가장 쉽고 빠르게 경험해 볼 수 있습니다.
 
 XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에 공유되어 있으며, 이미지를 다운로드 받아서, 여러분의 서버 또는 개인 PC 에 설치하고 실행해 볼 수 있습니다.
 
@@ -18,7 +18,8 @@ XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u
 
 ## 2. XPUSH Docker 이미지 다운로드
 
-[docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에는 이미 설정이 완료된 XPUSH 환경이 구성되어 있습니다. 다음과 같이 XPUSH 이미지 파일을 다운로드 받습니다.
+[docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에서 제공하는 XPUSH Docker 이미지에는 이미 설정이 완료된 XPUSH 환경이 구성되어 있습니다.
+다음과 같이 XPUSH 이미지 파일을 다운로드 받습니다.
 
 	> docker pull stalk/xpush
 
@@ -42,23 +43,27 @@ docker로 실행한 XPUSH서버에 접근하기 위해서는 다음의 명령어
 
 ## 4. Sample JavaScript Source
 
-[Xpush client library](http://xpush.github.io/doc/library/javascript/xpush.js/index.html)를 include합니다.
+[XPUSH client library](http://xpush.github.io/doc/library/javascript/xpush.js/index.html) 를 include합니다.
 
 <pre data-lang="html">
 <code class="prettyprint">&lt;script type="text/javascript" charset="utf-8" src="xpush.min.js"&gt;&lt;/script&gt;
 </code>
 </pre>
 
-Xpush를 생성합니다.
+XPUSH 인스턴스를 생성합니다.
 
 <pre data-lang="js">
 <code class="prettyprint">// parameter : server to connect, applicationId
-var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+var xpush = new XPush('http://127.0.0.1:8000', 'sample');
 </code>
 </pre>
 
-channel01 생성 후에 event 발생 시에 호출할 function을 등록합니다.
-`message` event를 처리할 수 있습니다.
+XPUSH 인스턴스 생성시,
+첫번째 인자로는 위에서 실행한 XPUSH의 Session 서버 주소 입니다.
+코드에서 사용하는 XPUSH 서버 주소는 Session 서버 뿐입니다.
+그러면 XPUSH 라이브러리가 내부에서 Channel 서버를 찾아 자동 연결시켜 주게 됩니다.
+
+이제, 메시지 수신을 위한 채널을 생성하도록 합니다.
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.createSimpleChannel('channel01', function(){
@@ -72,7 +77,12 @@ channel01 생성 후에 event 발생 시에 호출할 function을 등록합니�
 </code>
 </pre>
 
-channel01로 `message` event를 발생시키면서 Hello World를 전송합니다.
+`channel01` 이라는 이름으로 채널을 생성합니다.
+채널은 메시지를 송수신할 주소로 사용 되며, 체팅 프로그램에서의 체팅방이라고 생각할 수 있습니다.  생성 후에 event 발생 시에 호출할 function을 등록합니다.
+
+생성한 채널에 `message` 라는 이름의 이벤트가 발생하면 로그가 남기도록 개발합니다.
+
+이제, `channel01` 채널로 `message` 이벤트로 Hello World 문자열을 전송합니다. 문자열 뿐 아니라, JSON 타입도 가능합니다.
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>
@@ -88,7 +98,7 @@ channel01로 `message` event를 발생시키면서 Hello World를 전송합니�
 <script src="http://xpush.github.io/lib/dist/xpush.js"></script>
 
 <script type="text/javascript">
-// Create new xpush
+// Create new xpush instance
 var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
 
 $(document).ready( function(){
@@ -158,6 +168,8 @@ var send = function( ){
 		</div>
 	</div>
 </div>
+
+http://stalk-front-s01.cloudapp.net:8000
 
 full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
 
