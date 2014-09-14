@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "XPUSH 웹사이트 오픈"
-date:   2014-09-06 12:03:54
+date:   2014-09-14 12:03:54
 categories: announcement
 tags: xpush
 ---
@@ -17,6 +17,12 @@ tags: xpush
 
 계속해서 문서 작업 중이므로, 부족한 부분 있으시면 [Issue] 등록 부탁 드립니다.
 여러분들의 많은 관심과 feedback 부탁드립니다.
+
+<div class="row centered">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/3MJfQXo_R9s?rel=0" allowfullscreen></iframe>
+  </div>
+</div>
 
 - - -
 
