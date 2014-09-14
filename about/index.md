@@ -4,6 +4,14 @@ description: "Opensource Project - Realtime Web Communication Platform"
 layout: about
 ---
 
+<div class="row centered">
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/hBNYpZf2VHc?rel=0" allowfullscreen></iframe>
+  </div>
+</div>
+
+- - -
+
 <img src="/about/resource/rwcp.png" width="45%" align="right">
 
 웹에서 실시간 데이터 통신을 구현하기 위해서는 HTML5 Websocket 으로 구현하거나, node.js 의 socket.io 를 활용하여 구현하는 등 다양한 방법이 있습니다.
