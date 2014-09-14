@@ -82,16 +82,24 @@ XPUSH 인스턴스 생성시,
 
 생성한 채널에 `message` 라는 이름의 이벤트가 발생하면 로그가 남기도록 개발합니다.
 
-이제, `channel01` 채널로 `message` 이벤트로 Hello World 문자열을 전송합니다. 문자열 뿐 아니라, JSON 타입도 가능합니다.
+이제, `channel01` 채널로 `message` 이벤트로 'Hello World' 문자열을 전송합니다. 문자열 뿐 아니라, JSON 타입도 가능합니다.
 
 <pre data-lang="js">
-<code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello world' );</code>
+<code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello World' );</code>
 </pre>
 
 <br />
 
 ## 5. Live Demo
 
+위와 같은 방법으로 간단한 채팅을 구현해봅니다.
+
+full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
+
+아래 데모에서 사용한 XPUSH 서버는 XPUSH 개발팀에서 제공하는 임시 테스트용 서버이므로, 일시적으로 동작하지 않거나 성능을 보장할 수 없습니다. 그러므로 여러분이 직접 설치하신 XPUSH 를 사용하시기 바랍니다.
+
+#### 데모 전체 소스
+{% highlight html %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <!-- xpush -->
@@ -168,10 +176,90 @@ var send = function( ){
 		</div>
 	</div>
 </div>
+{% endhighlight %}
 
-http://stalk-front-s01.cloudapp.net:8000
 
-full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- xpush -->
+<script src="http://xpush.github.io/lib/dist/xpush.js"></script>
+
+<script type="text/javascript">
+// Create new xpush instance
+var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+
+$(document).ready( function(){
+	// channel01 을 생성합니다.
+	xpush.createSimpleChannel('channel01', function(){
+		// 생성 후에 success 메시지를 보여줍니다.
+		var html =  '<strong>Well done!</strong> Create simple channel success';
+		$( "#success" ).html(html);
+		$( "#success" ).show();
+
+			// `message` event로 들어오는 data를 받아 화면에 출력합니다.
+		xpush.on( 'message', function(channel, name, data){
+			data = decodeURIComponent( data );
+			$( "#success" ).html( '<strong>Received success</strong> : ' + data );
+
+			// template을 복사하여 새로운 DOM 객체를 생성합니다..
+			var newMessage = $( "#template" ).clone();
+
+			// 새로 만든 DOM 객체를 수정합니다.
+			newMessage.attr( "id", "template_"+ Date.now() );
+			newMessage.html( data );
+
+			// 새로 만든 DOM 객체를 ul DOM에 추가합니다.
+			newMessage.appendTo( "#list" );
+			newMessage.show();
+
+			// 새로 생성한 DOM 객체에 class를 추가합니다.
+			$( ".list-group-item-success" ).each(function(){
+				$(this).removeClass( "list-group-item-success" );
+			});
+			newMessage.addClass( "list-group-item-success" );
+		});
+	});
+});
+
+var send = function( ){
+	var msg = $( "#message" ).val();
+	xpush.send( 'channel01', 'message', encodeURIComponent( msg ) );
+	$( "#message" ).val('');
+};
+
+</script>
+
+<br />
+
+#### 실행 결과
+
+<div class="row" style="margin-top:20px;">
+	<div class="col-sm-12">
+		<div class="jumbotron">
+			<h1>Simple Channel Example</h1>
+			<p class="lead">Send a message with simple channel</p>
+			<p><a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">View source from github</a></p>
+		</div>
+		<div id="success" class="alert alert-success" role="alert" style="display:none">
+		</div>
+
+		<div style="display:flex;">
+			<input class="form-control" placeholder="Input message" name="message" id="message" type="text" value=""/>
+			<button type="submit" id="form-button" class="btn btn-primary" style="margin-left:10px;" onclick="send();">Send</button>
+		</div>
+		<span class="help-block">Input message to send. The message will be displayed in under area</span>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<h2>Received message</h2>
+				<ul id="list" class="list-group">
+					<li id="template" class="list-group-item" style="display:none;">There is no message</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 <script type="text/javascript">
 	prettyPrint();
