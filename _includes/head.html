@@ -5,6 +5,7 @@
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="">
   {% if page.og %}
+  {% if page.og.type %}<meta property="og:type" content="{{ page.og.type }}" />{% endif %}
   {% if page.og.title %}<meta property="og:title" content="{{ page.og.title }}" />{% endif %}
   {% if page.og.description %}<meta property="og:description" content="{{ page.og.description }}" />{% endif %}
   {% if page.og.image %}<meta property="og:image" content="{{ page.og.image }}" />{% endif %}

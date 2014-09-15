@@ -5,7 +5,8 @@ date:   2014-09-14 12:03:54
 categories: announcement
 tags: xpush
 og:
-  image: http://ia.media-imdb.com/images/M/MV5BMTUzMjkzNDY0MF5BMl5BanBnXkFtZTcwNDQyMzA1MQ@@._V1_SY317_CR5,0,214,317_AL_.jpg
+  type: article
+  image: http://ecx.images-amazon.com/images/I/51zCpSmtDoL._SX940_.jpg
   description: Jekyll 기반으로 XPUSH 홈페이지를 오픈했습니다. github pages 를 통해 Jekyll 을 사용한 소스도 확인해 보세요.
 ---
 
