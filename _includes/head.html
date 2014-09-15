@@ -4,6 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="">
+  {% if page.og %}
+  {% if page.og.title %}<meta property="og:title" content="{{ page.og.title }}" />{% endif %}
+  {% if page.og.description %}<meta property="og:description" content="{{ page.og.description }}" />{% endif %}
+  {% if page.og.image %}<meta property="og:image" content="{{ page.og.image }}" />{% endif %}
+  {% endif %}
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
