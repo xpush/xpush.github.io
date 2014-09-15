@@ -5,7 +5,7 @@ layout: about
 ---
 
 <div class="row centered">
-  <div class="embed-responsive embed-responsive-16by9">
+  <div class="embed-responsive embed-responsive-4by3">
     <iframe class="embed-responsive-item" src="//www.youtube.com/embed/3MJfQXo_R9s?rel=0" allowfullscreen></iframe>
   </div>
 </div>
