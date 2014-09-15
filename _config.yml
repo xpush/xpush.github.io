@@ -9,7 +9,7 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: none
 
 paginate: 3
 paginate_path: "blog/page:num"
