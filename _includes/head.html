@@ -33,8 +33,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script src="{{ "/lib/assets/js/modernizr.js" | prepend: site.baseurl }}"></script>
+  {% if page.css %}
+  <link rel="stylesheet" href="{{ page.css | prepend: site.baseurl }}">
+  {% endif %}
 
+
+  <script src="{{ "/lib/assets/js/modernizr.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/lib/assets/js/prettify.js" | prepend: site.baseurl }}"></script>
 
 </head>
