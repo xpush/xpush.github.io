@@ -50,9 +50,10 @@ layout: default
       <div class="spacing"></div>
       <h4>Project Details</h4>
       <div class="hline"></div>
-      <p><b>Author:</b> {{ service.author }}</p>
-      <p><b>Supported:</b> {{ service.support }}</p>
-      {% if service.url %}<p><b>Website:</b> <a href="{{ service.url }}">{{ service.url }}</a></p>{% endif %}
+      <p><b>Author : </b> {{ service.author }}</p>
+      <p><b>Supported : </b> {{ service.support }}</p>
+      {% if service.url %}<p><b>Website : </b> <a href="{{ service.url }}">{{ service.url }}</a></p>{% endif %}
+      {% if service.source %}<p><b>Source : </b> <a href="{{ service.source }}">{{ service.source }}</a></p>{% endif %}
     </div>
 
   </div><! --/row -->
