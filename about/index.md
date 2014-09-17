@@ -39,7 +39,7 @@ layout: about
 
 ### 2. Works Everywhere
 
-" *At the core of XPUSH is the HTML5 WebSocket protocol, but we also have fallback mechanisms so that Pusher just works anywhere, anytime.* "
+" *At the core of XPUSH is the HTML5 WebSocket protocol, but we also have fallback mechanisms so that XPUSH just works anywhere, anytime.* "
 
 **XPUSH** 는 저비용 고성능의 비동기 이벤트 루핑 서버를 구현하기 위하여 node.js 로 개발되었습니다. 그리고, 웹기반의 실시간 메시지 통신을 위하여 Node.js 모듈인 socket.io 의 최신 버젼을 사용합니다.
 
