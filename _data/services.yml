@@ -26,8 +26,8 @@
     - path: /service/resource/stalk.io.chrome.002.png
 
   description: stalk.io chrome extension은 설치 후 버튼 한번 클릭으로 현재 접속중인 페이지에 동시에 접속하고 있는 사람과 채팅이 가능한 웹기반 대화 서비스입니다. <b>STALK.IO</b> 와 동일한 채팅 위젯이지만 어떤 웹페이지던 내가 원할 때 채팅을 할 수 있다는 점이 기존의 STALK.IO와는 또다른 매력입니다.
-  url: https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko
-  source: https://github.com/xpush/messengerX
+  url: http://goo.gl/jnjVw8
+  source: https://github.com/xpush/chrome.stalk.io
   support: Any Web Browsers
   author: xpush team
 
