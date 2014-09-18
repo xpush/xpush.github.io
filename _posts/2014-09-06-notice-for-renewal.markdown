@@ -13,8 +13,8 @@ og:
 안녕하십니까. **XPUSH** 개발팀입니다.
 
 본 웹사이트는 [Github Pages] 를 통해 제공되고 있으며, [Jekyll] 를 기반으로 개발되었습니다.
-모든 블로그 게시물은 [Markdown] 으로 작성되어 Jekyll 을 통해 HTML 로 자동 변환되어 서비스 하고 있습니다.
-직접 공개되어 있는 홈페이지 [소스](https://github.com/xpush/xpush.github.io) 를 참조하실 수 있습니다.
+모든 블로그 게시물은 [Markdown] 으로 작성하고, Jekyll 이 HTML 로 자동 변환하여 서비스 하고 있습니다.
+홈페이지 모든 소스도 [여기](https://github.com/xpush/xpush.github.io) 에 공유 되어 있습니다.
 
 Jekyll 로 개발한 소스를 Github repository 에 올리면, Github Pages 자동으로 빌드하여 페이지를 생성해 줍니다.
 하지만, Jekyll 에서 유용하게 사용할 수 있는 Ruby 로 구현한 Plugin 은 대부분 사용할 수 없습니다.
@@ -22,9 +22,7 @@ Jekyll 로 개발한 소스를 Github repository 에 올리면, Github Pages 자
 
 **XPUSH** 웹사이트에서는 **XPUSH** 플랫폼 소개와 설치 및 사용 방법에 대한 다양한 문서를 제공하고 있습니다.
 
-모든 소스는 [XPUSH Github Project] 에 공개되어 있으며, 누구라도 참조하고 사용 가능합니다.
-
-
+프로젝트의 모든 소스는 [XPUSH Github Project] 에 공개되어 있으며, 누구라도 참조하고 사용 가능합니다.
 
 계속해서 문서 작업 중이므로, 부족한 부분 있으시면 [Issue] 등록 부탁 드립니다.
 여러분들의 많은 관심과 feedback 부탁드립니다.
