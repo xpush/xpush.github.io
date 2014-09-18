@@ -69,6 +69,15 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 
 	bin/mongod --dbpath db --smallfiles
 
+### imageMagick
+
+[image](http://www.imagemagick.org/script/binary-releases.php)를 참조하여 imageMagicK를 설치하고 실행합니다.
+
+아래는 imageMagicK를 설치하고 실행하는 코드 입니다.
+
+	wget http://www.imagemagick.org/download/linux/CentOS/x86_64/ImageMagick-6.8.9-7.x86_64.rpm
+	rpm -Uvh ImageMagick-6.8.9-7.x86_64.rpm
+
 <a name="install"></a>
 <br />
 
@@ -78,7 +87,7 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 
 ### Install with npm
 
-	npm install xpush
+	npm install -g xpush
 
 >**Note**:node-gyp rebuild 에러가 발생하는 경우는 node-gyp 버전이 0.10.10인데 node.js 버전이 0.8.xx 일때, 버젼차이 때문에 gyp가 패키지 리빌드를 못합니다. 이런 경우에는 $HOME/.node-gyp 폴더를 지우고 npm을 이용해 node-gyp를 새로 설치하면 됩니다.
 
