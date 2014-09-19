@@ -36,7 +36,6 @@
   images:
     - path: /service/resource/link.stalk.io.001.png
     - path: /service/resource/link.stalk.io.002.png
-    - path: /service/resource/link.stalk.io.003.png
   description: 여러분들의 홈페이지에 접속하는 고객과 1:1 대화 상담할 수 있는 서비스 입니다. 이 서비스를 통해 여러분의 홈페이지 안에서 고객과 적극적인 실시간 온라인 상담이 가능합니다. 현재 새로운 버젼을 준비 중입니다. 빠른 시일에 완료하여 새로운 서비스로 다시 나타나겠습니다.
   url: http://xpush.github.io/service/link.stalk.io
   support: Any Web Browsers
