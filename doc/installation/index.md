@@ -2,7 +2,7 @@
 layout: doc
 title: XPUSH, Installation
 date: April 25, 2014
-javascript: /doc/install/resource/installation.js
+javascript: /doc/installation/resource/installation.js
 ---
 
 XPUSH 설치 방법으로는,
