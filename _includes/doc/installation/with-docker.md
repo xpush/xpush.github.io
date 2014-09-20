@@ -48,13 +48,13 @@ stalk/xpush:standalone image에는 Docker를 설치하면, XPUSH에 필요한 �
 
 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
 
-	docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush:standalone
+	docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush:standalone /bin/bash xpush-stand-alone.sh --host sample.stalk.io
 
 >**Note**:docker 실행시 permission 에러가 발생할 경우, sudo 를 이용하여 docker를 실행하세요.
 
 ## 4. Run xpush separately
 
-stalk/xpush:latest image에는 xpush를 사용하는데 필요한 기능만 포함되어 있습니다. 여러분만의 redis, zookeeper, mongodb와 연동하여 XPUSH를  사용할 수 있습니다.
+stalk/xpush:latest image에는 xpush를 사용하는데 필요한 기능만 포함되어 있습니다. 여러분의 redis, zookeeper, mongodb와 연동하여 XPUSH를  사용할 수 있습니다.
 
 #### Run session server
 
@@ -64,7 +64,7 @@ stalk/xpush:latest image에는 xpush를 사용하는데 필요한 기능만 포�
 
 xpush 실행파일을 사용해서 session 서버를 시작합니다. 실행에 필요한 option을 원하는대로 설정할 수 있습니다. [See more](http://xpush.github.io/doc/configuration/#run_config)
 
-	docker run -i -t -p 8080:8080 -v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/session01.json --session --port 8080 --host http://sample.stalk.io
+	docker run -i -t -p 8080:8080 -v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/session01.json --session --port 8080 --host sample.stalk.io
 
 >**Note**: shell script는 아래와 같은 option을 사용하도록 설정되어 있습니다.
 
@@ -82,4 +82,4 @@ xpush 실행파일을 사용해서 session 서버를 시작합니다. 실행에 
 
 xpush 실행파일을 사용해서 session 서버를 시작합니다. 실행에 필요한 option을 원하는대로 설정할 수 있습니다. [See more](http://xpush.github.io/doc/configuration/#run_config)
 
-	docker run -i -t -p 9090:9090 -v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/channel01.json --port 9090 --host http://sample.stalk.io
+	docker run -i -t -p 9090:9090 -v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/channel01.json --port 9090 --host sample.stalk.io
