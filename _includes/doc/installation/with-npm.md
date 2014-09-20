@@ -74,9 +74,23 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 [image](http://www.imagemagick.org/script/binary-releases.php)를 참조하여 imageMagicK를 설치하고 실행합니다.
 
 아래는 imageMagicK를 설치하고 실행하는 코드 입니다.
+	
+CentOS
 
-	wget http://www.imagemagick.org/download/linux/CentOS/x86_64/ImageMagick-6.8.9-7.x86_64.rpm
-	rpm -Uvh ImageMagick-6.8.9-7.x86_64.rpm
+	yum -y install ImageMagick-c++ ImageMagick-c++-devel
+
+ubuntu
+
+	apt-get install imagemagick
+
+Install from Source
+
+	wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+	tar xvzf ImageMagick.tar.gz
+	cd ImageMagick-6.8.9
+	./configure && make && sudo make install
+	sudo ldconfig /usr/local/lib
+	sudo ln -s /usr/local/bin/convert /usr/bin/convert
 
 <a name="install"></a>
 <br />
@@ -106,12 +120,12 @@ latest development version을 설치하기 위해서는 [git](https://github.com
 
 ## 3. Run xpush
 
-세션 서버를 실행하세요.
+세션 서버를 실행하세요. 자세한 옵션은 [여기](http://xpush.github.io/doc/configuration/#run_config)를 확인하세요.
 
 	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 8000 --config ./config.sample.json --session
 
-채널 서버를 실행하세요.
+채널 서버를 실행하세요. 자세한 옵션은 [여기](http://xpush.github.io/doc/configuration/#run_config)를 확인하세요.
 
 	cd $HOME/xpush/node_modules/xpush
-	bin/xpush --port 8080 --config ./config.sample.json
+	bin/xpush --port 9000 --config ./config.sample.json

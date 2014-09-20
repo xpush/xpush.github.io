@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: XPUSH, Installation
+title: XPUSH, Installation & Run
 date: April 25, 2014
 javascript: /doc/installation/resource/installation.js
 ---

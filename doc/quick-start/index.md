@@ -107,7 +107,7 @@ full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/examp
 
 <script type="text/javascript">
 // Create new xpush instance
-var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+var xpush = new XPush('http://demo.stalk.io:8000', 'demo');
 
 $(document).ready( function(){
 	// channel01 을 생성합니다.
@@ -187,7 +187,7 @@ var send = function( ){
 
 <script type="text/javascript">
 // Create new xpush instance
-var xpush = new XPush('http://stalk-front-s01.cloudapp.net:8000', 'sample');
+var xpush = new XPush('http://demo.stalk.io:8000', 'demo');
 
 $(document).ready( function(){
 	// channel01 을 생성합니다.
