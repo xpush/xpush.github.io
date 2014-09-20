@@ -18,11 +18,11 @@
 
 - name: John Ko
   image: /lib/img/team/johnko.png
-  role: DEVELOPER
+  role: MULTI ENTERTAINER
   email: eunsan.ko@gmail.com
   facebook: https://www.facebook.com/john.ko.54
   github: https://github.com/EunsanKo
-  description: sue-hyun's father, server side application development, web application, data modeling, scalable application design, handsome guy.
+  description: 부자가 될거야야
 
 - name: James Jung
   image: /lib/img/team/james.jpg
