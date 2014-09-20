@@ -8,7 +8,7 @@ date: April 25, 2014
 
 간단한 파일업로드 기능을 구현해 보겠습니다.
 
-full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/fileupload.html)에서 확인할 수 있습니다.
+full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/upload.html)에서 확인할 수 있습니다.
 
 아래 데모에서 사용한 XPUSH 서버는 XPUSH 개발팀에서 제공하는 임시 테스트용 서버이므로, 일시적으로 동작하지 않거나 성능을 보장할 수 없습니다. 그러므로 여러분이 직접 설치하신 XPUSH 를 사용하시기 바랍니다.
 
