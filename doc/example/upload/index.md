@@ -176,7 +176,7 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
           &lt;div id="progress_bar" class="progress-bar" style="width: 0%;"&gt;&lt;/div&gt;
         &lt;/div&gt;
 
-        &lt;h2&gt;Uploaded images&lt;/h2&gt;
+        &lt;h2&gt;Uploaded images : click image to enlarge&lt;/h2&gt;
         &lt;div style="display:flex;" id="list"&gt;
         &lt;/div&gt;
         &lt;img id="template" class="img-thumbnail" style="display:none"&gt;
@@ -324,7 +324,7 @@ var upload = function(){
           <div id="progress_bar" class="progress-bar" style="width: 0%;"></div>
         </div>
 
-        <h2>Uploaded images</h2>
+        <h2>Uploaded images : click image to enlarge</h2>
         <div style="display:flex;" id="list">
         </div>
         <img id="template" class="img-thumbnail" style="display:none">
