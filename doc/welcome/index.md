@@ -56,3 +56,10 @@ Javascript 라이브러리는 여러분의 웹서비스에서 실시간 메시�
 
 #### > [JAVA library](/doc/library/java)
 JAVA 라이브러리는 일반적인 JAVA 어플리케이션 뿐 아니라, Android 어플리케이션 개발을 지원하는 라이브러리 입니다.
+
+- - -
+
+### EXAMPLES
+[Quick-start guide](/doc/quick-start) 이외의 좀더 상세한 예제를 모아 가이드를 작성하고 있습니다.
+
+
