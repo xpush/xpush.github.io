@@ -5,26 +5,37 @@ date: April 25, 2014
 ---
 # XPush Java Client
 
-XPush client library for Java targeting **Android** and general Java.
+XPush service를 이용하기 위한 자바 및 안드로이드 라이브러리 입니다. 
+
+XPush와 관련된 자세한 사항 및 아키텍쳐는 다음 페이지에 접속하면 확인할 수 있습니다. 
+visit **https://xpush.github.com**
 
 ## Installation
 
-The compiled library is available in one ways:
+현재는 git 에서 소스를 다운받아 컴파일 하여 사용할 수 있습니다.
 visit https://github.com/xpush/lib-xpush-java
 
- * ready for maven repository *
+ * 추후에는 maven repository 에서도 사용 가능합니다. *
 
 ### Source
 
-You can build the project from the source in this repository. See **https://github.com/xpush/lib-xpush-java** for more information on build environment.
+git 으로 부터 소스를 다운 받아 빌드할 수 있습니다.
+**https://github.com/xpush/lib-xpush-java**
 
 ## API Overview
+
+라이브러리를 사용하기 위해서는 XPush Session 서버 및 Channel 서버를 준비하고 Session서버에 접속 할 수 있어야 합니다. ApplicationId는 당신이 시스템을 구분하기 위한 역할을 할 뿐입니다. 동일한 ApplicationId내에서는 사용자 관리 및 채널등의 데이터가 구분됩니다.
 
 {% highlight java %}
 // XPush 를 사용하기 위한 메인 클래스를 생성한다. 
 // XPush session 주소 (XPUSH_SERVER_HOST)
 // XPush 에서 사용할 유니크한 Application Id 를 넣어서 생성한다.
 XPush xpush = new XPush( XPUSH_SERVER_HOST, APPLICATION_ID);
+
+// 사용자 생성을 위해서는 아이디,패스워드,장치아이디,알림아이디가 필요합니다. 
+// 안드로이드와 같은 gcm 을 사용하는 곳에서는 NOTIFICATION_ID를 넣으면 안드로이드 장치로 GCM을 보내줍니다. WEB 혹은 SERVER 같이 NOTIFICATION_ID가 필요 없는 곳에서는 사용하지 않습니다.
+// 장비 아이디는 보통 모바일 기기의 아이디로 구분되어 지며 WEB 혹은 SERVER는 개발자 임의로 지정해도 상관없습니다.
+xpush.signup( USER_ID, PASSWORD, DEVICE_ID, NOTIFICAITON_ID-options );
 
 // 사용자는 여러개의 디바이스를 소유할 수 있다. 로그인을 위한 현재의 장치명도 함께 입력한다.
 xpush.login( USER_ID, PASSWORD, DEVICE_ID);
@@ -123,7 +134,13 @@ NOT YET.
 
 ## LEAVE Channel
 
-NOT YET.
+{% highlight java %}
+xpush.exitChannel( CHANNEL_NAME , new Emitter.Listener() {
+    public void call(Object... args) {
+        String err = (String) args[0];
+    }
+});
+{% endhighlight %}
 
 ## Get All User List in Application
 
