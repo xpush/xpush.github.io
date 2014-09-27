@@ -130,7 +130,13 @@ Channel ch = xpush.getChannel( CHANNEL_NAME );
 
 ## Join Channel
 
-NOT YET.
+{% highlight java %}
+xpush2.joinChannel(CHANNEL_NAME , USER_ID, new Emitter.Listener() {
+    public void call(Object... args) {
+        String err = (String) args[0];
+    }
+});
+{% endhighlight %}
 
 ## LEAVE Channel
 
