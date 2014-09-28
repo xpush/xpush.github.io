@@ -39,9 +39,9 @@
 			columnNumber = 1;
 
 			if (winWidth > 950) {
-				columnNumber = 4;
-			} else if (winWidth > 600) {
 				columnNumber = 3;
+			//} else if (winWidth > 600) {
+			//	columnNumber = 3;
 			} else if (winWidth > 400) {
 				columnNumber = 2;
 			} else if (winWidth > 250) {
