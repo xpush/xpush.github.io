@@ -74,15 +74,25 @@ Session 서버는 사용자 접속을 위한 인증과 사용자 관리 및 부�
 
 ### Project Source Repository
 
-- **[github.com/xpush](http://github.com/xpush)**
-    * **node-xpush** : XPUSH 서버 플랫폼 소스
-    * **node-xpush-client** : XPUSH 서버 Node.js Client 모듈 소스
-    * **lib-xpush-web** : XPUSH API Javascript 라이브러리 소스
-    * **lib-xpush-java** : XPUSH API JAVA 라이브러리 소스
-    * **dockerfile** : XPUSH 서버 플랫폼 Docker 설치 이미지 파일 (Docker Hub에 등록)
-    * **messengerX** : XPUSH 기반의 메신저 솔루션 소스 ([messengerx](http://messengerx.github.io))
-    * **chrome.messengerX** : messengerX 의 Chrome Extension 설치 파일 소스
-    * **stalk.io** : XPUSH 기반의 웹 체팅 위젯 소스 ([stalk.io](http://stalk.io))
-    * **chrome.stalk.io** : stalk.io 의 Chrome Extension 설치 파일 소스
-    * **xpush.github.io** : XPUSH 소개 홈페이지 소스
+#### **[github.com/xpush](http://github.com/xpush)**
+
+> **node-xpush** : XPUSH 서버 플랫폼 소스
+
+> **node-xpush-client** : XPUSH 서버 Node.js Client 모듈 소스
+
+> **lib-xpush-web** : XPUSH API Javascript 라이브러리 소스
+
+> **lib-xpush-java** : XPUSH API JAVA 라이브러리 소스
+
+> **dockerfile** : XPUSH 서버 플랫폼 Docker 설치 이미지 파일 (Docker Hub에 등록)
+
+> **messengerX** : XPUSH 기반의 메신저 솔루션 소스 ([messengerx](http://messengerx.github.io))
+
+> **chrome.messengerX** : messengerX 의 Chrome Extension 설치 파일 소스
+
+> **stalk.io** : XPUSH 기반의 웹 체팅 위젯 소스 ([stalk.io](http://stalk.io))
+
+> **chrome.stalk.io** : stalk.io 의 Chrome Extension 설치 파일 소스
+
+> **xpush.github.io** : XPUSH 소개 홈페이지 소스
  
