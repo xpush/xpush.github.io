@@ -308,9 +308,15 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     });
   };
 
+  var startFlag = false;
+  var monitor;
+  var btnToggle;
+
+  // Init horse chart and xpush
   $(document).ready( function(){
     initHorseChart();
     initXpush();
+    btnToggle = $( "#btnToggle" );
   });
 </code>
 </pre>
@@ -318,9 +324,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 각 chart를 update하기 위한 함수들을 선언합니다. 값에 따라 말의 이미지가 바뀌는 interval의 속도를 조절하면 말이 달리는 속도를 변경할 수 있습니다.
 
 <pre data-lang="javascript">
-<code class="prettyprint">var startFlag = false;
-  var monitor;
-  var btnToggle = $( "#btnToggle" );
+<code class="prettyprint">
 
   // 메모리 line chart를 그린다.
   var drawMemChart = function(){
@@ -617,7 +621,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
           &lt;/div&gt;
           &lt;div class="panel-body" id="site_body"&gt;
             &lt;div style="min-height:225px;"&gt;
-              &lt;h2&gt;Click button to view&lt;/h2&gt;
+              &lt;h2&gt;Click on button to view&lt;/h2&gt;
             &lt;/div&gt;
           &lt;/div&gt;
           &lt;ul class="list-group" id="site_list" style="display:node;"&gt;
@@ -929,14 +933,16 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     });
   };
 
+  var startFlag = false;
+  var monitor;
+  var btnToggle;
+
+  // Init horse chart and xpush
   $(document).ready( function(){
     initHorseChart();
     initXpush();
+    btnToggle = $( "#btnToggle" );
   });
-
-  var startFlag = false;
-  var monitor;
-  var btnToggle = $( "#btnToggle" );
 
   // 메모리 line chart를 그린다.
   var drawMemChart = function(){
@@ -965,6 +971,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       // 서버에 모니터링이 시작함을 알리는 메세지를 보낸다.
       xpush.send('channel-dashboard', 'message', 'START_MONITOR' );
       startFlag = true;
+      console.log( btnToggle.length );
       btnToggle.removeClass( "btn-primary" ).addClass( "btn-danger" );
       btnToggle.html( "Off" );
       drawMemChart();
@@ -1229,7 +1236,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
           </div>
           <div class="panel-body" id="site_body">
             <div style="min-height:225px;">
-              <h2>Click button to view</h2>
+              <h2>Click on button to view</h2>
             </div>
           </div>
           <ul class="list-group" id="site_list" style="display:node;">
