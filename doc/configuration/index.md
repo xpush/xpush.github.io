@@ -29,19 +29,19 @@ XPUSH가 사용할 zookeeper, redis, mongodb 정보를 설정합니다.
 
 xpush가 사용할 zookeeper의 주소를 설정합니다.
 
-	zookeeper:{"address":"127.0.0.1:2181"}
+	"zookeeper":{"address":"127.0.0.1:2181"}
 
 ### redis
 
 xpush가 사용할 redis의 주소를 설정합니다.
 
-	redis:{"address":"127.0.0.1:6379"}
+	"redis":{"address":"127.0.0.1:6379"}
 
 ### mongodb
 
 xpush가 사용할 mongodb의 주소를 설정합니다.
 
-	mongodb:{"address":"127.0.0.1:27017"}
+	"mongodb":{"address":"127.0.0.1:27017"}
 
 <a name="app_config"></a>
 <br/>
@@ -72,6 +72,8 @@ facebook에 등록한 App ID와 App Secret를 등록합니다.
 
 >**Note**:facebook에 등록한 `Site URL`과 config의 callbackUrl이 일치해야합니다. Default : /auth/facebook/callback
 
+<img src="./resource/facebook.png" align="center">
+
 #### 2. twitter
 
 twitter에 등록한 App key와 App secret를 등록합니다.
@@ -86,7 +88,9 @@ twitter에 등록한 App key와 App secret를 등록합니다.
 	  "success": "<script>window.close();</script>"
 	}
 
->**Note**:Twitter에 등록한 Callback URL과 config의 callbackUrl이 일치해야합니다. Default : /auth/twitter/callback
+>**Note**:Twitter에 등록한 `Callback URL`과 config의 callbackUrl이 일치해야합니다. Default : /auth/twitter/callback
+
+<img src="./resource/twitter.png" align="center">
 
 #### 3. Google+
 
@@ -102,7 +106,9 @@ Google console에 등록한 CLIENT ID와 CLIENT SECRET를 등록합니다.
 	  "success": "<script>window.close();</script>"
 	}
 
->**Note**:Twitter에 등록한 REDIRECT URIS과 config의 callbackUrl이 일치해야합니다. Default : /auth/google/callback
+>**Note**:Twitter에 등록한 `REDIRECT URIS`과 config의 callbackUrl이 일치해야합니다. Default : /auth/google/callback
+
+<img src="./resource/google.png" align="center">
 
 ### apps
 
@@ -115,10 +121,10 @@ XPUSH 서버가 사용할 application정보와 GCM or APN key를 등록합니다
 
 	    "notification": {
 	      "gcm": {
-					"apiKey": "Google API KEY for GCM Here"
+			"apiKey": "Google API KEY for GCM Here"
 	      },
 	      "apn": {
-					"apiKey": "APNS Key Here"
+			"apiKey": "APNS Key Here"
 	      }
 	    }
 	  }
@@ -131,17 +137,37 @@ XPUSH 서버가 사용할 application정보와 GCM or APN key를 등록합니다
 
 xpush를 실행할 때 사용할 option을 설정합니다.
 
+####config
+
+XPUSH server 실행될 때 사용할 CONFIG FILE 위치를 지정합니다.
+
+	--config ./config.sampel.json
+
+>**Note**:docker를 이용해 실행할 경우 docker의 **-v** option을 함께 사용해서 docker host에 저장한 파일을 docker container에서 인식이 가능하도록 할 수 있습니다.
+아래는 host의 `/home/stalk/data` 위치에 저장한 `session01.json`을 docker container 내부에서 인식이 가능하도록 하는 설정입니다.
+
+	-v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/session01.json
+
+
+
+####host
+
+XPUSH server 실행될 때 사용할 hostname. zookeeper에 서버가 등록될 때 사용되기 때문에 **반드시 접근가능한 URL이어야 합니다.** default ***127.0.0.1***
+
+	--host www.sample.net
+
+
+>**Note**:docker를 이용해 실행할 경우 host를 설정하지 않으면, xpush server가 docker container의 내부 IP로 설정이 되서 접근이 불가능해집니다. 이 경우 반드시 public IP나 domain을 host 로 설정해야합니다.
+
+
+
 ####port
 
-XPUSH server가 실행될 때 사용할 PORT. default 80
+XPUSH server가 실행될 때 사용할 PORT. default ***80***
 
 	--port 8000
 
-####config
 
-XPUSH server 실행될 때 사용할 CONFIG FILE 위치
-
-	--config ./config.sampel.json
 
 ####session
 
@@ -149,21 +175,18 @@ XPUSH server 실행될 때 ***SESSION*** mode로 실행한다. default ***CHANNE
 
 	--session
 
+
+
 ####silent
 
-XPUSH server 실행될 때 ***SILENT*** mode로 실행한다. Log를 찍지 않는다.
+XPUSH server 실행될 때 ***SILENT*** mode로 실행한다. Log를 남기지 않습니다.
 
 	--silent
 
-####host
 
-XPUSH server 실행될 때 사용할 hostname. 해당 URL은 oauth에 사용할 callback url의 앞부분에 사용된다.
-[oauth 설정](#oauth_config) 참고
-
-	--host http://www.sample.net
 
 ####data
 
-XPUSH server가 사용할 data directory를 설정한다. 업로드한 파일들이 해당 위치에 저장된다.
+XPUSH server가 사용할 data directory를 설정합다. 업로드한 파일들이 해당 위치에 저장됩니다.
 
 	--data /data

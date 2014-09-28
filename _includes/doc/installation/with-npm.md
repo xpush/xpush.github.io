@@ -17,12 +17,12 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 
 	mkdir -p $HOME/xpush
 	cd $HOME/xpush
-	wget http://nodejs.org/dist/v0.10.31/node-v0.10.31-linux-x64.tar.gz
-	tar zvf node-v0.10.31-linux-x64.tar.gz
+	wget http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz
+	tar zvf node-v0.10.32-linux-x64.tar.gz
 
 환경변수 PATH에 설정하여 node와 npm을 global하게 사용할 수 있도록 합니다.
 
-	PATH=$HOME/xpush/node-v0.10.31-linux-x64/bin:$PATH
+	PATH=$HOME/xpush/node-v0.10.32-linux-x64/bin:$PATH
 
 ### zookeeper
 [zookeeper installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html)를 참조하여 zookeeper를 설치하고 실행합니다.
@@ -87,7 +87,7 @@ Install from Source
 
 	wget http://www.imagemagick.org/download/ImageMagick.tar.gz
 	tar xvzf ImageMagick.tar.gz
-	cd ImageMagick-6.8.9
+	cd ImageMagick-6.8.9-8
 	./configure && make && sudo make install
 	sudo ldconfig /usr/local/lib
 	sudo ln -s /usr/local/bin/convert /usr/bin/convert
@@ -98,6 +98,7 @@ Install from Source
 ## 2. Install xpush
 
 모든 준비가 되었으면, xpush를 설치하세요. 준비가 되지 않았으면, [준비](#prepare)를 확인하세요.
+-g option을 사용해서 global로 설치하는 것을 권장합니다.
 
 ### Install with npm
 
@@ -105,11 +106,11 @@ Install from Source
 
 >**Note**:node-gyp rebuild 에러가 발생하는 경우는 node-gyp 버전이 0.10.10인데 node.js 버전이 0.8.xx 일때, 버젼차이 때문에 gyp가 패키지 리빌드를 못합니다. 이런 경우에는 $HOME/.node-gyp 폴더를 지우고 npm을 이용해 node-gyp를 새로 설치하면 됩니다.
 
+	npm install -g node-gyp
+
 ### Install from github
 
 latest development version을 설치하기 위해서는 [git](https://github.com/xpush/node-xpush)을 이용해서 직접 설치하세요.
-
->**Note**:직접 설치 시에 에러가 발생할 경우, nodejs가 최신 version인지 확인하세요.
 
 	git clone https://github.com/xpush/node-xpush.git
 	cd node-xpush
