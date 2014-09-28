@@ -1,5 +1,4 @@
 # portfolios
-
 - name: stalk.io
   image: /lib/img/portfolio/003.png
   link: http://stalk.io
@@ -17,8 +16,8 @@
   link: http://messengerx.github.io
 
 - name: messenger-x source repository
-    image: /lib/img/portfolio/002.png
-    link: https://github.com/xpush/messengerx
+  image: /lib/img/portfolio/002.png
+  link: https://github.com/xpush/messengerx
 
 - name: xpush source repository
   image: /lib/img/portfolio/001.png
