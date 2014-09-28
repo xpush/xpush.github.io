@@ -558,7 +558,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       &lt;strong class="green"&gt;
         XPUSH Dashboard
       &lt;/strong&gt;
-      &lt;button type="button" class="btn btn-primary" id="btnToggle" style="float:right;margin-top:-6px;" onclick="toggleMonitor()"&gt;On&lt;/button&gt;
+      &lt;button type="button" class="btn btn-primary" id="btnToggle" onclick="toggleMonitor()"&gt;On&lt;/button&gt;
     &lt;/div&gt;
 
     &lt;div class="row"&gt;
@@ -638,16 +638,21 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 ### 실행 결과
 
 <style type="text/css">
-	circle {
-	    fill: none;
-	    stroke-width: 1.5px;
+  circle {
+    fill: none;
+    stroke-width: 1.5px;
 	}
 
 	#chart_cpu {
-	  width: 400px;
-	  height: 200px;
-	  margin: 0px auto;
+    width: 400px;
+    height: 200px;
+    margin: 0px auto;
 	}
+
+  #btnToggle {
+    float:right;
+    margin-top:-6px; 
+  }
 </style>
 
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -1165,7 +1170,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       <strong class="green">
         XPUSH Dashboard
       </strong>
-      <button type="button" class="btn btn-primary" id="btnToggle" style="float:right;margin-top:-6px;" onclick="toggleMonitor()">On</button>
+      <button type="button" class="btn btn-primary" id="btnToggle" onclick="toggleMonitor()">On</button>
     </div>
 
     <div class="row">
