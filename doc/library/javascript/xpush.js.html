@@ -10,7 +10,7 @@ res-path: /doc/library/res
       class="sunlight-highlight-javascript linenums">(function(){
 
   var XPush = (function() {
-    if (typeof module !== 'undefined' ) {
+    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
       http = require('http');
       io = require('socket.io-client');
     }
@@ -28,12 +28,19 @@ res-path: /doc/library/res
     };
 
     var isDebugging = false;
-    var debug = function(){
-      if( isDebugging ){
-        if (console.log.bind === 'undefined') { // IE &lt; 10
-          Function.prototype.bind.call(console.log, console, context);
+
+    var debug = function() { 
+      if (window.console) {
+        if (Function.prototype.bind) {
+          debug = Function.prototype.bind.call(console.log, console);
         } else {
-          console.log.apply(console, arguments);
+          debug = function() { 
+            Function.prototype.apply.call(console.log, console, arguments);
+          };
+        }
+  
+        if( isDebugging ){
+          debug.apply(this, arguments);
         }
       }
     }
@@ -101,7 +108,7 @@ res-path: /doc/library/res
     };
 
     /**
-     * userId와 password를 이용하여 회원가입을 한다.
+     * debug 기능을 켠다.
      * @name enableDebug
      * @memberof Xpush
      * @function
@@ -114,7 +121,7 @@ res-path: /doc/library/res
     };
 
     /**
-     * userId와 password를 이용하여 회원가입을 한다.
+     * debug 기능을 끈다.
      * @name disableDebug
      * @memberof Xpush
      * @function
@@ -404,10 +411,9 @@ res-path: /doc/library/res
           ch.connect(function(){
             if(cb) cb();
           }, 'CHANNEL_ONLY');
-
         }
       });
-
+      return ch;
     };
 
     /**
@@ -483,7 +489,7 @@ res-path: /doc/library/res
       var self = this;
       self.sEmit('channel-list-active',data, function(err, result){
         //app, channel, created
-        cb(result);
+        cb(err, result);
       });
     };
 
@@ -1252,7 +1258,7 @@ res-path: /doc/library/res
         if(xhr.readyState === 4) {
           var r = JSON.parse(xhr.responseText);
           if(r.status != 'ok'){
-            cb(r.status,r.mesage);
+            cb(r.status,r.message);
           }else{
             cb(null,r);
           }
@@ -1721,7 +1727,8 @@ res-path: /doc/library/res
       window.XPush = XPush;
     }
   }
-})();</pre>
+})();
+</pre>
   </article>
 </section>
 
