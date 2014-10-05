@@ -6,7 +6,6 @@ categories: announcement
 tags: xpush
 og:
   type: article
-  image: https://raw.githubusercontent.com/xpush/stalk.io/master/doc/stalk-logo.jpg
   description: XPUSH 를 기반으로 한 서비스인 stalk.io 는 웹페이지에 설치할 수 있는 체팅 위젯을 사용해 보세요.
 ---
 
