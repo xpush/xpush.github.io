@@ -29,7 +29,10 @@ layout: default
       <! -- Blog Post 1 -->
       <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
       <p><csmall>Posted: {{ post.date | date: "%b %-d, %Y" }}</csmall></p>
-      <p>{{ post.content }}</p>
+      <p>{{ post.content }}
+      <a href="{{ post.url | prepend: site.baseurl }}"> more . . . </a>
+      </p>
+      <br><br>
       <div class="hline"></div>
 
       <div class="spacing"></div>
