@@ -7,7 +7,7 @@ tags: xpush
 og:
   type: article
   image: http://deview.kr/images/2013/detail/dc5a76e7-a90b-4a5e-aa75-afc828beace3.jpg
-  description: XPUSH 를 기반으로 한 서비스인 stalk.io 는 웹페이지에 설치할 수 있는 체팅 위젯을 사용해 보세요.
+  description: XPUSH 와 같은 분산서버 아키텍처와 관련된 강의자료와 동영상 소개
 ---
 
 대용량 트래픽을 처리 할 수 있도록 분산서버 환경을 구성하는 일은 생각보다 많은 것들을 고려해야 합니다.
