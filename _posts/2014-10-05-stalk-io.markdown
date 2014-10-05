@@ -6,8 +6,8 @@ categories: announcement
 tags: xpush
 og:
   type: article
-  image: http://ecx.images-amazon.com/images/I/51zCpSmtDoL._SX940_.jpg
-  description: Jekyll 기반으로 XPUSH 홈페이지를 오픈했습니다. github pages 를 통해 Jekyll 을 사용한 소스도 확인해 보세요.
+  image: https://raw.githubusercontent.com/xpush/stalk.io/master/doc/stalk-logo.jpg
+  description: XPUSH 를 기반으로 한 서비스인 stalk.io 는 웹페이지에 설치할 수 있는 체팅 위젯을 사용해 보세요.
 ---
 
 <img src="https://raw.githubusercontent.com/xpush/stalk.io/master/doc/stalk-logo.jpg" width="100%" align="center">
