@@ -14,7 +14,7 @@ og:
 XPUSH 를 기반으로 한 서비스인 [stalk.io](http://xpush.github.io/announcement/stalk-io.html) 는 웹페이지에 설치할 수 있는 체팅 위젯입니다.
 
 이렇게 운영자 혹은 관리자가 직접 설치하는 것과는 별도로, 여러분들이 직접 원할 때, 원하는 웹 페이지에서 같은 페이지를 보는 다수의 사람들과
-서로 대화할 수 있는 stalk.io 크롬 익스텐션 버젼도 사용하실 수 있습니다.
+서로 대화할 수 있는 [stalk.io 크롬 익스텐션](https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko&utm_source=chrome-ntp-launcher)도 사용하실 수 있습니다.
 
 ***크롬 익스텐션이란(Chrome Extensions)?***
 
@@ -54,7 +54,8 @@ HTML또는 JavaScript파일로 구성되며, 익스텐션의 주요 로직을 �
 [stalk.io 크롬 익스텐션](https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko&utm_source=chrome-ntp-launcher)은 browser action, 백그라운드 페이지로 개발되었습니다.
 
 manifest.json
-<pre data-lang="js">
+
+<pre data-lang="html">
 <code class="prettyprint">
   "browser_action": {
     "default_icon": "images/stalk_16.png"
@@ -66,7 +67,8 @@ manifest.json
 </pre>
 
 background.js
-<pre data-lang="js">
+
+<pre data-lang="html">
 <code class="prettyprint">
   	chrome.browserAction.onClicked.addListener(
 	    function(tab) { 
