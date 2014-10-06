@@ -16,11 +16,11 @@ XPUSH 를 기반으로 한 서비스인 [stalk.io](http://xpush.github.io/announ
 이렇게 운영자 혹은 관리자가 직접 설치하는 것과는 별도로, 여러분들이 직접 원할 때, 원하는 웹 페이지에서 같은 페이지를 보는 다수의 사람들과
 서로 대화할 수 있는 [stalk.io 크롬 익스텐션](https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko&utm_source=chrome-ntp-launcher)도 사용하실 수 있습니다.
 
-***크롬 익스텐션이란(Chrome Extensions)?***
+##크롬 익스텐션이란(Chrome Extensions)?##
 
 크롬 익스텐션은 크롬 브라우져에 추가(확장) 가능한 HTML + JavaScript 기반의 웹 어플리케이션 입니다.
 
-[크롬 웹스토어](https://chrome.google.com/webstore/category/extensions?hl=ko)에서 설치 가능하며 본인에게 필요한 App을 설치하여 사용한다면, 
+[크롬 웹스토어](https://chrome.google.com/webstore/category/extensions?hl=ko)에서 설치 가능하며, 본인에게 필요한 App을 설치하여 사용한다면, 
 웹 사용 환경을 보다 빠르고 강력하게 만들 수 있습니다.
 
 [크롬 웹스토어](https://chrome.google.com/webstore/category/extensions?hl=ko)에서 설치 할수 있는 크롬 앱의 종류에는
@@ -34,12 +34,12 @@ XPUSH 를 기반으로 한 서비스인 [stalk.io](http://xpush.github.io/announ
 <img src="https://developer.chrome.com/webstore/images/flowchart.png" width="100%" align="center">
 
 
-***익스텐션 UI***
+##익스텐션 UI##
 
 익스텐션 UI는 주소창 우측의 toolbar의 아이콘을 통해서 실행이 되며, 대표적인 구성 요소에는 팝업, [page action](https://developer.chrome.com/extensions/pageAction), [browser action](https://developer.chrome.com/extensions/browserAction)이 있습니다.
 
 
-***익스텐션 구성요소***
+##익스텐션 구성요소##
 
 #### 1.[백그라운드 페이지](https://developer.chrome.com/extensions/background_pages)
 
@@ -59,7 +59,7 @@ HTML또는 JavaScript파일로 구성되며, 익스텐션의 주요 로직을 �
 
 
 
-***stalk.io 크롬 익스텐션***
+##stalk.io 크롬 익스텐션##
 
 [stalk.io 크롬 익스텐션](https://chrome.google.com/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko&utm_source=chrome-ntp-launcher)은 browser action, 백그라운드 페이지로 개발되었습니다.
 
