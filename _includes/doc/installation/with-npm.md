@@ -50,6 +50,7 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 	make
 <p/>
 	src/redis-server
+	(daemon : $ nohup src/redis-server & )
 
 ### mongodb
 [mongodb installation](http://docs.mongodb.org/manual/installation/)를 참조하여 mongodb를 설치하고 실행합니다.
@@ -57,12 +58,13 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 아래는 redis 2.6.4을 설치하고 실행하는 코드입니다.
 
 	cd $HOME/xpush
-	wget https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.4.tgz
+	wget --no-check-certificate https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.4.tgz
 	tar xzf mongodb-linux-x86_64-2.6.4.tar.gz
 <p/>
 	cd mongodb-linux-x86_64-2.6.4
 	mkdir db
-	bin/mongod --dbpath db
+	mkdir logs
+	bin/mongod --fork --dbpath db --logpath logs
 
 
 **Note**: Disk 공간이 3379MB보다 적으면 --smallfiles 옵션을 사용하세요.
