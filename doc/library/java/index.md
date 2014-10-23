@@ -58,14 +58,13 @@ xpush.send(CHANNEL_NAME, SEND_KEY, SEND_OBJECT, new Emitter.Listener() {
 });
 
 // 모든 채널에서 오는 모든 데이터를 수신할 수 있다. 데이터가 수신되면 callback함수를 호출한다.
-xpush.on( ChannelConnection.RECEIVE_KEY ,new Emitter.Listener() {
-    public void call(Object... args) {
-        // TODO Auto-generated method stub
-        String channel_name = (String) args[0];
-        String message_key = (String) args[1];
-        JSONObject message_data = (JSONObject) args[2];
+xpush.onMessageReceived(new XPushEmitter.messageReceived() {
+    @Override
+    public void call(String channelName, String key, JSONObject value) {
+        System.out.println(channelName +":"+ key +":"+ value);
     }
 });
+
 {% endhighlight %}
 
 # io.stalk.xpush.XPush
@@ -185,11 +184,10 @@ Receiving Message is available in two ways:
 Receive all message without message_key.
 
 {% highlight java %}
-xpush2.on( ChannelConnection.RECEIVE_KEY ,new Emitter.Listener() {
-    public void call(Object... args) {
-        String channel_name = (String) args[0];
-        String message_key = (String) args[1];
-        JSONObject message_data = (JSONObject) args[2];
+xpush2.onMessageReceived(new XPushEmitter.messageReceived() {
+    @Override
+    public void call(String channelName, String key, JSONObject value) {
+        System.out.println(channelName +":"+ key +":"+ value);
     }
 });
 {% endhighlight %}
