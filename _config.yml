@@ -4,8 +4,7 @@ email: xpush.io@gmail.com
 description: "eXtensional PUSH : Real-time communication server"
 baseurl: ""
 url: "http://xpush.github.io"
-twitter_username: jekyllrb
-github_username:  jekyll
+github_username:  xpush
 
 # Build settings
 markdown: kramdown
