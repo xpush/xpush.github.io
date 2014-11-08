@@ -1,0 +1,5 @@
+- name: ko
+  url: /
+
+- name: en
+  url: /en
