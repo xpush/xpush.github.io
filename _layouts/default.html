@@ -13,7 +13,7 @@
     {% include script.html %}
 
     {% if page.javascript %}
-    <script src="{{ page.javascript | prepend: site.baseurl }}"></script>
+    <script src="/{{ page.javascript }}"></script>
     {% endif %}
 
     {% include google_analytics.html %}

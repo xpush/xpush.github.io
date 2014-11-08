@@ -15,7 +15,7 @@ layout: default
 
   {{ content }}
 
-  {% for service in site.data.services %}
+  {% for service in site.data.services[page.lang] %}
 
   {% assign srv_num = forloop.index %}
   <div class="row">
