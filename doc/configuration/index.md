@@ -4,11 +4,11 @@ title: Configuration
 date: September 9, 2014
 ---
 
-세션서버를 아래와 같이 실행 했듯이
+As running the session server as follows
 
 	bin/xpush --port 8000 --config ./config.sample.json --session
 
-XPUSH 를 실행하기 위해 설정파일은 json형태로 되어 있습니다. 설정에 대해 자세히 알아봅니다.
+Configuration file for running XPUSH has become json format. Learn more detail about setting.
 
 	{
 	  "zookeeper": {},
@@ -23,23 +23,23 @@ XPUSH 를 실행하기 위해 설정파일은 json형태로 되어 있습니다.
 
 ## System Configuration
 
-XPUSH가 사용할 zookeeper, redis, mongodb 정보를 설정합니다.
+You can set the zookeeper, redis, and mongodb configuration that will be used by XPUSH server.
 
 ### zookeeper
 
-xpush가 사용할 zookeeper의 주소를 설정합니다.
+You can set the zookeeper that will be used by xpush server.
 
 	"zookeeper":{"address":"127.0.0.1:2181"}
 
 ### redis
 
-xpush가 사용할 redis의 주소를 설정합니다.
+You can set the redis that will be used by XPUSH server.
 
 	"redis":{"address":"127.0.0.1:6379"}
 
 ### mongodb
 
-xpush가 사용할 mongodb의 주소를 설정합니다.
+You can set the mongodb that will be used by xpush server.
 
 	"mongodb":{"address":"127.0.0.1:27017"}
 
@@ -48,17 +48,17 @@ xpush가 사용할 mongodb의 주소를 설정합니다.
 
 ## Application Configuration
 
-XPUSH를 통해 서비스할 Application에 대한 정보를 설정합니다.
+You can set the information about the Application to provide services through the XPUSH.
 
 <a name="oauth_config"></a>
 
 ### oauth
 
-oauth provider를 설정을 추가합니다. XPUSH는 oauth provider에 등록된 Application 정보를 이용하여 LOGIN 처리 후 event를 발생시킬 수 있습니다.
+You can add configuration for oauth. XPUSH is by using the Application information that has been registered by oauth provider, you can generate the event after LOGIN processing.
 
 #### 1. facebook
 
-facebook에 등록한 App ID와 App Secret를 등록합니다.
+Add the app id and app secret that are registered in facebook.
 
 	"facebook": {
 	  "key": "App ID Here",
@@ -70,13 +70,13 @@ facebook에 등록한 App ID와 App Secret를 등록합니다.
 	  "success": "<script>window.close();</script>"
 	}
 
->**Note**:facebook에 등록한 `Site URL`과 config의 callbackUrl이 일치해야합니다. Default : /auth/facebook/callback
+> ** Note **: the `Site URL` and callbackUrl that are registered in facebook will need to match. Default: /auth/facebook/callback
 
 <img src="./resource/facebook.png" align="center">
 
 #### 2. twitter
 
-twitter에 등록한 App key와 App secret를 등록합니다.
+Add the app key and app secret that are registered in twitter.
 
 	"twitter": {
 	  "key": "App key Here",
@@ -88,13 +88,13 @@ twitter에 등록한 App key와 App secret를 등록합니다.
 	  "success": "<script>window.close();</script>"
 	}
 
->**Note**:Twitter에 등록한 `Callback URL`과 config의 callbackUrl이 일치해야합니다. Default : /auth/twitter/callback
+> ** Note **: the `Callback URL` and callbackUrl that are registered in twitter will need to match. Default: /auth/twitter/callback
 
 <img src="./resource/twitter.png" align="center">
 
 #### 3. Google+
 
-Google console에 등록한 CLIENT ID와 CLIENT SECRET를 등록합니다.
+Add the client id and client secret that are registered in google console.
 
 	"googleplus": {
 	  "key": "CLIENT ID Here",
@@ -106,13 +106,14 @@ Google console에 등록한 CLIENT ID와 CLIENT SECRET를 등록합니다.
 	  "success": "<script>window.close();</script>"
 	}
 
->**Note**:Twitter에 등록한 `REDIRECT URIS`과 config의 callbackUrl이 일치해야합니다. Default : /auth/google/callback
+>** Note **: the `REDIRECT URIS` and callbackUrl that are registered in google console will need to match. Default: /auth/google/callback
+
 
 <img src="./resource/google.png" align="center">
 
 ### apps
 
-XPUSH 서버가 사용할 application정보와 GCM or APN key를 등록합니다.
+You can set the application information and GCM or APN key that will be used by xpush server.
 
 	"apps" : [
 	  {
@@ -135,16 +136,16 @@ XPUSH 서버가 사용할 application정보와 GCM or APN key를 등록합니다
 
 ## Runtime Configuration
 
-xpush를 실행할 때 사용할 option을 설정합니다.
+You can set the option to use when you run the xpush.
 
 ####config
 
-XPUSH server 실행될 때 사용할 CONFIG FILE 위치를 지정합니다.
+Specify the CONFIG FILE location to use when XPUSH server run.
 
 	--config ./config.sampel.json
 
->**Note**:docker를 이용해 실행할 경우 docker의 **-v** option을 함께 사용해서 docker host에 저장한 파일을 docker container에서 인식이 가능하도록 할 수 있습니다.
-아래는 host의 `/home/stalk/data` 위치에 저장한 `session01.json`을 docker container 내부에서 인식이 가능하도록 하는 설정입니다.
+> **Note**: If you are running by using the docker you can be a file that was saved in the docker host using the ** -v ** option to be recognized by the docker container.
+The following are the settings that you want to be able to recognize the `/home/stalk / data` location to the stored` session01.json` of the host in the internal docker container.
 
 	-v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/session01.json
 
@@ -152,18 +153,18 @@ XPUSH server 실행될 때 사용할 CONFIG FILE 위치를 지정합니다.
 
 ####host
 
-XPUSH server 실행될 때 사용할 hostname. zookeeper에 서버가 등록될 때 사용되기 때문에 **반드시 접근가능한 URL이어야 합니다.** default ***127.0.0.1***
+**Hostname  should be accessible URL.** Because the server is used when it is registered with the zookeeper. Default *** 127.0.0.1 ***
 
 	--host www.sample.net
 
 
->**Note**:docker를 이용해 실행할 경우 host를 설정하지 않으면, xpush server가 docker container의 내부 IP로 설정이 되서 접근이 불가능해집니다. 이 경우 반드시 public IP나 domain을 host 로 설정해야합니다.
+> ** Note **: If you are running by using the docker, if you do not set the host, xpush server will not be able to access because be set to the internal IP address of docker container. In this case, you must be sure to set the public IP or domain to host.
 
 
 
 ####port
 
-XPUSH server가 실행될 때 사용할 PORT. default ***80***
+The port to be used when XPUSH server is running. default *** 80 ***
 
 	--port 8000
 
@@ -171,7 +172,7 @@ XPUSH server가 실행될 때 사용할 PORT. default ***80***
 
 ####session
 
-XPUSH server 실행될 때 ***SESSION*** mode로 실행한다. default ***CHANNEL***
+Run the XPUSH server with *** SESSION *** mode. default *** CHANNEL ***
 
 	--session
 
@@ -179,7 +180,7 @@ XPUSH server 실행될 때 ***SESSION*** mode로 실행한다. default ***CHANNE
 
 ####silent
 
-XPUSH server 실행될 때 ***SILENT*** mode로 실행한다. Log를 남기지 않습니다.
+Run the XPUSH server with *** SILENT*** mode. It does not leave the Log.
 
 	--silent
 
@@ -187,6 +188,6 @@ XPUSH server 실행될 때 ***SILENT*** mode로 실행한다. Log를 남기지 �
 
 ####data
 
-XPUSH server가 사용할 data directory를 설정합다. 업로드한 파일들이 해당 위치에 저장됩니다.
+You can set XPUSH server's data directory. The uploaded files are saved to that location.
 
 	--data /data

@@ -1,33 +1,33 @@
 Installation with npm
 ===
 
-XPUSH는 nodejs 기반으로 되어 있습니다. 여러분은 [npm](https://www.npmjs.org/)을 통해 쉽게 XPUSH를 설치할 수 있습니다.
+XPUSH based on nodejs. You can easily install the XPUSH through the [npm] (https://www.npmjs.org/).
 <a name="prepare"></a>
 <br />
 
 ## 1. Prepare
 
-XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](http://zookeeper.apache.org/), [redis](http://redis.io/), [mongodb](http://www.mongodb.org/)가 필요합니다.
+To use the XPUSH is, [nodejs] (http://nodejs.org/), [zookeeper] (http://zookeeper.apache.org/), [redis] (http://redis.io/) , [mongodb] (http://www.mongodb.org/) is required .
 
-아래는 64bit linux에서 설치하는 방법입니다. 여러분의 환경에 맞게 설치하세요.
-이미 설치되어 있으면, xpush를 [바로 설치](#install)하세요.
+The following is how to install 64bit linux. Please install to suit your environment.
+If you have already been installed,  the xpush [installation immediately] (# install) please.
 
 ### nodejs
-[nodejs installation](http://nodejs.org/download/)를 참조하여 nodejs를 다운로드하고 압축을 해제합니다.
+[nodejs installation] (http://nodejs.org/download/) by referring to Download and unzip the nodejs.
 
 	mkdir -p $HOME/xpush
 	cd $HOME/xpush
 	wget http://nodejs.org/dist/v0.10.32/node-v0.10.32-linux-x64.tar.gz
 	tar zvf node-v0.10.32-linux-x64.tar.gz
 
-환경변수 PATH에 설정하여 node와 npm을 global하게 사용할 수 있도록 합니다.
+Set the PATH environment variable so that you can use the node and npm to global.
 
 	PATH=$HOME/xpush/node-v0.10.32-linux-x64/bin:$PATH
 
 ### zookeeper
-[zookeeper installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html)를 참조하여 zookeeper를 설치하고 실행합니다.
+[zookeeper installation] install and run the with reference to the zookeeper (http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html).
 
-아래는 zookeeper 3.4.6을 설치하고 실행하는 코드입니다.
+The following is the code to install and run the zookeeper3.4.6.
 
 	cd $HOME/xpush
 	wget http://apache.mirror.cdnetworks.com/zookeeper/stable/zookeeper-3.4.6.tar.gz
@@ -39,9 +39,9 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 
 
 ### redis
-[redis installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html)를 참조하여 redis를 설치하고 실행합니다.
+[redis installation] (http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html) install and run the with reference to redis.
 
-아래는 redis 2.8.14을 설치하고 실행하는 코드입니다.
+The follow is the code to install and run redis 2.8.14.
 
 	cd $HOME/xpush
 	wget http://download.redis.io/releases/redis-2.8.14.tar.gz
@@ -53,9 +53,9 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 	(daemon : $ nohup src/redis-server & )
 
 ### mongodb
-[mongodb installation](http://docs.mongodb.org/manual/installation/)를 참조하여 mongodb를 설치하고 실행합니다.
+[mongodb installation] install and run  mongodb with reference (http://docs.mongodb.org/manual/installation/).
 
-아래는 redis 2.6.4을 설치하고 실행하는 코드입니다.
+The follow is the code to install and run redis 2.6.4
 
 	cd $HOME/xpush
 	wget --no-check-certificate https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-2.6.4.tgz
@@ -67,16 +67,16 @@ XPUSH를 사용하기 위해서는 [nodejs](http://nodejs.org/), [zookeeper](htt
 	bin/mongod --fork --dbpath db --logpath logs
 
 
-**Note**: Disk 공간이 3379MB보다 적으면 --smallfiles 옵션을 사용하세요.
+**NOte**: use --smallfiles option if disk space less than 3379MB
 
 	bin/mongod --dbpath db --smallfiles
 
 ### imageMagick
 
-[image](http://www.imagemagick.org/script/binary-releases.php)를 참조하여 imageMagicK를 설치하고 실행합니다.
+[image] to install and run imageMagicK  with reference to (http://www.imagemagick.org/script/binary-releases.php).
 
-아래는 imageMagicK를 설치하고 실행하는 코드 입니다.
-	
+The follow is the code install and run imageMagick.
+
 CentOS
 
 	yum -y install ImageMagick-c++ ImageMagick-c++-devel
@@ -99,20 +99,20 @@ Install from Source
 
 ## 2. Install xpush
 
-모든 준비가 되었으면, xpush를 설치하세요. 준비가 되지 않았으면, [준비](#prepare)를 확인하세요.
--g option을 사용해서 global로 설치하는 것을 권장합니다.
+When you are all ready, please install the xpush. If not ready, please make sure the [preparation] (# prepare).
+You can use the -g option it is recommended that you install to the global.
 
 ### Install with npm
 
 	npm install -g xpush
 
->**Note**:node-gyp rebuild 에러가 발생하는 경우는 node-gyp 버전이 0.10.10인데 node.js 버전이 0.8.xx 일때, 버젼차이 때문에 gyp가 패키지 리빌드를 못합니다. 이런 경우에는 $HOME/.node-gyp 폴더를 지우고 npm을 이용해 node-gyp를 새로 설치하면 됩니다.
+>**Note**: If the node-gyp rebuild error occurs, when version of node-gyp is 0.10.10 node.js is 0.8.xx, gyp can not re-build the package for different versions. In such a case, you can install it using the npm by erasing the $ HOME / .node-gyp folder node-gyp to new.
 
 	npm install -g node-gyp
 
 ### Install from github
 
-latest development version을 설치하기 위해서는 [git](https://github.com/xpush/node-xpush)을 이용해서 직접 설치하세요.
+To install the latest development version, please install directly using the [git] (https://github.com/xpush/node-xpush).
 
 	git clone https://github.com/xpush/node-xpush.git
 	cd node-xpush
@@ -123,12 +123,12 @@ latest development version을 설치하기 위해서는 [git](https://github.com
 
 ## 3. Run xpush
 
-세션 서버를 실행하세요. 자세한 옵션은 [여기](http://xpush.github.io/doc/configuration/#run_config)를 확인하세요.
+Please run the session server. For more options, please make sure the [here] (http://xpush.github.io/doc/configuration/#run_config).
 
 	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 8000 --config ./config.sample.json --session
 
-채널 서버를 실행하세요. 자세한 옵션은 [여기](http://xpush.github.io/doc/configuration/#run_config)를 확인하세요.
+Please run the channel server. For more options, please make sure the [here] (http://xpush.github.io/doc/configuration/#run_config).
 
 	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 9000 --config ./config.sample.json

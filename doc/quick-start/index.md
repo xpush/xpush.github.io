@@ -4,38 +4,38 @@ title: XPUSH, Quick-start guide
 date: April 25, 2014
 ---
 
-여러분은 Docker 이미지 파일을 다운로드 받아 실행하여 XPUSH 를 설치 및 실행할 수 있으며 이를 통해 XPUSH 를 가장 쉽고 빠르게 경험해 볼 수 있습니다.
+You can download and run the image file of XPUSH at the docker repository. it is possible to install and run and, in this way, you can be most easily and quickly experience the XPUSH.
 
-XPUSH Docker 이미지 파일은, [docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에 공유되어 있으며, 이미지를 다운로드 받아서, 여러분의 서버 또는 개인 PC 에 설치하고 실행해 볼 수 있습니다.
-
-<br />
-
-## 1. Docker 설치
-
-[Docker Installation](https://docs.docker.com/installation/#installation) 를 참조하여 Docker 를 설치 합니다.
+XPUSH Docker image files is shared in [docker hub] (https://registry.hub.docker.com/u/stalk/xpush/), You can download the image to your server or personal PC, and then you can install and run the xpush with it.
 
 <br />
 
-## 2. XPUSH Docker 이미지 다운로드
+## 1. Docker Installation
 
-[docker hub](https://registry.hub.docker.com/u/stalk/xpush/) 에서 제공하는 XPUSH Docker 이미지에는 이미 설정이 완료된 XPUSH 환경이 구성되어 있습니다.
-다음과 같이 XPUSH 이미지 파일을 다운로드 받습니다.
+[Docker Installation](https://docs.docker.com/installation/#installation) By referring to the link, install the Docker.
+
+<br />
+
+## 2. Downloading XPUSH Docker image
+
+XPUSH Docker image which we provide is the already configured completely.
+You can download the XPUSH image file as follows.
 
   > docker pull stalk/xpush:standalone
 
-다운로드 받은 이미지에는, XPUSH 에서 사용하는 MongoDB, Redis 그리고 Zookeeper 가 설치되어 있고, XPUSH Session 서버와 Channel 서버가 실행되도록 되어 있습니다.
+MongoDB and Redis and Zookeeper are installed in the downloaded image, and You can run the session server and channel server as a stand-alone.
 
 <br />
 
-## 3. XPUSH 서버 실행
+## 3. Execution of XPUSH server
 
-이제, 다운로드 받은 이미지를 Docker 환경에서 실행합니다.
+Now, you can run the image that you downloaded in Docker environment.
 
   > docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush:standalone /bin/bash xpush-stand-alone.sh
 
-8000 포트는 Session 서버가 사용하는 포트번호이고, 9000 포트는 Channel 서버가 사용하는 포트번호 입니다. 실행이 완료된 xpush 서버에는 127.0.0.1로 접근이 가능합니다.
+8000 port is a port number that Session server uses, 9000 port is the port number that Channel server uses. Xpush server that have been executed is accessible to 127.0.0.1.
 
-OSX에서 docker로 실행한 XPUSH서버에 접근하기 위해서는 다음의 명령어를 통해 IP를 획득합니다. [More info](https://github.com/boot2docker/boot2docker)
+To access to XPUSH server that you run in docker in OSX, you can obtain an IP address by using the following command. [More info] (https://github.com/boot2docker/boot2docker)
 
   > boot2docker ip
 
@@ -43,14 +43,14 @@ OSX에서 docker로 실행한 XPUSH서버에 접근하기 위해서는 다음의
 
 ## 4. Sample JavaScript Source
 
-[XPUSH client library](http://xpush.github.io/doc/library/javascript/xpush.js/index.html) 를 include합니다.
+Include the [XPUSH client library](http://xpush.github.io/doc/library/javascript/xpush.js/index.html)
 
 <pre data-lang="html">
 <code class="prettyprint">&lt;script type="text/javascript" charset="utf-8" src="xpush.min.js"&gt;&lt;/script&gt;
 </code>
 </pre>
 
-XPUSH 인스턴스를 생성합니다.
+Create the xpush Object
 
 <pre data-lang="js">
 <code class="prettyprint">// parameter : server to connect, applicationId
@@ -58,18 +58,18 @@ var xpush = new XPush('http://127.0.0.1:8000', 'sample');
 </code>
 </pre>
 
-XPUSH 인스턴스 생성시,
-첫번째 인자로는 위에서 실행한 XPUSH의 Session 서버 주소 입니다.
-코드에서 사용하는 XPUSH 서버 주소는 Session 서버 뿐입니다.
-그러면 XPUSH 라이브러리가 내부에서 Channel 서버를 찾아 자동 연결시켜 주게 됩니다.
+When you create a XPUSH instance,
+The first argument, it is session server address of XPUSH.
+The server address to be used in the code is only session server.
+As a result, XPUSH library will let you automatically connect to find the Channel server internally.
 
-이제, 메시지 수신을 위한 채널을 생성하도록 합니다.
+Now, I will generate a channel for the message received.
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.createSimpleChannel('channel01', function(){
   console.log( 'create simple channel success' );
 
-  // `message` event로 들어오는 data를 받아 화면에 출력합니다.
+      // Output the data to the screen that comes in  `message` event.
   xpush.on( 'message', function(channel, name, data){
     console.log( channel, name, data );
   });
@@ -77,12 +77,12 @@ XPUSH 인스턴스 생성시,
 </code>
 </pre>
 
-`channel01` 이라는 이름으로 채널을 생성합니다.
-채널은 메시지를 송수신할 주소로 사용 되며, 체팅 프로그램에서의 체팅방이라고 생각할 수 있습니다.  생성 후에 event 발생 시에 호출할 function을 등록합니다.
+Create a channel named `channel01`.
+Channels are used as the address to send and receive messages, can be thought of as chat room in chatting program. Register a function to be called when it is created after the event occurred.
 
-생성한 채널에 `message` 라는 이름의 이벤트가 발생하면 로그가 남기도록 개발합니다.
+When the event named `message` occurs, the will be printed at the console.
 
-이제, `channel01` 채널로 `message` 이벤트로 'Hello World' 문자열을 전송합니다. 문자열 뿐 아니라, JSON 타입도 가능합니다.
+Now, We can send the string "Hello World" to `message` events in` channel01` channel. String as well, JSON type is also available.
 
 <pre data-lang="js">
 <code class="prettyprint">xpush.send( 'channel01', 'message', 'Hello World' );</code>
@@ -92,13 +92,13 @@ XPUSH 인스턴스 생성시,
 
 ## 5. Live Demo
 
-위와 같은 방법으로 간단한 채팅을 구현해봅니다.
+We will implement a simple chat in such a way as described above.
 
-full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html)에서 확인할 수 있습니다.
+Full source can be found in [here] (https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html).
 
-아래 데모에서 사용한 XPUSH 서버는 XPUSH 개발팀에서 제공하는 임시 테스트용 서버이므로, 일시적으로 동작하지 않거나 성능을 보장할 수 없습니다. 그러므로 여러분이 직접 설치하신 XPUSH 를 사용하시기 바랍니다.
+The XPUSH server that was used in the demo below is a server for temporary test provided by the XPUSH development team, can not operate temporarily, it is not possible to guarantee the performance. So, please use the XPUSH on  your own.
 
-#### 데모 전체 소스
+#### Demo complete source
 {% highlight html %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -110,33 +110,33 @@ full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/examp
 var xpush = new XPush('http://demo.stalk.io:8000', 'demo');
 
 $(document).ready( function(){
-  // channel01 을 생성합니다.
+// Generate channel named `channel01`
   xpush.createSimpleChannel('channel01', function(){
-    // 생성 후에 success 메시지를 보여줍니다.
+    // Display success message after creation.
     var html =  '<strong>Well done!</strong> Create simple channel success';
     $( "#success" ).html(html);
     $( "#success" ).show();
 
-      // `message` event로 들어오는 data를 받아 화면에 출력합니다.
+      // Output the data to the screen that comes in  `message` event.
     xpush.on( 'message', function(channel, name, data){
-      data = decodeURIComponent( data );
+     data = decodeURIComponent( data );
       $( "#success" ).html( '<strong>Received success</strong> : ' + data );
 
-      // template을 복사하여 새로운 DOM 객체를 생성합니다..
+      // Generate a new DOM object by copying the template.
       var newMessage = $( "#template" ).clone();
 
-      // 새로 만든 DOM 객체를 수정합니다.
+      // Change the DOM object that was the newly created.
       newMessage.attr( "id", "template_"+ Date.now() );
       newMessage.html( data );
 
-      // 새로 만든 DOM 객체를 ul DOM에 추가합니다.
-      newMessage.appendTo( "#list" );
-      newMessage.show();
+      // Add the DOM object that was the newly created to the ul DOM object
+      newMessage.appendTo( "#list" )
+     newMessage.show()
 
-      // 새로 생성한 DOM 객체에 class를 추가합니다.
+      // Add css class to the DOM object that was the newly created
       $( ".list-group-item-success" ).each(function(){
         $(this).removeClass( "list-group-item-success" );
-      });
+     });
       newMessage.addClass( "list-group-item-success" );
     });
   });
@@ -144,7 +144,7 @@ $(document).ready( function(){
 
 var send = function( ){
   var msg = $( "#message" ).val();
-  xpush.send( 'channel01', 'message', encodeURIComponent( msg ) );
+xpush.send( 'channel01', 'message', encodeURIComponent( msg ) );
   $( "#message" ).val('');
 };
 
@@ -155,14 +155,14 @@ var send = function( ){
     <div class="jumbotron">
       <h1>Simple Channel Example</h1>
       <p class="lead">Send a message with simple channel</p>
-      <p>
-        <a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button">
+     <p>
+        <a href="https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html" class="btn btn-primary btn-lg" role="button"
           View source from github
-        </a>
+     </a>
       </p>
     </div>
     <div id="success" class="alert alert-success" role="alert" style="display:none">
-    </div>
+    </div
 
     <div style="display:flex;">
       <input class="form-control" placeholder="Input message" name="message" id="message" type="text" value=""/>
@@ -173,11 +173,11 @@ var send = function( ){
     <span class="help-block">Input message to send. The message will be displayed in under area</span>
 
     <div class="row">
-      <div class="col-sm-8">
+     <div class="col-sm-8">
         <h2>Received message</h2>
         <ul id="list" class="list-group">
           <li id="template" class="list-group-item" style="display:none;">There is no message</li>
-        </ul>
+       </ul>
       </div>
     </div>
   </div>
@@ -196,30 +196,30 @@ var send = function( ){
 var xpush = new XPush('http://demo.stalk.io:8000', 'demo');
 
 $(document).ready( function(){
-  // channel01 을 생성합니다.
-  xpush.createSimpleChannel('channel01', function(){
-    // 생성 후에 success 메시지를 보여줍니다.
+// Generate a channel01.
+xpush.createSimpleChannel('channel01', function(){
+     // Display success message after creation.
     var html =  '<strong>Well done!</strong> Create simple channel success';
     $( "#success" ).html(html);
     $( "#success" ).show();
 
-      // `message` event로 들어오는 data를 받아 화면에 출력합니다.
+      // Output the data to the screen that comes in  `message` event.
     xpush.on( 'message', function(channel, name, data){
       data = decodeURIComponent( data );
       $( "#success" ).html( '<strong>Received success</strong> : ' + data );
 
-      // template을 복사하여 새로운 DOM 객체를 생성합니다..
+      // Generate a new DOM object by copying the template.
       var newMessage = $( "#template" ).clone();
 
-      // 새로 만든 DOM 객체를 수정합니다.
+      // Change the DOM object that was the newly created.
       newMessage.attr( "id", "template_"+ Date.now() );
       newMessage.html( data );
 
-      // 새로 만든 DOM 객체를 ul DOM에 추가합니다.
+      // Add the DOM object that was the newly created to the ul DOM object
       newMessage.appendTo( "#list" );
       newMessage.show();
 
-      // 새로 생성한 DOM 객체에 class를 추가합니다.
+      // Change the DOM object that was the newly created.
       $( ".list-group-item-success" ).each(function(){
         $(this).removeClass( "list-group-item-success" );
       });
@@ -238,7 +238,7 @@ var send = function( ){
 
 <br />
 
-#### 실행 결과
+#### Code Result
 
 <div class="row" style="margin-top:20px;">
   <div class="col-sm-12">
