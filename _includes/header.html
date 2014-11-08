@@ -56,13 +56,18 @@
               window.location.href = "/"+targetUrl;
             }
           </script>
-          <div class="btn-group">
-            {% for lang in site.data.languages %}
-            <button type="button" class="btn btn-default navbar-btn {% if page.lang == lang.name %}active{% endif %}" onclick="changeLang('{{lang.name}}')">{{ lang.name }}</button>
-            {% endfor %}
+
+          <div>
+          {% for lang in site.data.languages %}
+            <div class="btn btn-xs {% if page.lang == {{lang.name}} %}btn-default{% else %}btn-link{% endif %}" onclick="changeLang('{{lang.name}}')">
+              <img src="/lib/img/lang-{{lang.name}}.png" style="height:30px;">
+            </div>
+          {% endfor %}
           </div>
+          
         </li>
       </ul>
+
     </div><!--/.nav-collapse -->
   </div>
 </div>
