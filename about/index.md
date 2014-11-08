@@ -14,14 +14,14 @@ layout: about
 
 <img src="/about/resource/rwcp.png" width="45%" align="right">
 
-웹에서 실시간 데이터 통신을 구현하기 위해서는 HTML5 표준 Websocket 으로 구현하거나, node.js 의 socket.io 모듈을 사용하여 구현할 수 있습니다.
+You  can easily build real-time services with HTML5 Websocket and  socket.io, the module on node.js.
 
-특히, 실시간 서비스에는 고려해야 할 것들이 많이 있습니다. 급격히 증가하는 사용자를 고려한 분산 서버 구성, 대용량 네트워크 트래픽 처리, 무중단 서버 확장 (Scale-out) 등 다양한 것들을 고려해야 할 것입니다.
+There are a lot of things to consider on building the real-time services. You need to consider various things such as distributed server configuration in consideration of the users who are rapidly increasing, network traffic processing of large capacity and scale-out strategy.
 
-**XPUSH** 는 여러분이 직접 설치해서 사용할 수 있는 실시간 메시지 통신 기능과 메시지 저장 및 사용자와 장치를 관리하는 기능 그리고 Mobile Push 기능을 제공하는 서버 플랫폼 입니다.
-또한, 하나의 **XPUSH** 플랫폼으로 다양한 실시간 서비스 및 어플리케이션을 구현할 수 있는 통합 실시간 서비스 플랫폼입니다.
+**XPUSH** is a server platform that provides such as real-time message communication, message storage, user and device management and Mobile Push Notification. Everyone will be able to install and use after you downloaded.
+And, XPUSH is a service platform for developing a wide range of real-time services and applications over a single **XPUSH** server platform.
 
-이제, 직접 실시간 통신 서버를 구현하지 않고, **XPUSH** 를 설치 및 활용하여 여러분의 서비스에 실시간 데이터 통신 기능을 추가해 보세요.
+Without having to directly implement the real-time communication servers, After you install **XPUSH** platform, try adding a real-time data communication features of your service.
 
 - - -
 
@@ -29,11 +29,11 @@ layout: about
 
 " *We help you easily build real-time applications. XPUSH was designed for developers.* "
 
-**XPUSH** 는 웹 구현기술로 구현된 실시간 메시지 통신 서버들로 구성되어 있습니다. **XPUSH** 활용하여 메신져나 체팅서비스 등 다양한 실시간 메시지 송수신 기능을 구현할 수 있습니다.
+**XPUSH** consists of real-ime communication servers hat has been developed as a Web technology. You can build  a variety of real-time messaging applications such as your own messenger and chat services
 
-현재는 다양한 웹서비스에서 사용 가능한 Javascript 라이브러라와, JAVA 어플리케이션이나 Android 에서 사용할 수 있는 JAVA 라이브러리가 제공되고 있습니다. **XPUSH** 개발팀은 계속해서 라이브러리를 추가 개발하고 있습니다.
+Currently, **XPUSH** developers are provided Javascript libraries for developing Web services and JAVA libraries for developing JAVA applications and Android applications. We are continually developing additional libraries.
 
-실시간 데이터 통신은 Client 와 Server 간 연결을 유지하면서 양방향으로 데이터를 송수신할 수 있도록 되어 있으며, 연결이 끊어지거나 서버가 장애나더라도 서비스에 지장이 없도록 설계 되어 있습니다.
+Real-time data communication, while maintaining the network connection between the Client and the Server, can transmit and receive data bidirectionally. If the connection to the server is lost, or even if some servers fails, it guarantee the service availability.
 
 - - -
 
@@ -41,9 +41,9 @@ layout: about
 
 " *At the core of XPUSH is the HTML5 WebSocket protocol, but we also have fallback mechanisms so that XPUSH just works anywhere, anytime.* "
 
-**XPUSH** 는 저비용 고성능의 비동기 이벤트 루핑 서버를 구현하기 위하여 node.js 로 개발되었습니다. 그리고, 웹기반의 실시간 메시지 통신을 위하여 Node.js 모듈인 socket.io 를 사용하고 있으며, 사용하는 모듈은 계속해서 최신 버젼으로 업데이트 하고 있습니다.
+**XPUSH** was developed by node.js to implement high-performance servers. It uses Socket.IO, one of the modules for web-based real-time messaging. And We continues to update the modules to use the latest version.
 
-socket.io 를 통해 IE, Chrome, Opera 등 다양한 웹브라우져에서 동작할 수 있을 뿐 아니라, Android/IOS 또는 다양한 Standalone 어플리케이션에서도 사용이 가능합니다.
+Socket.IO enables real-time bidirectional event-based communication. It works on every platform, browser or device, focusing equally on reliability and speed.
 
 - - -
 
@@ -53,20 +53,20 @@ socket.io 를 통해 IE, Chrome, Opera 등 다양한 웹브라우져에서 동�
 
 " *XPUSH was designed to work with commodity servers, an elastic virtualised environments saving you money and headaches. A scalable web application can handle growth – of users or work – without requiring changes to the source code and stoping existed servers* "
 
-일반적으로 실시간 메시지 통신은 대량의 네트워크 트래픽을 처리 할 수 있어야 하며, 사용자가 늘어나면서 급격하게 트래픽이 증가할 수 있습니다. 그러므로, 부하 분산을 위한 다수의 서버가 구동될 수 있도록 해야 하며, 무중단 확장 가능하도록 설계해야만 했습니다. 그래서 **XPUSH** 개발팀은 초기부터 Scalable Architecture 를 설계하고 검증하면서, 아키텍처 설계를 주기적으로 최적화 하고 있습니다.
+Real time server platform has to be designed to be able to handle a large amount of network traffic to a sharply rising splice. It has to run a large number of servers for load balancing, needs to designed to be non-disruptive expansion. **XPUSH** developers designed the **Scalable Web Architecture** for a long time, and continue to optimize the architecture design.
 
-**XPUSH** 는 분산 서버들의 실시간 코디네이션을 위하여 zookeeper 를 사용하고 있으며, 서버에 연결되어 있는 정보를 실시간 저장하고 기본데이터를 캐쉬하기 위한 Redis 를 사용합니다. 그리고, 다양한 형태의 비정형 통신 메시지를 저장하기 위하여 MongoDB 를 사용하고 있습니다.
+**XPUSH** manages the real-time status of the distributed servers through a **zookeeper** and use **Redis** to store connection information of the visitors and meta datas in the memory. And XPUSH stores various types of unstructured messages sent or received in **MongoDB**. 
 
-**XPUSH** 를 구성하는 서버들은 내부적으로 Session 서버와 Channel 서버로 분리되어 동작합니다.
-Session 서버는 사용자 접속을 위한 인증과 사용자 관리 및 부하 분산을 위한 서버 분배 할당을 처리합니다. 그리고 Channel 서버는 실제로 데이터 송수신을 하기 위해 Client 가 연결을 유지하는 서버 입니다. 상대적으로 Channel 서버의 부하가 증가하기 쉬우므로, Channel 서버만 증설할 수 있도록 서버 실행 파라미터를 구분하고 있습니다.
+**XPUSH** server platform run each in the Session server and Channel server.
+Channel server is responsible to authenticate users, managing user and device information, and assign distribution server for load balancing. Since relatively Channel easy to increase the load on the server, so that it can be added separately expansion only Channel server
 
-#### - standalone 동작
+#### - Standalone operations
 
-테스트의 목적 또는 개발 단계에 설치할 수 있는 All In One 구성입니다. Docker 이미지중 standalone 으로 실행하면, MongoDB / Redis / Zookeeper / XPUSH Session 서버 / XPUSH Channel 서버 가 하나의 장치에 한번에 설치 될 것입니다. 자세한 설명은 [Installation](/doc/installation/#docker) 문서에서 확인 하실 수 있습니다.
+You can install the XPUSH with standalone(all-in-one) mode from Docker image. MongoDB, Redis, Zookeeper, XPUSH Session server and XPUSH Channel server will be installed on one server at a time for testing purposes, or in the development stage. For more information, you can check in the [Installation](/doc/installation/#docker) document.
 
-#### - 확장성을 고려한 분산 환경 (실제 운영 환경)
+#### - Considering the scalability distributed environment (production environment)
 
-실제로 운영환경에 적용하기 위해서는 별도로 구성된 MongoDB Cluster, Redis Cluster, Zookeeper Cluster 를 구성하고, XPUSH Session 서버와 Channel 서버를 각각 독립적인 이미지 또는 서버에 설치해야 할 것입니다. 설치에 대한 자세한 설명은 [Installation](/doc/installation) 문서에서 확인하실 수 있습니다.
+In order to install and use the XPUSH in the operating environment, MongoDB Cluster, Redis Cluster, Zookeeper Cluster, XPUSH Session server and Channel server will be installed in each separate image or servers. For more information, you can check in the [Installation](/doc/installation) document.
 
 <img src="/about/resource/infra.png" width="100%" align="center">
 
@@ -75,13 +75,13 @@ Session 서버는 사용자 접속을 위한 인증과 사용자 관리 및 부�
 ### Project Source Repository
 
 #### **[github.com/xpush](http://github.com/xpush)**
-> **node-xpush** : XPUSH 서버 플랫폼 소스 <br>
-> **node-xpush-client** : XPUSH 서버 Node.js Client 모듈 소스 <br>
-> **lib-xpush-web** : XPUSH API Javascript 라이브러리 소스 <br>
-> **lib-xpush-java** : XPUSH API JAVA 라이브러리 소스 <br>
-> **dockerfile** : XPUSH 서버 플랫폼 Docker 설치 이미지 파일 (Docker Hub에 등록) <br>
-> **messengerX** : XPUSH 기반의 메신저 솔루션 소스 ([messengerx](http://messengerx.github.io)) <br>
-> **chrome.messengerX** : messengerX 의 Chrome Extension 설치 파일 소스 <br>
-> **stalk.io** : XPUSH 기반의 웹 체팅 위젯 소스 ([stalk.io](http://stalk.io)) <br>
-> **chrome.stalk.io** : stalk.io 의 Chrome Extension 설치 파일 소스 <br>
-> **xpush.github.io** : XPUSH 소개 홈페이지 소스
+> **node-xpush** : source of XPUSH server platform<br>
+> **node-xpush-client**: source of XPUSH server Node.js Client module <br>
+> **lib-xpush-web** : Javascript XPUSH library <br>
+> **lib-xpush-java** : JAVA  XPUSH library <br>
+> **dockerfile** : Docker files for XPUSH Images on Docker Hub <br>
+> **messengerX** : Instant Messenger solution based XPUSH ([messengerx](http://messengerx.github.io)) <br>
+> **chrome.messengerX** : Chrome Extension source for messengerX<br>
+> **stalk.io** : XPUSH based web chatting widget source([stalk.io](http://stalk.io)) <br>
+> **chrome.messengerX** : Chrome Extension source for stalk.io <br>
+> **xpush.github.io**: Homepage source for introducing XPUSH

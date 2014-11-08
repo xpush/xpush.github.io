@@ -68,3 +68,11 @@ nav:
     blog:
       title: "BLOG"
       url:   "/blog"
+
+t:
+  en:
+    testmonial:
+      value: "You can develop a variety of services based on the <b>XPUSH</b> , such as messenger, online consultation system, real-time Dashboard, etc. &nbsp; The processing of large-scale network traffic to send and receive real-time data, such as the configuration of a distributed server, must meet a variety of requirements, <b>XPUSH</b> platform becomes its solution. &nbsp; Development team of <b>XPUSH</b> has developing the new service based on the <b>XPUSH</b> platform.&nbsp; If there is a project that has been developed with <b>XPUSH</b>, please let me know in the <b>XPUSH</b> development team."
+  ko:
+    testmonial:
+      value: "여러분은 <b>XPUSH</b> 를 기반으로 메신져, 온라인 상담 시스템, 실시간 Dashboard, 실시간 상황판 등 다양한 서비스를 개발할 수 있습니다.&nbsp; 실시간 데이터 송수신을 위해서는 대용량 네트워크 트래픽 처리, 분산 서버 구성 등 다양한 요건을 만족해야 하며, <b>XPUSH</b> 플랫폼이 그 해결책이 될 것입니다.&nbsp;<b>XPUSH</b> 개발팀은 <b>XPUSH</b> 플랫폼을 기반으로 계속해서 새로운 서비스를 개발하고 있습니다.&nbsp;여러분이 <b>XPUSH</b> 기반으로 개발하신 프로젝트가 있으시다면, <b>XPUSH</b> 개발팀에 알려주시기 바랍니다."
