@@ -12,3 +12,60 @@ permalink: none
 
 paginate: 3
 paginate_path: "blog/page:num"
+
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      lang: ko
+      layout: default
+  -
+    scope:
+      path: en
+    values:
+      lang: en
+
+collections :
+
+  ko:
+    name : "ko"
+    url : "/"
+  en:
+    name : "en"
+    url : "/en"
+
+nav:
+  ko:
+    home:
+      title: "HOME"
+      url:   "/"
+    about:
+      title: "ABOUT"
+      url:   "/about"
+    documents:
+      title: "DOCUMENTS"
+      url:   "/doc"
+    service:
+      title: "SERVICES"
+      url:   "/service"
+    blog:
+      title: "BLOG"
+      url:   "/blog"
+  en:
+    home:
+      title: "HOME"
+      url:   "/"
+    about:
+      title: "ABOUT"
+      url:   "/about"
+    documents:
+      title: "DOCUMENTS"
+      url:   "/doc"
+    service:
+      title: "SERVICES"
+      url:   "/service"
+    blog:
+      title: "BLOG"
+      url:   "/blog"

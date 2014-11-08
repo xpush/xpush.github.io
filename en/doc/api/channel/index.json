@@ -1,0 +1,18 @@
+{
+  "swaggerVersion": "1.2",
+	"basePath": "http://xpush.github.io/doc/api/channel",
+  "apis": [
+		{
+		  "path": "/channel",
+		  "description": "Event list of channel socket"
+		},
+		{
+		  "path": "/session",
+		  "description": "Event list of session socket"
+		},
+		{
+		  "path": "/rest",
+		  "description": "REST API list of channel server"
+		}
+  ]
+}

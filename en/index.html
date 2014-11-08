@@ -1,0 +1,121 @@
+---
+layout: default
+title: XPUSH, real-time web communication platform
+javascript: index.js
+---
+
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h3>Build your real-time applications easily <i>with</i></h3>
+					<h1>Real-time Web Communication Platform</h1>
+				</div>
+				<div class="col-lg-8 col-lg-offset-2 himg">
+					<img src="/lib/img/main.png" class="img-responsive">
+				</div>
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /headerwrap -->
+
+	<!-- *****************************************************************************************************************
+	 SERVICE LOGOS
+	 ***************************************************************************************************************** -->
+	<div id="service">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-md-4">
+					<i class="fa fa-plane"></i>
+					<h4>High Performance</h4>
+					<p>
+						XPUSH is low priced and high-performance server with low cost that can minimize the cost of the network and it can enables the real-time of message communication.
+						Many of the applications will be able to quickly send and receive large amounts of messages by connecting to XPUSH server.
+						In addition, you can continue to expand the server without service interruption to the rapid increase of users.
+					</p>
+					<p><br/><a href="/about" class="btn btn-theme">More Info</a></p>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-trophy"></i>
+					<h4>Integration Platform</h4>
+					<p>
+                        Messenger, real-time dashboards, such as mobile notification application, it can be implemented using one of XPUSH platform a variety of services.
+                        XPUSH platform rather than required, respectively for each service, you will be able to manage the implementation and messages and user functions can be integrated into one of XPUSH platform. </ P>
+					<p><br/><a href="/service" class="btn btn-theme">More Info</a></p>
+				</div>
+				<div class="col-md-4">
+					<i class="fa fa-code"></i>
+					<h4>Designed for developers</h4>
+					<p>
+						You can easily install the XPUSH platform, allows you to effortlessly implement a real-time message transmission and reception functions with client libraries.
+Various functions that can be used through the API documentation and library specification. It has various function as managing users and devices for transmitting and receiving real-time messages, storing and forwarding messages which is not delivered.
+						Please check quickly how to use it through the with Quick-start Guide.
+					</p>
+					<p><br/><a href="/doc/welcome" class="btn btn-theme">More Info</a></p>
+				</div>
+			</div>
+
+		</div><! --/container -->
+	</div><! --/service -->
+
+
+
+	<!-- *****************************************************************************************************************
+	 PORTFOLIO SECTION
+	 ***************************************************************************************************************** -->
+
+	<div id="portfoliowrap">
+		<h3>LATEST WORKS</h3>
+
+		<div class="portfolio-centered">
+			<div class="recentitems portfolio">
+
+				{% for portfolio in site.data.portfolios %}
+
+				<div class="portfolio-item">
+					<div class="he-wrap tpl6">
+					<img src="{{ portfolio.image }}" alt="">
+						<div class="he-view">
+							<div class="bg a0" data-animate="fadeIn">
+								<h3 class="a1" data-animate="fadeInDown">{{ portfolio.name }}</h3>
+								<a data-rel="prettyPhoto" href="{{ portfolio.image }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-search"></i></a>
+								<a href="{{ portfolio.link }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% endfor %}
+
+
+      </div><!-- portfolio -->
+		</div><!-- portfolio container -->
+	</div><!--/Portfoliowrap -->
+
+
+	<!-- *****************************************************************************************************************
+	 MIDDLE CONTENT
+	 ***************************************************************************************************************** -->
+	<div class="container mtb">
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-1">
+				<h4>More About Our Project.</h4>
+				<p>
+					Nowadays, there are lots of implementing real-time data transmission and reception functions in an application or Web service.&nbsp;
+					<b>XPUSH</b> can enable you to send and receive data directly install, and use it to cross-web or device as a real-time communication platform.&nbsp;
+					And, <b>XPUSH</b> developers try to share the progress of development, technical documentation, and various application examples through the Blog.
+				</p>
+				<p><br/><a href="/blog" class="btn btn-theme">More Info</a></p>
+			</div>
+
+			<div class="col-lg-4">
+				<h4>Latest Posts</h4>
+				<div class="hline"></div>
+			{% for post in site.posts offset: 0 limit: 5  %}
+			<p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+			{% endfor %}
+			</div>
+
+		</div><! --/row -->
+	</div><! --/container -->
+
+	{% include testimonial.html %}

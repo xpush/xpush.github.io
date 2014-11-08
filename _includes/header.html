@@ -11,11 +11,57 @@
     </div>
     <div class="navbar-collapse collapse navbar-right">
       <ul class="nav navbar-nav">
-        <li {% if page.url == '/' %}class="active"{% endif %} ><a href="{{ site.baseurl }}/">HOME</a></li>
-        <li {% if page.url contains "/about" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/about">ABOUT</a></li>
-        <li {% if page.url contains "/doc" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/doc">DOCUMENTS</a></li>
-        <li {% if page.url contains "/service" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/service">SERVICES</a></li>
-        <li {% if page.url contains "/blog" %}class="active"{% endif %} ><a href="{{ site.baseurl }}/blog">BLOG</a></li>
+        {% for menu in site.nav[page.lang] %}
+        {% if menu[1].url == '/' %}
+          {% if page.url == '/index.html' %}
+          <li class="active">
+          {% elsif page.url  == '/en/index.html' %}
+          <li class="active">
+          {% else %}
+          <li>
+          {% endif %}
+        {% elsif menu[1].url != '/' and page.url contains menu[1].url %}
+        <li class="active" >
+        {% else %}
+        <li>
+        {% endif %}
+
+          {% if page.lang == 'ko' %}
+          <a href="{{ menu[1].url }}">
+          {% else %}
+          <a href="/{{ page.lang }}{{ menu[1].url }}">
+          {% endif %}
+            {{ menu[1].title }}
+          </a>
+        </li>
+        {% endfor %}
+        <li>
+          <script type="text/javascript">
+            function changeLang( lang ){
+              var currentUrl = '{{page.url}}';
+              var currentLang = '{{page.lang}}';
+              if( lang == currentLang ){
+                return;
+              }
+
+              var enInx = currentUrl.indexOf( 'en' );
+              var targetUrl;
+
+              if( lang == 'ko' ){
+                targetUrl = currentUrl.substring( enInx+3 );
+              } else {
+                targetUrl = lang+currentUrl;
+              }
+
+              window.location.href = "/"+targetUrl;
+            }
+          </script>
+          <div class="btn-group">
+            {% for lang in site.data.languages %}
+            <button type="button" class="btn btn-default navbar-btn {% if page.lang == lang.name %}active{% endif %}" onclick="changeLang('{{lang.name}}')">{{ lang.name }}</button>
+            {% endfor %}
+          </div>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
