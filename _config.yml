@@ -19,25 +19,24 @@ defaults:
     scope:
       path: ""
     values:
-      lang: ko
+      lang: en
       layout: default
   -
     scope:
-      path: en
+      path: ko
     values:
-      lang: en
+      lang: ko
 
 collections :
-
-  ko:
-    name : "ko"
-    url : "/"
   en:
     name : "en"
-    url : "/en"
+    url : "/"
+  ko:
+    name : "ko"
+    url : "/ko"
 
 nav:
-  ko:
+  en:
     home:
       title: "HOME"
       url:   "/"
@@ -53,7 +52,7 @@ nav:
     blog:
       title: "BLOG"
       url:   "/blog"
-  en:
+  ko:
     home:
       title: "HOME"
       url:   "/"

@@ -26,7 +26,7 @@
         <li>
         {% endif %}
 
-          {% if page.lang == 'ko' %}
+          {% if page.lang == 'en' %}
           <a href="{{ menu[1].url }}">
           {% else %}
           <a href="/{{ page.lang }}{{ menu[1].url }}">
@@ -44,11 +44,11 @@
                 return;
               }
 
-              var enInx = currentUrl.indexOf( 'en' );
+              var inx = currentUrl.indexOf( 'ko' );
               var targetUrl;
 
-              if( lang == 'ko' ){
-                targetUrl = currentUrl.substring( enInx+3 );
+              if( lang == 'en' ){
+                targetUrl = currentUrl.substring( inx+3 );
               } else {
                 targetUrl = lang+currentUrl;
               }

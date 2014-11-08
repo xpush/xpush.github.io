@@ -1,5 +1,5 @@
-- name: ko
+- name: en
   url: /
 
-- name: en
-  url: /en
+- name: ko
+  url: /ko
