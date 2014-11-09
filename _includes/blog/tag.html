@@ -27,7 +27,7 @@
 
       <div class="row">
 
-        {% for post in site.posts %}
+        {% for post in site.posts | where:"lang", page.lang %}
         {% for pc in post.tags %}
         {% if pc == page.tagname %}
 
