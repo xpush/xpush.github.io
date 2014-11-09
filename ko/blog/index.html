@@ -23,8 +23,8 @@ layout: default
 
     <! -- BLOG POSTS LIST -->
     <div class="col-lg-8">
-
-      {% for post in paginator.posts %}
+      {% assign posts=site.posts | where:"lang", page.lang %}
+      {% for post in posts %}
 
       <! -- Blog Post 1 -->
       <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
@@ -39,6 +39,7 @@ layout: default
 
       {% endfor %}
 
+      <!--
       {% if paginator.total_pages > 1 %}
       <div class="text-center">
         <ul class="pagination">
@@ -66,7 +67,7 @@ layout: default
         </ul>
       </div>
       {% endif %}
-
+    -->
     </div><! --/col-lg-8 -->
 
     {% include blog/sidebar.html %}

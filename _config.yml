@@ -26,6 +26,17 @@ defaults:
       path: ko
     values:
       lang: ko
+  -
+    scope:
+      path: ""
+    values:
+      lang: en
+      layout: default
+  -
+    scope:
+      path: _posts/ko
+    values:
+      lang: ko
 
 collections :
   en:
