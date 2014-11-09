@@ -6,15 +6,15 @@ date: April 31, 2014
 
 ## Dashboard Example
 
-간단한 dashboard 기능을 구현해 보겠습니다.
+Let's implement a simple dashboard.
 
-full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/dashboard.html)에서 확인할 수 있습니다.
+full source can be found in [here](https://github.com/xpush/lib-xpush-web/blob/master/example/dashboard.html).
 
-아래 데모에서 사용한 XPUSH 서버는 XPUSH 개발팀에서 제공하는 임시 테스트용 서버이므로, 일시적으로 동작하지 않거나 성능을 보장할 수 없습니다. 그러므로 여러분이 직접 설치하신 XPUSH 를 사용하시기 바랍니다.
+Since XPUSH servers used in the demo below is a temporary test servers provided by XPUSH team, we can't guarantee performance and iIt may be temporarily unavailable. Therefore, please use the XPUSH you install it yourself.
 
 ### script import
 
-ui를 위한 jquery 와 chart를 그리기 위한 d3.js, google jsapi, message 전송을 위한 xpush.js를 include 합니다.
+Include js files : jquery, d3.js, google jsapi, xpush.js
 
 <pre data-lang="javascript">
 <code class="prettyprint">&lt;script type="text/javascript" src="https://www.google.com/jsapi"&gt;&lt;/script&gt;
@@ -27,10 +27,10 @@ ui를 위한 jquery 와 chart를 그리기 위한 d3.js, google jsapi, message �
 
 ### script code
 
-google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 초기화합니다. 
+Create an option for drawing and dataTable for google chart, and initialize the chart.
 
 <pre data-lang="javascript">
-<code class="prettyprint">// CPU Stats을 위한 gauge , Memory Stats 를 위한 corechart 를 import한다.
+<code class="prettyprint">// import corechart for CPU Stats, import gauge for Memory Stats
   google.load("visualization", "1", {packages:["gauge","corechart"]});
   google.setOnLoadCallback(initGoogleChart);
 
@@ -66,7 +66,7 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
     legend: { position: 'bottom' }
   };
 
-  // Timestamp를 hh:min:ss 형태로 보여주는 함수
+  // function for timestamp ( hh:min:ss )
   function getTime(){
     var now = new Date();
     var hours="";
@@ -93,7 +93,7 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
     return x;
   }
 
-  // 숫자를 M, K 단위 포맷으로 변경하는 함수.
+  // function for M, K
   function getNumberFormatString(number, isPoint){
     if( number &gt;= 1000000){
       if(isPoint) return "#,###.###M";
@@ -107,7 +107,7 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
     }
   }
 
-  // 숫자를 M, K 단위로 변경한다.
+  // function for M, K
   function getNumberFormat(number, string){
     if(string.length == 6){
       if( "#,###M" == string ){
@@ -128,7 +128,7 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
     }
   }
 
-  // 원형큐의 함수를 정의한다.
+  // Defines the functions of the circular queue.
   var CircularQueueItem = function (value, next, back) {
     this.next = next;
     this.value = value;
@@ -136,7 +136,7 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
     return this;
   };
 
-  // 원형 큐를 생성한다.
+  // Defines the functions for the circular queue.
   var CircularQueue = function (queueLength) {
     this._current = new CircularQueueItem(undefined, undefined, undefined);
     var item = this._current;
@@ -158,33 +158,32 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
     return this;
   }
 
-  // google chart를 그린다.
+  // Draw the google chart
   function initGoogleChart() {
 
-    // cpu gauge chart의 data 형식을 정의한다.
+    // Defines the data type of the cpu gauge chart.
     cpuDataTable = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
       ['stalk-front-c01', 0],
       ['stalk-front-c02', 0]
     ]);
 
-    // memory line chart의 data 형식을 정의한다.
+    // Defines the data type of the memory line
     memDataTable = new google.visualization.DataTable();
 
     memDataTable.addColumn('string', 'Time');
     memDataTable.addColumn('number', 'stalk-front-c01');
     memDataTable.addColumn('number', 'stalk-front-c02');
 
-    // chart_cpu 영역에 gauge chart 를 그린다.
+    // Draw a gauge chart in chart_cpu area.
     cpuChart = new google.visualization.Gauge(document.getElementById('chart_cpu'));
     cpuChart.draw(cpuDataTable, options);
 
-    // chart_mem 영역에 line chart 를 그린다.
+    // Draw a gauge chart in chart_mem area.
     memChart = new google.visualization.LineChart(document.getElementById('chart_mem'));
     memChart.draw(memDataTable, memOptions);
 
-
-    // size 변경시 memChart를 다시 그린다.
+    // redraws memChart when window size is changed
     window.onresize = function(){
       memChart.draw(memDataTable, memOptions);
     };
@@ -192,10 +191,10 @@ google chart를 그리기 위한 option과 dataTable을 생성하고, chart를 �
 </code>
 </pre>
 
-D3를 사용해서 말이 달리기 위한 영역을 그립니다. 말은 원형 큐에 달리는 모션순서대로 이미지를 6개 등록하고, 큐에서 하나씩 이미지를 꺼내와서 이미지 소스를 변경함으로써 달릴 수 있습니다.
+Use D3 to draw the area for running horses. Horses will be run by changing the image source.
 
 <pre data-lang="javascript">
-<code class="prettyprint">// serverlist를 변수로 설정한다.
+<code class="prettyprint">// Set the serverlist as a variable.
   var hostNames = ["stalk-front-c01","stalk-front-c02"];
   var sorts = {"stalk-front-c01":0, "stalk-front-c02":1 };
   var serviceNames = ["server01", "server02"];
@@ -204,21 +203,21 @@ D3를 사용해서 말이 달리기 위한 영역을 그립니다. 말은 원형
   var queues = [];
   var cw, z, w, h;
 
-  // SVG를 이용해서 horse chart를 초기화한다.
+  // Initialize the horse chart using SVG.
   function initHorseChart(){
     w = 400,
     h = 250,
     cw = 200,
     z = d3.scale.category10();
 
-    // svg를 그린다.
+    // Draw svg
     svg = d3.select("#transaction").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
     
     var data = [0,1];
 
-    // server명을 보여주기 위한 사각형을 그린다.
+    // Draw a rectangle to show the server name.
     var sel = svg.selectAll("rect").data(data).enter();
     sel.append("rect")
     .attr("id", function(d) {return "rect_"+serviceNames[d];})
@@ -229,7 +228,7 @@ D3를 사용해서 말이 달리기 위한 영역을 그립니다. 말은 원형
     .attr("x", function(d) {return ( d * cw ) + 50;} )
     .attr("y", 210);
     
-    // server명을 TEXT 형태로 보여준다.
+    // shows the server name to TEXT form.
     sel.append("svg:text")
     .attr("fill", "black")
     .attr("x", function(d) {return ( d * cw ) + 100;})
@@ -238,7 +237,7 @@ D3를 사용해서 말이 달리기 위한 영역을 그립니다. 말은 원형
     .style("font-size", "12px")
     .text(function(d) {return hostNames[d]});
     
-    // horse image를 추가한다.
+    // Add the horse image.
     sel.append("image")
     .attr("id", function(d) {return "image"+d;})
     .attr( "xlink:href", "assets/0.png" )
@@ -248,7 +247,7 @@ D3를 사용해서 말이 달리기 위한 영역을 그립니다. 말은 원형
     .attr("height", 100)
     .attr("opacity", "1" );
 
-    // Circle Queue 를 생성한다.
+    // Creates a Circle Queue.
     for( var key in data ){
       var queue = new CircularQueue(6);
       queue.push("5");
@@ -263,7 +262,7 @@ D3를 사용해서 말이 달리기 위한 영역을 그립니다. 말은 원형
 </code>
 </pre>
 
-XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 chart나 변수를 호출하도록 합니다.
+Initialize the xpush object and registers the event listener to draw chart
 
 <pre data-lang="javascript">
 <code class="prettyprint">var mem01;
@@ -274,12 +273,12 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
   var u01 = 0;
   var u02 = 0;
 
-  // xpush를 초기화 하고 event listener를 등록한다.
+  // Initialize the xpush object and registers the event listener
   function initXpush(){
     xpush = new XPush('http://demo.stalk.io:8000', 'demo');
     xpush.createSimpleChannel('channel-dashboard', function(){
       xpush.send('channel-dashboard', 'message', 'STOP_MONITOR' );
-      // `message` event로 들어오는 data를 받아 화면에 출력합니다.
+      // receive incoming data is output to the screen in `message` event.
       xpush.on( 'message', function(channel, name, data){
 
         if( data.type && data.type == 'db' ) {
@@ -289,18 +288,18 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
           cpuChart.draw(cpuDataTable, options);
 
           if( 0 == sorts[data.json.H] ){
-            // memory 변수를 변경합니다.
+            // Change the memory variables.
             memFormat = getNumberFormatString( Number( data.json.M ), false );
             mem01 = getNumberFormat( Number( data.json.M ), memFormat);
 
-            // User 변수를 변경합니다.
+            // Change the user variables.
             u01 = data.json.U;
           } else if( 1 == sorts[data.json.H]  ){
-            // memory 변수를 변경합니다.
+            // Change the memory variables.
             memFormat = getNumberFormatString( Number( data.json.M ), false );
             mem02 = getNumberFormat( Number( data.json.M ), memFormat);
 
-            // User 변수를 변경합니다.
+            // Change the user variables.
             u02 = data.json.U;
           }
         }
@@ -321,15 +320,15 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 </code>
 </pre>
 
-각 chart를 update하기 위한 함수들을 선언합니다. 값에 따라 말의 이미지가 바뀌는 interval의 속도를 조절하면 말이 달리는 속도를 변경할 수 있습니다.
+Declare the function to update each chart. We can change the horse's running speed by adjusting the speed of the interval, because the image changes depending on the value.
 
 <pre data-lang="javascript">
 <code class="prettyprint">
 
-  // 메모리 line chart를 그린다.
+  // Draw a memory line chart.
   var drawMemChart = function(){
 
-    // line chart의 X축은 시간이 다를수 있기에 5초에 한번씩 서버에서 받은 memory value를 이용하여 그린다.
+    // Draw a chart every 5 seconds.
     monitor = setInterval( function() {
       if( mem01 && mem02 ){
         var time = getTime();
@@ -347,10 +346,10 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }, 5000 );
   };
 
-  // 모니터링기능을 켜거나 끈다.
+  // Turns on or off the monitoring function.
   var toggleMonitor = function(){
     if( !startFlag  ){
-      // 서버에 모니터링이 시작함을 알리는 메세지를 보낸다.
+      // Sends the message to the server informing the monitoring begins.
       xpush.send('channel-dashboard', 'message', 'START_MONITOR' );
       startFlag = true;
       btnToggle.removeClass( "btn-primary" ).addClass( "btn-danger" );
@@ -360,7 +359,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       $( "#site_body" ).hide();
       $( "#site_list" ).show();
     } else {
-      // 서버에 모니터링이 끈남을 알리는 메세지를 보낸다.
+      // Sends the message to the server informing the monitoring ends.
       xpush.send('channel-dashboard', 'message', 'STOP_MONITOR' );
       startFlag = false;
       mem01 = 0;
@@ -379,7 +378,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }
   };
 
-  // 5초간 동심원을 그린다.
+  // Draw a concentric circle every five seconds.
   function drawParticle( cx, cy, radius, sort ) {     
     svg.append("svg:circle")
     .attr("cx", cx)
@@ -397,7 +396,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 
   var topSite = [];
   var drawTopSite = function( json ){
-    // template을 복사하여 새로운 DOM 객체를 생성합니다
+    // Copy the template to create a new DOM object
     $( "#site_list" ).children().remove();
     for( var key in json ){
       var data = json[key];
@@ -410,19 +409,19 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       } else {
         var newSite = $( "#template" ).clone();
 
-        // 새로 만든 DOM 객체를 수정합니다.
+        // Modify the newly created DOM object.
         newSite.attr( "id", "template_"+ liId );
         newSite.children( "span:first" ).text( data.C );
         newSite.children( "span:last" ).text( data.S );
 
-        // 새로 만든 DOM 객체를 ul DOM에 추가합니다.
+        // Add the newly created DOM object to ul DOM.
         newSite.appendTo( "#site_list" );
         newSite.show();
       }
     }
   };
  
-  // 말을 달리게 한다.
+  // The horses ran.
   function runHorse( val, sort ){
     var img = svg.select("#image"+ sort );
     if( val == 0 ){
@@ -442,7 +441,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       }
     }
     
-    // 말이 달리는 주기를 조절한다.
+    // Adjust the right running cycle.
     var speed = Math.round( 50000 / val );
     
     svg.append("svg:text")
@@ -458,7 +457,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .remove(); 
     
     var now = Date.now();
-    // 말이 달리기 위해 주기마다 이미지를 변환한다.
+    // Convert the image reach cycle to run
     var t = setInterval(function(){
       img.attr( "xlink:href", "assets/"+queues[sort].pop() +".png" );
       if ( Date.now() - now > 5250 ){
@@ -467,7 +466,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }, speed );
   }
   
-  // 동심원 영역을 그린다.
+  // Draw concentric zones.
   function drawSysChart( json ){
 
     var totalUsers = 0;
@@ -476,14 +475,14 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       totalUsers = plus( totalUsers, Number( val ) );
       var sort = sorts[json[inx].H];
 
-      // 동심원과 함께 말이 달리게 한다.
+      // The horse ran with concentric circles.
       runHorse( val, sort );
       
       if( val != 0 ){
         // Position X
         var cx = ( sort * cw ) + 85;
 
-       	// 동심원의 개수를 계산한다.
+       	// Calculate the number of concentric circles.
         var until = Math.floor( val / 200 ) * 5 ;
         
         var jnx = 1;
@@ -491,7 +490,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
           until = 1;
         }         
         
-        // 동심원의 갯수만큼 동심원을 그린다.
+        // Draw a number of concentric circles as
         while( jnx <= until ){              
           drawParticle( cx, 130, val * ( jnx * ( 1/until) ), sort );
           jnx++;
@@ -501,7 +500,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     setTotal( Number(totalUsers).toFixed(2) );
   }
   
-  // Total 영역을 그린다.
+  // Draw a total area
   function setTotal( totalUsers ){
     svg.append("svg:text")
     .attr("fill", "#000")
@@ -516,18 +515,18 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .remove();
   }
   
-  // 소숫점을 포함하여 더하기를 하는 함수
+  // function for float
   function plus() {
     var argsLength = arguments.length;
      
     if(argsLength == 0) return 0;
      
-    var result = 0.0;  //결과값 
-    var argString = "";  //문자열로 변환된 파라미터
-    var pointIndex = 0;  //소수점의 위치
-    var decimalSize = 0; //소수의 자리수
-    var maxDecimalSize = 0; //파라미터 중 가장 소수점이 큰 수의 소수 자리수
-    var maxPower = 1.0;  //파라미터 중 가장 소수점이 큰 수의 소수 자리수 * 10
+    var result = 0.0;  
+    var argString = "";
+    var pointIndex = 0;
+    var decimalSize = 0;
+    var maxDecimalSize = 0;
+    var maxPower = 1.0;
      
     for(var inx = 0; inx < argsLength; inx++) {
      
@@ -639,7 +638,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 </code>
 </pre>
 
-### 실행 결과
+### Code Result
 
 <style type="text/css">
   circle {
@@ -665,7 +664,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://xpush.github.io/lib/dist/xpush.js"></script>
 <script type="text/javascript">  
-  // CPU Stats을 위한 gauge , Memory Stats 를 위한 corechart 를 import한다.
+  // import corechart for CPU Stats, import gauge for Memory Stats
   google.load("visualization", "1", {packages:["gauge","corechart"]});
   google.setOnLoadCallback(initGoogleChart);
 
@@ -701,7 +700,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     legend: { position: 'bottom' }
   };
 
-  // Timestamp를 hh:min:ss 형태로 보여주는 함수
+  // function for timestamp ( hh:min:ss )
   function getTime(){
     var now = new Date();
     var hours="";
@@ -728,7 +727,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     return x;
   }
 
-  // 숫자를 M, K 단위 포맷으로 변경하는 함수.
+  // function for M, K
   function getNumberFormatString(number, isPoint){
     if( number >= 1000000){
       if(isPoint) return "#,###.###M";
@@ -742,7 +741,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }
   }
 
-  // 숫자를 M, K 단위로 변경한다.
+  // function for M, K
   function getNumberFormat(number, string){
     if(string.length == 6){
       if( "#,###M" == string ){
@@ -771,7 +770,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     return this;
   };
 
-  // 원형 큐를 생성한다.
+  // Defines the functions of the circular queue.
   var CircularQueue = function (queueLength) {
     this._current = new CircularQueueItem(undefined, undefined, undefined);
     var item = this._current;
@@ -793,39 +792,39 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     return this;
   }
 
-  // google chart를 그린다.
+  // Draw the google chart
   function initGoogleChart() {
 
-    // cpu gauge chart의 data 형식을 정의한다.
+    // Defines the data type of the cpu gauge chart.
     cpuDataTable = google.visualization.arrayToDataTable([
       ['Label', 'Value'],
       ['stalk-front-c01', 0],
       ['stalk-front-c02', 0]
     ]);
 
-    // memory line chart의 data 형식을 정의한다.
+    // Defines the data type of the memory line
     memDataTable = new google.visualization.DataTable();
 
     memDataTable.addColumn('string', 'Time');
     memDataTable.addColumn('number', 'stalk-front-c01');
     memDataTable.addColumn('number', 'stalk-front-c02');
 
-    // chart_cpu 영역에 gauge chart 를 그린다.
+    // Draw a gauge chart in chart_cpu area.
     cpuChart = new google.visualization.Gauge(document.getElementById('chart_cpu'));
     cpuChart.draw(cpuDataTable, options);
 
-    // chart_mem 영역에 line chart 를 그린다.
+    // Draw a gauge chart in chart_mem area.
     memChart = new google.visualization.LineChart(document.getElementById('chart_mem'));
     memChart.draw(memDataTable, memOptions);
 
 
-    // size 변경시 memChart를 다시 그린다.
+    // redraw memChart when window size is changed
     window.onresize = function(){
       memChart.draw(memDataTable, memOptions);
     };
   }
 
-  // serverlist를 변수로 설정한다.
+  // Set the serverlist as a variable.
   var hostNames = ["stalk-front-c01","stalk-front-c02"];
   var sorts = {"stalk-front-c01":0, "stalk-front-c02":1 };
   var serviceNames = ["server01", "server02"];
@@ -834,21 +833,21 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
   var queues = [];
   var cw, z, w, h;
 
-  // SVG를 이용해서 horse chart를 초기화한다.
+  // Initialize the horse chart using SVG.
   function initHorseChart(){
     w = 400,
     h = 250,
     cw = 200,
     z = d3.scale.category10();
 
-    // svg를 그린다.
+    // Draw the svg
     svg = d3.select("#transaction").append("svg:svg")
     .attr("width", w)
     .attr("height", h);
     
     var data = [0,1];
 
-    // server명을 보여주기 위한 사각형을 그린다.
+    // Draw a rectangle to show the server name.
     var sel = svg.selectAll("rect").data(data).enter();
     sel.append("rect")
     .attr("id", function(d) {return "rect_"+serviceNames[d];})
@@ -859,7 +858,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .attr("x", function(d) {return ( d * cw ) + 50;} )
     .attr("y", 210);
     
-    // server명을 TEXT 형태로 보여준다.
+    // shows the server name to TEXT form.
     sel.append("svg:text")
     .attr("fill", "black")
     .attr("x", function(d) {return ( d * cw ) + 100;})
@@ -868,7 +867,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .style("font-size", "12px")
     .text(function(d) {return hostNames[d]});
     
-    // horse image를 추가한다.
+    // Add the horse image.
     sel.append("image")
     .attr("id", function(d) {return "image"+d;})
     .attr( "xlink:href", "assets/0.png" )
@@ -878,7 +877,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .attr("height", 100)
     .attr("opacity", "1" );
 
-    // Circle Queue 를 생성한다.
+    // Create a Circle Queue.
     for( var key in data ){
       var queue = new CircularQueue(6);
       queue.push("5");
@@ -899,12 +898,12 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
   var u01 = 0;
   var u02 = 0;
 
-  // xpush를 초기화 하고 event listener를 등록한다.
+  // Initialize the xpush object and registers the event listener to draw chart
   function initXpush(){
     xpush = new XPush('http://demo.stalk.io:8000', 'demo');
     xpush.createSimpleChannel('channel-dashboard', function(){
       xpush.send('channel-dashboard', 'message', 'STOP_MONITOR' );
-      // `message` event로 들어오는 data를 받아 화면에 출력합니다.
+      // receive incoming data is output to the screen in `message` event.
       xpush.on( 'message', function(channel, name, data){
 
         if( data.type && data.type == 'db' ) {
@@ -914,18 +913,18 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
           cpuChart.draw(cpuDataTable, options);
 
           if( 0 == sorts[data.json.H] ){
-            // memory 변수를 변경합니다.
+            // Change the memory variables.
             memFormat = getNumberFormatString( Number( data.json.M ), false );
             mem01 = getNumberFormat( Number( data.json.M ), memFormat);
 
-            // User 변수를 변경합니다.
+            // Change the user variables.
             u01 = data.json.U;
           } else if( 1 == sorts[data.json.H]  ){
-            // memory 변수를 변경합니다.
+            // Change the memory variables.
             memFormat = getNumberFormatString( Number( data.json.M ), false );
             mem02 = getNumberFormat( Number( data.json.M ), memFormat);
 
-            // User 변수를 변경합니다.
+            // Change the user variables.
             u02 = data.json.U;
           }
         }
@@ -944,10 +943,10 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     btnToggle = $( "#btnToggle" );
   });
 
-  // 메모리 line chart를 그린다.
+  // Draw a memory line chart.
   var drawMemChart = function(){
 
-    // line chart의 X축은 시간이 다를수 있기에 5초에 한번씩 서버에서 받은 memory value를 이용하여 그린다.
+    // Draw a chart every 5 seconds.
     monitor = setInterval( function() {
       if( mem01 && mem02 ){
         var time = getTime();
@@ -965,10 +964,10 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }, 5000 );
   };
 
-  // 모니터링기능을 켜거나 끈다.
+  // Turns on or off the monitoring function.
   var toggleMonitor = function(){
     if( !startFlag  ){
-      // 서버에 모니터링이 시작함을 알리는 메세지를 보낸다.
+      // Sends the message to the server informing the monitoring begins.
       xpush.send('channel-dashboard', 'message', 'START_MONITOR' );
       startFlag = true;
       console.log( btnToggle.length );
@@ -979,7 +978,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       $( "#site_body" ).hide();
       $( "#site_list" ).show();
     } else {
-      // 서버에 모니터링이 끈남을 알리는 메세지를 보낸다.
+      // Sends the message to the server informing the monitoring ends.
       xpush.send('channel-dashboard', 'message', 'STOP_MONITOR' );
       startFlag = false;
       mem01 = 0;
@@ -998,7 +997,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }
   };
 
-  // 5초간 동심원을 그린다.
+  // Draw a concentric circle every five seconds.
   function drawParticle( cx, cy, radius, sort ) {     
     svg.append("svg:circle")
     .attr("cx", cx)
@@ -1016,7 +1015,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
 
   var topSite = [];
   var drawTopSite = function( json ){
-    // template을 복사하여 새로운 DOM 객체를 생성합니다
+    // Copy the template to create a new DOM object
     $( "#site_list" ).children().remove();
     for( var key in json ){
       var data = json[key];
@@ -1029,19 +1028,19 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       } else {
         var newSite = $( "#template" ).clone();
 
-        // 새로 만든 DOM 객체를 수정합니다.
+        // Modify the newly created DOM object.
         newSite.attr( "id", "template_"+ liId );
         newSite.children( "span:first" ).text( data.C );
         newSite.children( "span:last" ).text( data.S );
 
-        // 새로 만든 DOM 객체를 ul DOM에 추가합니다.
+        // Add the newly created DOM object to ul DOM.
         newSite.appendTo( "#site_list" );
         newSite.show();
       }
     }
   };
  
-  // 말을 달리게 한다.
+  // The horses ran.
   function runHorse( val, sort ){
     var img = svg.select("#image"+ sort );
     if( val == 0 ){
@@ -1061,7 +1060,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       }
     }
     
-    // 말이 달리는 주기를 조절한다.
+    // Adjust the right running cycle.
     var speed = Math.round( 50000 / val );
     
     svg.append("svg:text")
@@ -1077,7 +1076,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .remove(); 
     
     var now = Date.now();
-    // 말이 달리기 위해 주기마다 이미지를 변환한다.
+    // Convert the image reach cycle to run
     var t = setInterval(function(){
       img.attr( "xlink:href", "assets/"+queues[sort].pop() +".png" );
       if ( Date.now() - now > 5250 ){
@@ -1086,7 +1085,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     }, speed );
   }
   
-  // 동심원 영역을 그린다.
+  // Draw concentric zones.
   function drawSysChart( json ){
 
     var totalUsers = 0;
@@ -1095,14 +1094,14 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
       totalUsers = plus( totalUsers, Number( val ) );
       var sort = sorts[json[inx].H];
 
-      // 동심원과 함께 말이 달리게 한다.
+      // The horse ran with concentric circles.
       runHorse( val, sort );
       
       if( val != 0 ){
         // Position X
         var cx = ( sort * cw ) + 85;
 
-        // 동심원의 개수를 계산한다.
+        // Calculate the number of concentric circles.
         var until = Math.floor( val / 200 ) * 5 ;
         
         var jnx = 1;
@@ -1110,7 +1109,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
           until = 1;
         }         
         
-        // 동심원의 갯수만큼 동심원을 그린다.
+        // Draw a number of concentric circles
         while( jnx <= until ){              
           drawParticle( cx, 130, val * ( jnx * ( 1/until) ), sort );
           jnx++;
@@ -1120,7 +1119,7 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     setTotal( Number(totalUsers).toFixed(2) );
   }
   
-  // Total 영역을 그린다.
+  // Draw a total area
   function setTotal( totalUsers ){
     svg.append("svg:text")
     .attr("fill", "#000")
@@ -1135,18 +1134,18 @@ XPUSH 객체를 초기화하고 DB data나 System data가 들어올 때, 해당 
     .remove();
   }
   
-  // 소숫점을 포함하여 더하기를 하는 함수
+  // function for float 
   function plus() {
     var argsLength = arguments.length;
      
     if(argsLength == 0) return 0;
      
-    var result = 0.0;  //결과값 
-    var argString = "";  //문자열로 변환된 파라미터
-    var pointIndex = 0;  //소수점의 위치
-    var decimalSize = 0; //소수의 자리수
-    var maxDecimalSize = 0; //파라미터 중 가장 소수점이 큰 수의 소수 자리수
-    var maxPower = 1.0;  //파라미터 중 가장 소수점이 큰 수의 소수 자리수 * 10
+    var result = 0.0;  
+    var argString = "";
+    var pointIndex = 0;
+    var decimalSize = 0;
+    var maxDecimalSize = 0;
+    var maxPower = 1.0;
      
     for(var inx = 0; inx < argsLength; inx++) {
      

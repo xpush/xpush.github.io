@@ -6,13 +6,13 @@ date: April 25, 2014
 
 ## Image File Upload Example
 
-간단한 파일업로드 기능을 구현해 보겠습니다.
+Let's implement a simple file upload.
 
-full source는 [여기](https://github.com/xpush/lib-xpush-web/blob/master/example/upload.html)에서 확인할 수 있습니다.
+full source can be found in [here](https://github.com/xpush/lib-xpush-web/blob/master/example/upload.html).
 
-아래 데모에서 사용한 XPUSH 서버는 XPUSH 개발팀에서 제공하는 임시 테스트용 서버이므로, 일시적으로 동작하지 않거나 성능을 보장할 수 없습니다. 그러므로 여러분이 직접 설치하신 XPUSH 를 사용하시기 바랍니다.
+Since XPUSH servers used in the demo below is a temporary test servers provided by XPUSH team, we can't guarantee performance and iIt may be temporarily unavailable. Therefore, please use the XPUSH you install it yourself.
 
-ui를 위한 jquery 와 xpush.js, 그리고 파일 업로드를 위한 socket.io-stream.js를 include 합니다.
+Include js files : jquery, socket.io-stream.js, xpush.js
 
 ### script import
 
@@ -28,16 +28,16 @@ ui를 위한 jquery 와 xpush.js, 그리고 파일 업로드를 위한 socket.io
 
 ### script code
 
-화면 로딩이 완료되면 channel02를 생성합니다.
+When screen loading is complete, create a channel02.
 
 <pre data-lang="js">
 <code class="prettyprint">// Create new xpush
 var xpush = new XPush('http://demo.stalk.io:8000', 'demo');
 
 $(document).ready( function(){
-  // channel02 을 생성합니다.
+  // create a channel02.
   xpush.createSimpleChannel('channel02', function(){
-    // 생성 후에 success 메시지를 보여줍니다.
+    // show the success message after generating
     var html =  '<strong>Well done!</strong> Create simple channel success';
     $( "#danger" ).hide()
     $( "#success" ).html(html);
@@ -48,35 +48,35 @@ $(document).ready( function(){
 </code>
 </pre>
 
-upload 함수를 생성합니다. upload함수는 xpush의 uploadStream 함수를 사용하여 파일을 업로드합니다.
+Generate the upload function. The upload function to upload a file using the function of uploadStream xpush.
 
-uploadStream 의 첫번째 인자는 channel id 입니다.
+The first argument of the uploadStream function is channel id.
 
-uploadStream 의 두번째 인자는 업로드 option입니다. file type의 input Document Element 객체를 포함한 json입니다. type을 `image`로 설정할 경우 thumbnail 이미지를 생성해줍니다.
+The second argument of the uploadStream function is options. The json object containing the input Document Element of the file type. If you set the type to `image`, it will generate a thumbnail image.
 
 	{ file: fileObj, type : 'image' }
 
-uploadStream 의 세번째 인자는 progress status을 알려주는 function입니다. 지정된 함수의 첫번째 인자에 status 값을 %형태로 전달해줍니다.
+The third argument of the uploadStream function is the function to show progressing status.
 
-uploadStream 의 네번째 인자는 업로드 완료 후에 수행되는 callback function입니다. 지정된 함수의 첫번째 인자에 업로드한 결과를 JSON 형태로 전달해줍니다. name은 업로드한 이미지의 유니크한 키이고, tname은 thumbnail입니다.
+The forth argument of the uploadStream function is callback function will be occured when upload is finished. if will deliver the results as a JSON format. name is the unique key of the uploaded images, tname is a thumbnail.
 
 	{result : {channel: "channel02", name: "Zk__N6hqm.jpg", tname: "T_Zk__N6hqm.jpg"}}
 
 
-getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 다운로드 받을 수 있는 URL을 생성해줍니다.
+getFileUrl function create a download URL using the name or tname
 
 <pre data-lang="js">
 <code class="prettyprint">var upload = function(){
 
-  // File Document Element 객체를 가져옵니다.
+  // Gets the File Document Element object.
   var inputObj = document.getElementById("uploadFile");
 
-  // progressbar 를 가져옵니다.
+  // Gets the progressbar.
   var progressbar = $("#progress_bar");
   var progressdiv = $("#progress_div");
 
 
- // Validation을 추가합니다.
+ // Add the Validation.
   if( inputObj.value === '' ){
     var html =  '<strong>Upload Failed!</strong> Select file.';
     $( "#success" ).hide();
@@ -86,7 +86,7 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
     return;
   }
 
-  // file의 type이 image type인지 체크합니다.
+  // check file type whether file is the image type.
   var file = inputObj.files[0];
   if( file.type.indexOf( "image" ) < 0 ){
 
@@ -99,13 +99,13 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
     return;
   }
 
-  // xpush의 uploadStream 함수를 사용하여 파일을 업로드합니다.
+  // Use uploadStream function of xpush to upload the file.
   xpush.uploadStream( 'channel02', {
     file: inputObj, type : 'image'
   }, function(data, idx){
     inputObj.value = "";
 
-    // progress 정보를 받아 bar 형태로 보여줍니다.
+    // show the progress information as progressbar
     var progress = data+"%";
     progressbar.html( progress );
     progressbar.css( { width : progress } );
@@ -114,9 +114,9 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
 
     inputObj.value = "";
 
-    // thumbnail image를 다운로드 받을 수 있는 URL을 얻어 옵니다.
+    // Obtains the URL that you can download a thumbnail image
     var thumbnailUrl = xpush.getFileUrl('channel02', data.result.tname );
-    // original image를 다운로드 받을 수 있는 URL을 얻어 옵니다.
+    // Obtains the URL that you can download a original image
     var imageUrl = xpush.getFileUrl('channel02', data.result.name );
 
     var progress = "0%";
@@ -124,23 +124,23 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
     progressbar.css( { width : progress } );
     progressdiv.hide();
 
-    // 업로드결과를 화면에 보여줍니다.
+    //Shows the results of the upload to screen.
     var html =  '<strong>Upload Success!</strong> ' + imageUrl;
     $( "#danger" ).hide();
     $( "#success" ).html(html);
     $( "#success" ).show();
 
-    // thumbnail image를 보여주기 위한 template 객체를 복사하여 새로운 Document Element을 생성합니다.
+    // Copy the template object to show a thumbnail image 
     var newImage = $( "#template" ).clone();
 
-    // 새로 만든 Document Element 객체를 수정합니다.
+    // modify the newly created object.
     newImage.attr( "id", "template_"+ Date.now() );
     newImage.attr( "src", thumbnailUrl );
     newImage.bind( "click", function(){
       var popup = window.open(imageUrl, '_blank', 'location=no');
     });
 
-    // 새로 만든 Document Element 객체를 지정된 영역에 추가합니다.
+    // Add the newly created Document Element object in the specified area.
     newImage.appendTo( "#list" );
     newImage.show();
   });
@@ -188,7 +188,7 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
 </pre>
 
 
-### 실행 결과
+### Code Result
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
@@ -208,9 +208,9 @@ getFileUrl 함수는 uploadStream로 받은 name이나 tname 을 이용하여 �
 var xpush = new XPush('http://demo.stalk.io:8000', 'demo');
 
 $(document).ready( function(){
-  // channel02 을 생성합니다.
+  // create a channel02.
   xpush.createSimpleChannel('channel02', function(){
-    // 생성 후에 success 메시지를 보여줍니다.
+    // show the success message after generating
     var html =  '<strong>Well done!</strong> Create simple channel success';
     $( "#danger" ).hide()
     $( "#success" ).html(html);
@@ -221,15 +221,14 @@ $(document).ready( function(){
 
 
 var upload = function(){
-  // File Document Element 객체를 가져옵니다.
+  // Gets the File Document Element object.
   var inputObj = document.getElementById("uploadFile");
 
-  // progressbar 를 가져옵니다.
+  // Gets the progressbar.
   var progressbar = $("#progress_bar");
   var progressdiv = $("#progress_div");
 
-
- // Validation을 추가합니다.
+  // Add the Validation. 
   if( inputObj.value === '' ){
     var html =  '<strong>Upload Failed!</strong> Select file.';
     $( "#success" ).hide();
@@ -239,7 +238,7 @@ var upload = function(){
     return;
   }
 
-  // file의 type이 image type인지 체크합니다.
+  // check file type whether file is the image type.
   var file = inputObj.files[0];
   if( file.type.indexOf( "image" ) < 0 ){
 
@@ -252,13 +251,13 @@ var upload = function(){
     return;
   }
 
-  // xpush의 uploadStream 함수를 사용하여 파일을 업로드합니다.
+  // Use uploadStream function of xpush to upload the file.
   xpush.uploadStream( 'channel02', {
     file: inputObj, type : 'image'
   }, function(data, idx){
     inputObj.value = "";
 
-    // progress 정보를 받아 bar 형태로 보여줍니다.
+    // show the progress information as progressbar
     var progress = data+"%";
     progressbar.html( progress );
     progressbar.css( { width : progress } );
@@ -267,9 +266,9 @@ var upload = function(){
 
     inputObj.value = "";
 
-    // thumbnail image를 다운로드 받을 수 있는 URL을 얻어 옵니다.
+    // Obtains the URL that you can download a thumbnail image
     var thumbnailUrl = xpush.getFileUrl('channel02', data.result.tname );
-    // original image를 다운로드 받을 수 있는 URL을 얻어 옵니다.
+    // Obtains the URL that you can download a original image
     var imageUrl = xpush.getFileUrl('channel02', data.result.name );
 
     var progress = "0%";
@@ -277,23 +276,23 @@ var upload = function(){
     progressbar.css( { width : progress } );
     progressdiv.hide();
 
-    // 업로드결과를 화면에 보여줍니다.
+    // Shows the results of the upload to screen
     var html =  '<strong>Upload Success!</strong> ' + imageUrl;
     $( "#danger" ).hide();
     $( "#success" ).html(html);
     $( "#success" ).show();
 
-    // thumbnail image를 보여주기 위한 template 객체를 복사하여 새로운 Document Element을 생성합니다.
+    // Copy the template object to show a thumbnail image 
     var newImage = $( "#template" ).clone();
 
-    // 새로 만든 Document Element 객체를 수정합니다.
+    // modify the newly created object.
     newImage.attr( "id", "template_"+ Date.now() );
     newImage.attr( "src", thumbnailUrl );
     newImage.bind( "click", function(){
       var popup = window.open(imageUrl, '_blank', 'location=no');
     });
 
-    // 새로 만든 Document Element 객체를 지정된 영역에 추가합니다.
+    // Add the newly created Document Element object in the specified area.
     newImage.appendTo( "#list" );
     newImage.show();
   });
