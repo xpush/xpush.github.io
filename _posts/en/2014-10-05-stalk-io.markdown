@@ -1,33 +1,37 @@
 ---
 layout: post
-title:  "STALK.IO 서비스를 사용해보세요."
+title:  "Try using STALK.IO service."
 date:   2014-10-05 21:29:06
 categories: announcement
 tags: xpush
 og:
   type: article
-  image: http://xpush.github.io/lib/img/portfolio/003.png
-  description: XPUSH 를 기반으로 한 서비스인 stalk.io 는 웹페이지에 설치할 수 있는 체팅 위젯을 사용해 보세요.
+  imagereal time. in real time.k to each oth: http://xpush.github.io/lib/img/portfolio/003.png
+  description: Stalk.io is a chatting widget service based on XPUSH that you can install on your web page.
 ---
 
 <img src="https://raw.githubusercontent.com/xpush/stalk.io/master/doc/stalk-logo.jpg" width="100%" align="center">
 
-안녕하십니까. **XPUSH** 개발팀입니다.
+Hello. ** XPUSH ** We are xpush development team.
 
-XPUSH 를 기반으로 한 서비스인 stalk.io 는 웹페이지에 설치할 수 있는 체팅 위젯입니다.
-같은 페이지를 보고 있는 사람들이 몇명인지 실시간으로 표시해주며, 서로 대화 할 수 있는 기능을 제공합니다.
-Facebook 또는 Google+ 계정으로 로그인하면 대화에 참여하실 수 있습니다.
+Stalk.io is a chatting widget service based on XPUSH that you can easily install on your web page.
 
-여러분이 홈페이지나 블로그를 운영하신다면, HTML 템블릿에 간단한 테그를 추가 하기만 하면 웹페이지 하단에 체팅 위젯이 보이게 될 것입니다.
+It displays a number of people who are looking at the same page in real time. Also it offers a feature that allows them to talk to each other.
+
+When you log in to Facebook, or Google+ account, you can join the conversation.
+
+If you are running a website or blog, you only need to add a simple tag in the HTML and templates would make chatting widget at the bottom of this web page.
+
+
 
 {% highlight html %}
 <script src="http://stalk.io/stalk.js"></script>
 <script>STALK.init();</script>
 {% endhighlight %}
 
-현재 200여개 웹사이트에 적용되어 있으며, 지금 보고 계시는 XPUSH 홈페이지 역시 우측 하단에 stalk.io 웹체팅 위젯이 적용되어 있습니다.
+Currently, it has been applied to more than 200 web sites, in addition, it has been applied in the lower-right corner of in this homepage like you're looking at right now.
 
-IE6 이상부터, Chrome, Opera, Firefox 등 거의 모든 웹브라우져에서 동작하고, 모바일 브라우져에서도 동작 가능합니다.
-현재는 SSL 인증서 적용이 되지 않아, HTTPS 도메인에는 동작하지 않습니다.
+It is support from IE6 or higher, Chrome, Opera, Firefox, and any web browser, such as it can also be operated with a mobile phone browser.
+Currently, do not apply SSL certificate, It does not work in HTTPS domains
 
-무료로 제공되는 stalk.io 서비스는 [http://stalk.io](http://stalk.io) 에서 간단한 설명과 적용 방법을 확인 하실 수 있습니다.
+Stalk.io service is provided free of charge, you can find a short description and how to apply in [http://stalk.io] (http://stalk.io).
