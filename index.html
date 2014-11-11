@@ -110,7 +110,8 @@ Various functions that can be used through the API documentation and library spe
 			<div class="col-lg-4">
 				<h4>Latest Posts</h4>
 				<div class="hline"></div>
-			{% for post in site.posts offset: 0 limit: 5  %}
+			{% assign posts=site.posts | where:"lang", page.lang %}
+			{% for post in posts offset: 0 limit: 5  %}
 			<p><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
 			{% endfor %}
 			</div>
