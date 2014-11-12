@@ -6,7 +6,7 @@
     {% for category in site.categories %}
     <p>
       <a href="{% if page.lang != "en" %}/{{page.lang}}{% endif %}/blog/category/{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first }}</a>
-      <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+      <span class="badge badge-theme pull-right">{{ category | last | size | divided_by: site.data.languages.size }}</span>
     </p>
     {% endfor %}
   <div class="spacing"></div>
