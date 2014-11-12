@@ -5,7 +5,7 @@
   <div class="hline"></div>
     {% for category in site.categories %}
     <p>
-      <a href="/blog/category/{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first }}</a>
+      <a href="{% if page.lang != "en" %}/{{page.lang}}{% endif %}/blog/category/{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first }}</a>
       <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
     </p>
     {% endfor %}
