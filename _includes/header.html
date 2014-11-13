@@ -57,7 +57,7 @@
             }
           </script>
 
-          <div>
+          <div class="language-container">
           {% for lang in site.data.languages %}
             <div class="btn btn-xs {% if page.lang == {{lang.name}} %}btn-default{% else %}btn-link{% endif %}" onclick="changeLang('{{lang.name}}')">
               <img src="/lib/img/lang-{{lang.name}}.png" style="height:30px;">
