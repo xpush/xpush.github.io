@@ -6,7 +6,7 @@ date: April 25, 2014
 
 You can download and run the image file of XPUSH at the docker repository. it is possible to install and run and, in this way, you can be most easily and quickly experience the XPUSH.
 
-XPUSH Docker image files is shared in [docker hub] (https://registry.hub.docker.com/u/stalk/xpush/), You can download the image to your server or personal PC, and then you can install and run the xpush with it.
+XPUSH Docker image files is shared in [docker hub](https://registry.hub.docker.com/u/stalk/xpush/), You can download the image to your server or personal PC, and then you can install and run the xpush with it.
 
 <br />
 
@@ -35,7 +35,7 @@ Now, you can run the image that you downloaded in Docker environment.
 
 8000 port is a port number that Session server uses, 9000 port is the port number that Channel server uses. Xpush server that have been executed is accessible to 127.0.0.1.
 
-To access to XPUSH server that you run in docker in OSX, you can obtain an IP address by using the following command. [More info] (https://github.com/boot2docker/boot2docker)
+To access to XPUSH server that you run in docker in OSX, you can obtain an IP address by using the following command. [More info](https://github.com/boot2docker/boot2docker)
 
   > boot2docker ip
 
@@ -94,7 +94,7 @@ Now, We can send the string "Hello World" to `message` events in` channel01` cha
 
 We will implement a simple chat in such a way as described above.
 
-Full source can be found in [here] (https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html).
+Full source can be found in [here](https://github.com/xpush/lib-xpush-web/blob/master/example/simple.html).
 
 The XPUSH server that was used in the demo below is a server for temporary test provided by the XPUSH development team, can not operate temporarily, it is not possible to guarantee the performance. So, please use the XPUSH on  your own.
 
