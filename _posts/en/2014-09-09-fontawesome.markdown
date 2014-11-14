@@ -9,7 +9,7 @@ og:
   description: You can easily get PNG files extracted from the Font Awesome by using the font awesome to png.
 ---
 
-Some of the images used on the ** XPUSH ** site is converted from font in the [Font Awesome].
+Some of the images used on the **XPUSH** site is converted from font in the [Font Awesome].
 
 In this post, we will introduce to [font awesome to png] tool which was used by XPUSH team.
 
@@ -18,12 +18,12 @@ The [font awesome to png] source was developed in Python, using this method is v
 Based on the OS X environment,
 First, make sure Python is installed. (OSX is the Python installed by default.)
 
-In the [source] (https://github.com/odyniec/font-awesome-to-png/blob/master/font-awesome-to-png.py) of [font awesome to png], You can make sure that it uses the image library.
-So [PIL] (Python Imaging Library) is required.
+In the [source](https://github.com/odyniec/font-awesome-to-png/blob/master/font-awesome-to-png.py) of [font awesome to png], You can make sure that it uses the image library.
+So [PIL](Python Imaging Library) is required.
 [PIL] has devised an update since 2009, still a lot of people use it because it was made very well.
 However, since the Python version may no longer support while still rising, we will use the [Pillow] that provides the same functionality instead of PIL
 
-[Pillow] can be installed without difficulty along the [Official Site] (http://pillow.readthedocs.org/en/latest/installation.html#mac-os-x-installation) guide.
+[Pillow] can be installed without difficulty along the [Official Site](http://pillow.readthedocs.org/en/latest/installation.html#mac-os-x-installation) guide.
 
     $ brew install libtiff libjpeg webp little-cms2
     $ sudo pip install Pillow

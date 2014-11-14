@@ -9,7 +9,7 @@ og:
   description: Brief introduction of chrome extension and explanation how to implement [stalk.io chrome extension](https://chrome.googlecom/webstore/detail/stalkio/kjnhjokbnogkikofagidldnohdbjofoe?hl=ko&utm_source=chrome-ntp-launcher).  
 ---
 
-Hello. ** XPUSH ** We are xpush development team.
+Hello. **XPUSH** We are xpush development team.
 
 Stalk.io is a chatting widget service based on XPUSH that you can easily install on your web page.
 

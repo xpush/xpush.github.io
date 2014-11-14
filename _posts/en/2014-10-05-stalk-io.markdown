@@ -6,13 +6,13 @@ categories: announcement
 tags: xpush
 og:
   type: article
-  imagereal time. in real time.k to each oth: http://xpush.github.io/lib/img/portfolio/003.png
-  description: Stalk.io is a chatting widget service based on XPUSH that you can install on your web page.
+  image: http://xpush.github.io/lib/img/portfolio/003.png
+  description: STALK.IO is the most beautiful and effective way to make visitors stay on your website. It's super easy to install this chat widget for your website. 
 ---
 
 <img src="https://raw.githubusercontent.com/xpush/stalk.io/master/doc/stalk-logo.jpg" width="100%" align="center">
 
-Hello. ** XPUSH ** We are xpush development team.
+Hello. **XPUSH** We are xpush development team.
 
 Stalk.io is a chatting widget service based on XPUSH that you can easily install on your web page.
 
@@ -34,4 +34,4 @@ Currently, it has been applied to more than 200 web sites, in addition, it has b
 It is support from IE6 or higher, Chrome, Opera, Firefox, and any web browser, such as it can also be operated with a mobile phone browser.
 Currently, do not apply SSL certificate, It does not work in HTTPS domains
 
-Stalk.io service is provided free of charge, you can find a short description and how to apply in [http://stalk.io] (http://stalk.io).
+Stalk.io service is provided free of charge, you can find a short description and how to apply in [http://stalk.io](http://stalk.io).

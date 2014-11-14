@@ -10,7 +10,7 @@ og:
   description: XPUSH website was opened based on the Jekyll. Check out the sources using Jekyll via github pages.
 ---
 
-Hello. ** XPUSH ** We are xpush development team.
+Hello. **XPUSH** We are xpush development team.
 
 This website is being provided through the [Github Pages], has been developed based on [Jekyll].
 All blog posts are written by [Markdown] and, they are automatically converted to HTML by Jekyll.
@@ -20,7 +20,7 @@ Raising source developed by the Jekyll on Github repository, Github Pages will c
 However, useful plugins of Jekyll implemented by Ruby mostly is unavailable.
 You can use the Jekyll in Github Pages except with little discomfort.
 
-** XPUSH ** Web site provides a variety of documentation for the platform ** XPUSH ** Introduction and how to install and use.
+**XPUSH** Web site provides a variety of documentation for the platform **XPUSH** Introduction and how to install and use.
 
 And all sources for the project are published in [XPUSH Github Project], and can be used by anyone to see.
 
