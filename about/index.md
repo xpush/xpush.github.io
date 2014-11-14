@@ -30,11 +30,11 @@ Without having to directly implement the real-time communication servers, After 
 
 " *We help you easily build real-time applications. XPUSH was designed for developers.* "
 
-**XPUSH** consists of real-ime communication servers hat has been developed as a Web technology. You can build  a variety of real-time messaging applications such as your own messenger and chat services
+**XPUSH** consists of real-time communication servers that has been developed as a Web technology. You can build  a variety of real-time messaging applications such as your own messenger and chat services
 
 Currently, **XPUSH** developers are provided Javascript libraries for developing Web services and JAVA libraries for developing JAVA applications and Android applications. We are continually developing additional libraries.
 
-Real-time data communication, while maintaining the network connection between the Client and the Server, can transmit and receive data bidirectionally. If the connection to the server is lost, or even if some servers fails, it guarantee the service availability.
+Real-time data communication, while maintaining the network connection between the Client and the Server, can transmit and receive data bidirectionally. If the connection to the server is lost, or even if some servers fails, it guarantees the service availability.
 
 - - -
 
@@ -42,7 +42,7 @@ Real-time data communication, while maintaining the network connection between t
 
 " *At the core of XPUSH is the HTML5 WebSocket protocol, but we also have fallback mechanisms so that XPUSH just works anywhere, anytime.* "
 
-**XPUSH** was developed by node.js to implement high-performance servers. It uses Socket.IO, one of the modules for web-based real-time messaging. And We continues to update the modules to use the latest version.
+**XPUSH** was developed by node.js to implement high-performance servers. It uses Socket.IO, one of the modules for web-based real-time messaging. And we continue to update the modules to use the latest version.
 
 Socket.IO enables real-time bidirectional event-based communication. It works on every platform, browser or device, focusing equally on reliability and speed.
 
@@ -59,7 +59,7 @@ Real time server platform has to be designed to be able to handle a large amount
 **XPUSH** manages the real-time status of the distributed servers through a **zookeeper** and use **Redis** to store connection information of the visitors and meta datas in the memory. And XPUSH stores various types of unstructured messages sent or received in **MongoDB**. 
 
 **XPUSH** server platform run each in the Session server and Channel server.
-Channel server is responsible to authenticate users, managing user and device information, and assign distribution server for load balancing. Since relatively Channel easy to increase the load on the server, so that it can be added separately expansion only Channel server
+Channel server is responsible to authenticate users, managing user and device information, and assigning distribution server for load balancing. Since relatively Channel servers are easy to increase the load on the network traffic, so that it can be added separately as an expansion only Channel server
 
 #### - Standalone operations
 
