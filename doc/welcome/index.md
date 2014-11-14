@@ -16,7 +16,7 @@ And we will explain how to install the XPUSH and how to create a configuration f
 #### > [Quick-start guide](/doc/quick-start) <span class="badge badge-theme">recommended</span>
 For your fastest experience for the XPUSH, you can make the simple application through sample by installing directly.
 
-Please try to run the sample application by directly install the image file that is configured in the docker container.
+Please try to run the sample application by directly installing the docker image file that is configured in the docker container.
 
 #### > [Installation](/doc/installation)
 XPUSH use MongoDB, redis, and zookeeper to storage data and manage the real-time session and distributed environment.
