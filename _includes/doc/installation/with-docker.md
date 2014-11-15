@@ -5,15 +5,15 @@
 Installation with docker
 ===
 
-XPUSH the image of Docker has been registered. You will be able to easily install the XPUSH by using the [Docker] (https://www.docker.com/).
+XPUSH the image of Docker has been registered. You will be able to easily install the XPUSH by using the [Docker](https://www.docker.com/).
 <a name="prepare"></a>
 <br />
 
 ## 1. Prepare
 
-To use the XPUSH, it is required [nodejs] (http://nodejs.org/), [zookeeper] (http://zookeeper.apache.org/), [redis] (http://redis.io/), [mongodb] (http://www.mongodb.org/).
+To use the XPUSH, it is required [nodejs](http://nodejs.org/), [zookeeper](http://zookeeper.apache.org/), [redis](http://redis.io/), [mongodb](http://www.mongodb.org/).
 
-Please install the [Docker installation] (https://docs.docker.com/installation/#installation) with reference to the Docker. The following is how to install the Docker in Ubuntu13.10.
+Please install the [Docker installation](https://docs.docker.com/installation/#installation) with reference to the Docker. The following is how to install the Docker in Ubuntu13.10.
 
  Install the package for AUFS Filesystem support.
 
@@ -80,7 +80,7 @@ Quick for the start, use the start script`xpush-session.sh` that are included in
 
 	--config /data/session.json --session --port 8000
 
-Start the session server using the xpush executable file. You can set the way you want the option necessary to run. For more options, please make sure the [here] (http://xpush.github.io/doc/configuration/#run_config).
+Start the session server using the xpush executable file. You can set the way you want the option necessary to run. For more options, please make sure the [here](http://xpush.github.io/doc/configuration/#run_config).
 
 	docker run -i -t -p 8080:8080 -v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/session01.json --session --port 8080 --host sample.stalk.io
 
@@ -95,6 +95,6 @@ Quick for the start, use the start script `xpush-channel.sh` that are included i
 
 	--config /data/channel.json --port 9000
 
-Start the channel server using the xpush executable file. You can set the way you want the option necessary to run. For more options, please make sure the [here] (http://xpush.github.io/doc/configuration/#run_config).
+Start the channel server using the xpush executable file. You can set the way you want the option necessary to run. For more options, please make sure the [here](http://xpush.github.io/doc/configuration/#run_config).
 
 	docker run -i -t -p 9090:9090 -v /home/stalk/data:/data stalk/xpush:latest xpush --config /data/channel01.json --port 9090 --host sample.stalk.io

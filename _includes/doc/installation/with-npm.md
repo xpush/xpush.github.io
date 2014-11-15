@@ -1,19 +1,19 @@
 Installation with npm
 ===
 
-XPUSH based on nodejs. You can easily install the XPUSH through the [npm] (https://www.npmjs.org/).
+XPUSH based on nodejs. You can easily install the XPUSH through the [npm](https://www.npmjs.org/).
 <a name="prepare"></a>
 <br />
 
 ## 1. Prepare
 
-To use the XPUSH is, [nodejs] (http://nodejs.org/), [zookeeper] (http://zookeeper.apache.org/), [redis] (http://redis.io/) , [mongodb] (http://www.mongodb.org/) is required .
+To use the XPUSH is, [nodejs](http://nodejs.org/), [zookeeper](http://zookeeper.apache.org/), [redis](http://redis.io/) , [mongodb](http://www.mongodb.org/) is required .
 
 The following is how to install 64bit linux. Please install to suit your environment.
-If you have already been installed,  the xpush [installation immediately] (# install) please.
+If you have already been installed,  the xpush [installation immediately](# install) please.
 
 ### nodejs
-[nodejs installation] (http://nodejs.org/download/) by referring to Download and unzip the nodejs.
+[nodejs installation](http://nodejs.org/download/) by referring to Download and unzip the nodejs.
 
 	mkdir -p $HOME/xpush
 	cd $HOME/xpush
@@ -39,7 +39,7 @@ The following is the code to install and run the zookeeper3.4.6.
 
 
 ### redis
-[redis installation] (http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html) install and run the with reference to redis.
+[redis installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html) install and run the with reference to redis.
 
 The follow is the code to install and run redis 2.8.14.
 
@@ -99,7 +99,7 @@ Install from Source
 
 ## 2. Install xpush
 
-When you are all ready, please install the xpush. If not ready, please make sure the [preparation] (# prepare).
+When you are all ready, please install the xpush. If not ready, please make sure the [preparation](# prepare).
 You can use the -g option it is recommended that you install to the global.
 
 ### Install with npm
@@ -112,7 +112,7 @@ You can use the -g option it is recommended that you install to the global.
 
 ### Install from github
 
-To install the latest development version, please install directly using the [git] (https://github.com/xpush/node-xpush).
+To install the latest development version, please install directly using the [git](https://github.com/xpush/node-xpush).
 
 	git clone https://github.com/xpush/node-xpush.git
 	cd node-xpush
@@ -123,12 +123,12 @@ To install the latest development version, please install directly using the [gi
 
 ## 3. Run xpush
 
-Please run the session server. For more options, please make sure the [here] (http://xpush.github.io/doc/configuration/#run_config).
+Please run the session server. For more options, please make sure the [here](http://xpush.github.io/doc/configuration/#run_config).
 
 	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 8000 --config ./config.sample.json --session
 
-Please run the channel server. For more options, please make sure the [here] (http://xpush.github.io/doc/configuration/#run_config).
+Please run the channel server. For more options, please make sure the [here](http://xpush.github.io/doc/configuration/#run_config).
 
 	cd $HOME/xpush/node_modules/xpush
 	bin/xpush --port 9000 --config ./config.sample.json

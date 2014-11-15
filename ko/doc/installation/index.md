@@ -17,13 +17,13 @@ Docker 이미지 파일을 다운로드 받아 실행하는 방법이 있으며,
 <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="npm">
 
-      {% capture npm_include %}{% include doc/installation/with-npm.md %}{% endcapture %}
+      {% capture npm_include %}{% include doc/installation/ko/with-npm.md %}{% endcapture %}
       {{ npm_include | markdownify }}
 
     </div>
     <div class="tab-pane" id="docker">
 
-      {% capture docker_include %}{% include doc/installation/with-docker.md %}{% endcapture %}
+      {% capture docker_include %}{% include doc/installation/ko/with-docker.md %}{% endcapture %}
       {{ docker_include | markdownify }}
 
     </div>
