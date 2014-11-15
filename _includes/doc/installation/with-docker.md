@@ -35,7 +35,7 @@ After registering the Docker repository, and then install the Docker.
 
 ## 2. Install xpush
 
-When you are all ready, install the xpush image that has been registered in the docker. Depending on the network environment, it takes a total of about 10 minutes to 60 minutes.
+When you are all ready, install the xpush image that has been registered in the docker. Depending on the network environment, it takes a total of about 10 to 30 minutes.
 
 	docker pull stalk/xpush:standalone
 
@@ -46,12 +46,12 @@ When you are all ready, install the xpush image that has been registered in the 
 
 In order to xpush run with docker, you can use the following options.
 
-> <p /> ** - d **: docker run as a daemon.
-> <p /> ** - name **: the name of the docker container.
-> <p /> ** - p **: It will map the port of host port with docker container. You can be connected to the port in the docker using this setting.
+> <p /> **- d**: docker run as a daemon.
+> <p /> **- name**: the name of the docker container.
+> <p /> **- p**: It will map the port of host port with docker container. You can be connected to the port in the docker using this setting.
 >
 >&nbsp;&nbsp;&nbsp;&nbsp;Usage -p _hostPort:containerPort_
-> <p /> ** - v **: It will map the directory of host and the directory of docker container. You can use the configuration file of the host using this setting in the docker.
+> <p /> **- v**: It will map the directory of host and the directory of docker container. You can use the configuration file of the host using this setting in the docker.
 >
 >&nbsp;&nbsp;&nbsp;&nbsp;Usage -v _hostDirectory:containerDirectory_
 
@@ -63,7 +63,7 @@ Run the downloaded image with Docker environment. Use the start script`stand-alo
 
 	docker run -d --name xpush -p 8000:8000 -p 9000:9000 stalk/xpush:standalone /bin/bash xpush-stand-alone.sh --host sample.stalk.io
 
-> ** Note **: If a run-time permission error was encountered, use the sudo to run the docker.
+> **Note**: If a run-time permission error was encountered, use the sudo to run the docker.
 
 ### 3-2. Run xpush separately
 

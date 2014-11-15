@@ -25,7 +25,7 @@ Set the PATH environment variable so that you can use the node and npm to global
 	PATH=$HOME/xpush/node-v0.10.32-linux-x64/bin:$PATH
 
 ### zookeeper
-[zookeeper installation] install and run the with reference to the zookeeper (http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html).
+Install and run zookeeper with reference [Zookeeper installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html).
 
 The following is the code to install and run the zookeeper3.4.6.
 
@@ -39,7 +39,7 @@ The following is the code to install and run the zookeeper3.4.6.
 
 
 ### redis
-[redis installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html) install and run the with reference to redis.
+Install and run redis with reference [Redis installation](http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html).
 
 The follow is the code to install and run redis 2.8.14.
 
@@ -53,7 +53,7 @@ The follow is the code to install and run redis 2.8.14.
 	(daemon : $ nohup src/redis-server & )
 
 ### mongodb
-[mongodb installation] install and run  mongodb with reference (http://docs.mongodb.org/manual/installation/).
+Install and run mongodb with reference [Mongodb installation](http://docs.mongodb.org/manual/installation/).
 
 The follow is the code to install and run redis 2.6.4
 
@@ -73,7 +73,7 @@ The follow is the code to install and run redis 2.6.4
 
 ### imageMagick
 
-[image] to install and run imageMagicK  with reference to (http://www.imagemagick.org/script/binary-releases.php).
+Install and run imageMagicK with reference [Imagemagick installation](http://www.imagemagick.org/script/binary-releases.php).
 
 The follow is the code install and run imageMagick.
 
