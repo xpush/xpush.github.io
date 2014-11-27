@@ -13,7 +13,7 @@ layout: about
 - - -
 
 <img src="/about/resource/rwcp.png" width="45%" align="right">
-english
+
 웹에서 실시간 데이터 통신을 구현하기 위해서는 HTML5 표준 Websocket 으로 구현하거나, node.js 의 socket.io 모듈을 사용하여 구현할 수 있습니다.
 
 특히, 실시간 서비스에는 고려해야 할 것들이 많이 있습니다. 급격히 증가하는 사용자를 고려한 분산 서버 구성, 대용량 네트워크 트래픽 처리, 무중단 서버 확장 (Scale-out) 등 다양한 것들을 고려해야 할 것입니다.
@@ -31,9 +31,9 @@ english
 
 **XPUSH** 는 웹 구현기술로 구현된 실시간 메시지 통신 서버들로 구성되어 있습니다. **XPUSH** 활용하여 메신져나 체팅서비스 등 다양한 실시간 메시지 송수신 기능을 구현할 수 있습니다.
 
-현재는 다양한 웹서비스에서 사용 가능한 Javascript 라이브러라와, JAVA 어플리케이션이나 Android 에서 사용할 수 있는 JAVA 라이브러리가 제공되고 있습니다. **XPUSH** 개발팀은 계속해서 라이브러리를 추가 개발하고 있습니다.
+현재는 다양한 웹서비스에서 사용 가능한 Javascript 라이브러리와, JAVA 어플리케이션이나 Android 에서 사용할 수 있는 JAVA 라이브러리가 제공되고 있습니다. **XPUSH** 개발팀은 계속해서 라이브러리를 추가 개발하고 있습니다.
 
-실시간 데이터 통신은 Client 와 Server 간 연결을 유지하면서 양방향으로 데이터를 송수신할 수 있도록 되어 있으며, 연결이 끊어지거나 서버가 장애나더라도 서비스에 지장이 없도록 설계 되어 있습니다.
+실시간 데이터 통신은 Client 와 Server 간 연결을 유지하면서 양방향으로 데이터를 송수신할 수 있도록 되어 있으며, 연결이 끊어지거나 서버 장애가 나더라도 서비스에 지장이 없도록 설계 되어 있습니다.
 
 - - -
 
@@ -62,7 +62,7 @@ Session 서버는 사용자 접속을 위한 인증과 사용자 관리 및 부�
 
 #### - standalone 동작
 
-테스트의 목적 또는 개발 단계에 설치할 수 있는 All In One 구성입니다. Docker 이미지중 standalone 으로 실행하면, MongoDB / Redis / Zookeeper / XPUSH Session 서버 / XPUSH Channel 서버 가 하나의 장치에 한번에 설치 될 것입니다. 자세한 설명은 [Installation](/doc/installation/#docker) 문서에서 확인 하실 수 있습니다.
+테스트의 목적 또는 개발 단계에 설치할 수 있는 All In One 구성입니다. Docker 이미지 중 standalone 으로 실행하면, MongoDB / Redis / Zookeeper / XPUSH Session 서버 / XPUSH Channel 서버 가 하나의 장치에 한번에 설치 될 것입니다. 자세한 설명은 [Installation](/doc/installation/#docker) 문서에서 확인 하실 수 있습니다.
 
 #### - 확장성을 고려한 분산 환경 (실제 운영 환경)
 
