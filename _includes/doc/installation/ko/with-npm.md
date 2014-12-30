@@ -126,9 +126,9 @@ latest development version을 설치하기 위해서는 [git](https://github.com
 세션 서버를 실행하세요. 자세한 옵션은 [여기](http://xpush.github.io/doc/configuration/#run_config)를 확인하세요.
 
 	cd $HOME/xpush/node_modules/xpush
-	bin/xpush --port 8000 --config ./config.sample.json --session
+	bin/xpush --port 8000 --config ./config/config.server.sample.json --session
 
 채널 서버를 실행하세요. 자세한 옵션은 [여기](http://xpush.github.io/doc/configuration/#run_config)를 확인하세요.
 
 	cd $HOME/xpush/node_modules/xpush
-	bin/xpush --port 9000 --config ./config.sample.json
+	bin/xpush --port 9000 --config ./config/config.server.sample.json

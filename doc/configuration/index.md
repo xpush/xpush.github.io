@@ -6,7 +6,7 @@ date: September 9, 2014
 
 As running the session server as follows
 
-	bin/xpush --port 8000 --config ./config.sample.json --session
+	bin/xpush --port 8000 --config ./config/config.server.sample.json --session
 
 Configuration file for running XPUSH has become json format. Learn more detail about setting.
 

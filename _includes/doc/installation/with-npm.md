@@ -126,9 +126,9 @@ To install the latest development version, please install directly using the [gi
 Please run the session server. For more options, please make sure the [here](http://xpush.github.io/doc/configuration/#run_config).
 
 	cd $HOME/xpush/node_modules/xpush
-	bin/xpush --port 8000 --config ./config.sample.json --session
+	bin/xpush --port 8000 --config ./config/config.server.sample.json --session
 
 Please run the channel server. For more options, please make sure the [here](http://xpush.github.io/doc/configuration/#run_config).
 
 	cd $HOME/xpush/node_modules/xpush
-	bin/xpush --port 9000 --config ./config.sample.json
+	bin/xpush --port 9000 --config ./config/config.server.sample.json
